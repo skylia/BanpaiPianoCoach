@@ -1,0 +1,24 @@
+/* The sheet scrolls independently; notation is drawn from vector music glyphs. */
+.notation-view{position:relative;isolation:isolate;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;background:#fffdf7;border:1px solid #e8e2d4;border-radius:15px;max-height:620px;min-height:310px;scroll-behavior:smooth;outline-offset:4px;color:#273b39}
+.notation-view:focus-visible{outline:2px solid #478e7e}
+.notation-surface{position:relative;min-width:100%;padding:12px 14px 22px;box-sizing:border-box}
+.notation-legend{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;padding:5px 9px 7px;color:#79827a;font-family:inherit;font-size:11px;letter-spacing:.04em;line-height:1.6}
+.notation-legend span:last-child{margin-left:auto}
+.notation-notice{margin:6px 7px 10px;padding:9px 12px;border-radius:8px;color:#766046;background:#f5eedc;font-size:12px;line-height:1.7}
+.notation-system{position:relative;line-height:0;border-bottom:1px solid #f0ede5;margin-bottom:6px}
+.notation-system:last-child{border-bottom:0;margin-bottom:0}
+.notation-svg{display:block;overflow:visible;max-width:none;flex-shrink:0}
+.notation-bar-number{font-family:Arial,sans-serif;font-size:11px;fill:#889085}
+.notation-note{transition:filter .12s ease;outline:none}
+.notation-note[role=button]{cursor:pointer}
+.notation-note[role=button]:hover{filter:drop-shadow(0 0 3px #6fbba6)}
+.notation-note:focus-visible{filter:drop-shadow(0 0 4px #d2a33b)}
+.notation-note.notation-selected{filter:drop-shadow(0 0 4px #ce9e37)}
+.notation-note.notation-selected path,.notation-note.notation-selected text{fill:#a77615!important;stroke:#a77615!important}
+.notation-note.notation-playing{filter:drop-shadow(0 0 3px #79c2af)}
+.notation-note.notation-playing path,.notation-note.notation-playing text{fill:#14745f!important;stroke:#14745f!important}
+.notation-playhead{pointer-events:none}
+.notation-error{padding:60px 24px;text-align:center;color:#89583e;font-size:14px;line-height:1.7}
+@media(max-width:640px){.notation-view{max-height:540px;border-radius:11px}.notation-surface{padding:8px 7px 14px}.notation-legend{gap:4px 11px;font-size:10px}.notation-legend span:last-child{margin-left:0}}
+@media(prefers-reduced-motion:reduce){.notation-view{scroll-behavior:auto}.notation-note{transition:none}}
+@media print{.notation-view{max-height:none;overflow:visible;border:0}.notation-system{break-inside:avoid}.notation-playhead{display:none}}

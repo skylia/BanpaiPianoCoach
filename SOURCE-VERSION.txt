@@ -1,0 +1,3 @@
+Banpai 0.3.0
+Source commit: 207a3c21c682ef4cb5e9b55eaabad398df187768
+Private release confirmed: 2026-09-22

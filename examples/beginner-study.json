@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "id": "beginner-two-bars",
+  "title": "入门双手练习 · 两小节",
+  "composer": "半拍原创示例",
+  "collection": "我的曲谱",
+  "level": "入门",
+  "bpm": 72,
+  "timeSignature": [
+    4,
+    4
+  ],
+  "keySignature": "C",
+  "notes": [
+    {
+      "id": "r1",
+      "pitch": 60,
+      "beat": 0,
+      "duration": 1,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "id": "l1",
+      "pitch": 48,
+      "beat": 0,
+      "duration": 4,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "id": "r2",
+      "pitch": 62,
+      "beat": 1,
+      "duration": 1,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "id": "r-rest",
+      "pitch": null,
+      "beat": 2,
+      "duration": 1,
+      "hand": "right"
+    },
+    {
+      "id": "r3",
+      "pitch": 64,
+      "beat": 3,
+      "duration": 1,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "id": "r4",
+      "pitch": 67,
+      "beat": 4,
+      "duration": 1,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "id": "l2",
+      "pitch": 55,
+      "beat": 4,
+      "duration": 2,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "id": "r5",
+      "pitch": 65,
+      "beat": 5,
+      "duration": 1,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "id": "r6",
+      "pitch": 64,
+      "beat": 6,
+      "duration": 2,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "id": "l3",
+      "pitch": 48,
+      "beat": 6,
+      "duration": 2,
+      "hand": "left",
+      "finger": 5
+    }
+  ],
+  "totalBeats": 8,
+  "source": {
+    "label": "半拍原创示例",
+    "url": "",
+    "note": "用于 JSON / MIDI 导入、分手练习与图形编辑演示。不是哈农或车尔尼教材原谱。"
+  },
+  "tags": [
+    "双手",
+    "休止",
+    "示例"
+  ]
+}

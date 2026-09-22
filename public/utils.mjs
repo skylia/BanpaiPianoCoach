@@ -1,0 +1,12 @@
+export const $=s=>document.querySelector(s);
+export const $$=s=>[...document.querySelectorAll(s)];
+export const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export const uid=()=>crypto.randomUUID();
+export function downloadFile(data,name,type='application/json'){const u=URL.createObjectURL(new Blob([data],{type}));const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+let toastTimer;export function notify(message){const el=$('#toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),6000);}
+const paths={trend:'M4 4v16h17 M7 14l5-5 4 3 5-7 M16 5h5v5',piano:'M3 5h18v14H3z M7 5v8h3V5 M14 5v8h3V5 M8 13v6 M16 13v6',book:'M12 5C8 2 4 3 2 4v15c4-2 7-1 10 1 3-2 6-3 10-1V4c-4-2-7-1-10 1v15',history:'M3 11a9 9 0 1 1 2 7 M3 4v7h7 M12 7v5l3 2',spark:'m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z',lock:'M7 10V7a5 5 0 0 1 10 0v3 M5 10h14v11H5z M12 14v3',help:'M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4 M12 17h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',play:'m8 4 12 8-12 8z',stop:'M6 6h12v12H6z',record:'M17 12a5 5 0 1 1-10 0 5 5 0 0 1 10 0',usb:'M12 3v14a3 3 0 1 0 3 3 M9 6l3-3 3 3 M12 13l-5-3V7 M12 16l5-4V8 M6 7h2 M16 7h2v2h-2z',upload:'M12 17V3 m-5 5 5-5 5 5 M4 16v5h16v-5',download:'M12 3v12 m-5-5 5 5 5-5 M4 16v5h16v-5',edit:'m4 15 12-12 5 5L9 20H4z M13 6l5 5',plus:'M12 4v16 M4 12h16',search:'M16 16l5 5 M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0',expand:'M8 3H3v5 M16 3h5v5 M3 16v5h5 M21 16v5h-5',volume:'M11 4 6 8H2v8h4l5 4z M16 8a6 6 0 0 1 0 8 M19 5a10 10 0 0 1 0 14',repeat:'M4 8a8 8 0 0 1 14-3l3 3 M21 2v6h-6 M20 16a8 8 0 0 1-14 3l-3-3 M3 22v-6h6',trash:'M3 6h18 M8 6V3h8v3 M5 6l1 15h12l1-15 M10 10v7 M14 10v7',arrow:'M4 12h16 m-6-6 6 6-6 6',check:'m4 12 5 5L20 6',close:'M5 5l14 14 M5 19 19 5'};
+export const icon=name=>`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="${paths[name]||paths.spark}"/></svg>`;
+export const fillIcons=()=>$$('[data-icon]').forEach(el=>el.innerHTML=icon(el.dataset.icon));
+export const formatTime=s=>`${Math.floor(Math.max(0,s)/60).toString().padStart(2,'0')}:${Math.floor(Math.max(0,s)%60).toString().padStart(2,'0')}`;
+export const beatsPerBar=score=>score.timeSignature[0]*4/score.timeSignature[1];
+export const barCount=score=>Math.max(1,Math.ceil(score.totalBeats/beatsPerBar(score)));
