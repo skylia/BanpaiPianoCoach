@@ -1,6 +1,6 @@
 /** Five-line grand staff. VexFlow 4.2.5 is vendored with its Bravura font. */
 const NS = 'http://www.w3.org/2000/svg';
-const GRID = 8; // Thirty-second-note display grid; source events are never modified.
+const GRID = 48; // Straight and triplet display grid; source events are never modified.
 const MAX_BARS = 256;
 const EPS = 1e-6;
 const DURATIONS = [
@@ -10,7 +10,9 @@ const DURATIONS = [
   { ticks: 6, duration: '8', dots: 1 }, { ticks: 4, duration: '8', dots: 0 },
   { ticks: 3, duration: '16', dots: 1 }, { ticks: 2, duration: '16', dots: 0 },
   { ticks: 1, duration: '32', dots: 0 },
-];
+  { ticks: .5, duration: '64', dots: 0 },
+].map(d=>({...d,ticks:d.ticks*6}));
+const TRIPLETS=[['w',128],['h',64],['q',32],['8',16],['16',8],['32',4],['64',2],['128',1]].map(([duration,ticks])=>({ticks,duration,dots:0,tuplet:true}));
 const KEY_SIGS = { C:0, G:1, D:2, A:3, E:4, B:5, 'F#':6, 'C#':7, F:-1, Bb:-2, Eb:-3, Ab:-4, Db:-5, Gb:-6, Cb:-7, Am:0, Em:1, Bm:2, 'F#m':3, 'C#m':4, 'G#m':5, 'D#m':6, 'A#m':7, Dm:-1, Gm:-2, Cm:-3, Fm:-4, Bbm:-5, Ebm:-6, Abm:-7 };
 const finite = (v, fallback) => Number.isFinite(Number(v)) ? Number(v) : fallback;
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
@@ -37,8 +39,12 @@ export function chooseNotationClefs(score) {
   return result;
 }
 function splitDuration(ticks) {
-  const result = [];
-  while (ticks > 0) { const spec = DURATIONS.find(d => d.ticks <= ticks) || DURATIONS.at(-1); result.push(spec); ticks -= spec.ticks; }
+  const result=[];
+  while(ticks>0){
+    const pool=ticks%3===0?DURATIONS:TRIPLETS;
+    const spec=pool.find(d=>d.ticks<=ticks)||TRIPLETS.at(-1);
+    result.push(spec);ticks-=spec.ticks;
+  }
   return result;
 }
 /** Pure notation preparation; never changes or quantizes the source practice data. */
@@ -53,7 +59,7 @@ export function buildNotationBars(score, options = {}) {
     if (Math.abs(start/GRID-rawBeat) > .00001 || Math.abs((end-start)/GRID-rawDuration) > .00001) adjusted = true;
     return { ...n, id: String(n.id ?? `note-${i}`), pitch: n.pitch === null || n.pitch === undefined ? null : clamp(Math.round(finite(n.pitch,60)),0,127), hand: noteHand(n), start, end };
   }).sort((a,b) => a.start-b.start || (a.pitch??0)-(b.pitch??0));
-  if (adjusted) warnings.add('五线谱按三十二分音符网格显示；原始演奏与分析时值保持不变。');
+  if (adjusted) warnings.add('五线谱按普通与三连音细分网格显示；极短装饰音可能近似，原始演奏与分析时值保持不变。');
   const barTicks = Math.round(time.barBeats*GRID);
   const totalTicks = Math.max(barTicks, Math.ceil(finite(score.totalBeats,0)*GRID), ...notes.map(n => n.end));
   const totalBars = Math.ceil(totalTicks/barTicks);
@@ -79,7 +85,7 @@ export function buildNotationBars(score, options = {}) {
         const rests=active.length ? [] : relevant.filter(n=>n.pitch===null && n.start<=from && n.end>=to);
         let tick=from;
         for(const spec of splitDuration(to-from)) {
-          segments.push({ beat:tick/GRID, duration:spec.ticks/GRID, value:spec.duration, dots:spec.dots, notes:unique, rests, hand }); tick+=spec.ticks;
+          segments.push({ beat:tick/GRID, duration:spec.ticks/GRID, value:spec.duration, dots:spec.dots, tuplet:!!spec.tuplet, notes:unique, rests, hand }); tick+=spec.ticks;
         }
       }
       entry.hands[hand]=segments;
@@ -170,9 +176,9 @@ export function renderNotation(container, score, options = {}) {
         if(first) {new V.StaveConnector(top,bottom).setType(V.StaveConnector.type.BRACE).setContext(ctx).draw();new V.StaveConnector(top,bottom).setType(V.StaveConnector.type.SINGLE_LEFT).setContext(ctx).draw();}
         new V.StaveConnector(top,bottom).setType(V.StaveConnector.type.SINGLE_RIGHT).setContext(ctx).draw();
         const label=svgElement('text',{x:x+3,y:23,class:'notation-bar-number'});label.textContent=String(bar.number);
-        const scaledLabel=svgElement('g',{transform:`scale(${displayScale})`});scaledLabel.append(label);svg.append(scaledLabel);
+        const scaledLabel=svgElement('g');scaledLabel.append(label);svg.append(scaledLabel);
         const noteStart=Math.max(top.getNoteStartX(),bottom.getNoteStartX());top.setNoteStartX(noteStart);bottom.setNoteStartX(noteStart);
-        const voices=[],voiceSets=[],beamSets=[];
+        const voices=[],voiceSets=[],beamSets=[],tupletSets=[];
         for(const [hand,stave,clef] of [['right',top,prepared.clefs.right],['left',bottom,prepared.clefs.left]]) {
           const accidentalState=new Map(),defaults=signatureState(prepared.keySignature);
           const staffNotes=bar.hands[hand].map(segment=>{
@@ -196,6 +202,9 @@ export function renderNotation(container, score, options = {}) {
             for(const n of source) {if(!notesById.has(n.id))notesById.set(n.id,[]);notesById.get(n.id).push(d);}
             return note;
           });
+          let tripletGroup=[];
+          const finishTuplet=()=>{if(tripletGroup.length){tupletSets.push(new V.Tuplet(tripletGroup,{num_notes:3,notes_occupied:2,bracketed:true,ratioed:true}));tripletGroup=[];}};
+          bar.hands[hand].forEach((segment,i)=>{if(segment.tuplet){tripletGroup.push(staffNotes[i]);if(Math.abs((segment.beat+segment.duration)%1)<EPS)finishTuplet();}else finishTuplet();});finishTuplet();
           const voice=new V.Voice({num_beats:prepared.time.numerator,beat_value:prepared.time.denominator}).setMode(V.Voice.Mode.SOFT).addTickables(staffNotes);
           voices.push(voice);voiceSets.push({voice,stave,hand,staffNotes});
           const grouping=prepared.time.denominator===8 && prepared.time.numerator%3===0?new V.Fraction(3,8):new V.Fraction(1,4);
@@ -205,7 +214,7 @@ export function renderNotation(container, score, options = {}) {
         const formatter=new V.Formatter();voiceSets.forEach(v=>formatter.joinVoices([v.voice]));
         try {
           formatter.format(voices,Math.max(52,x+bw-noteStart-20));
-          voiceSets.forEach(v=>v.voice.draw(ctx,v.stave));beamSets.flat().forEach(beam=>beam.setContext(ctx).draw());
+          voiceSets.forEach(v=>v.voice.draw(ctx,v.stave));beamSets.flat().forEach(beam=>beam.setContext(ctx).draw());tupletSets.forEach(t=>t.setContext(ctx).draw());
           for(const d of drawings.filter(d=>d.bar===bar.number)) {
             for(let k=0;k<d.segment.notes.length;k++) {
               const n=d.segment.notes[k],prev=refs.get(n.id);
@@ -213,7 +222,7 @@ export function renderNotation(container, score, options = {}) {
               refs.set(n.id,d);
             }
           }
-        }catch(error) {const fallback=svgElement('text',{x:x+20,y:112,fill:'#8a583b','font-size':12});fallback.textContent='此小节过于复杂，请简化声部后查看';const group=svgElement('g',{transform:`scale(${displayScale})`});group.append(fallback);svg.append(group);console.warn('Notation measure fallback',bar.number,error?.message);}
+        }catch(error) {const fallback=svgElement('text',{x:x+20,y:112,fill:'#8a583b','font-size':12});fallback.textContent='此小节过于复杂，请简化声部后查看';const group=svgElement('g');group.append(fallback);svg.append(group);console.warn('Notation measure fallback',bar.number,error?.message);}
         x+=bw;
       });
       rows.push({element:rowDiv,svg,ctx,index:rowIndex,scale:displayScale,trebleY,bassY,startBeat:row[0].bar.startBeat,endBeat:row.at(-1).bar.endBeat});
@@ -238,11 +247,13 @@ export function renderNotation(container, score, options = {}) {
     cursor?.remove();cursor=null;
     if(!Number.isFinite(progress))return;
     const row=rows.find(r=>progress>=r.startBeat-EPS&&progress<r.endBeat-EPS);if(!row)return;
-    const candidates=drawings.filter(d=>d.rowIndex===row.index&&d.segment.beat<=progress+EPS);
+    const candidates=drawings.filter(d=>d.rowIndex===row.index&&d.segment.beat<=progress+EPS&&(!options.selectedHand||options.selectedHand==='both'||options.selectedHand===d.hand));
     const closest=candidates.sort((a,b)=>b.segment.beat-a.segment.beat)[0];if(!closest)return;
-    let xpos;try{xpos=closest.note.getAbsoluteX()+6;}catch{return;}
-    cursor=svgElement('g',{class:'notation-playhead',transform:`scale(${displayScale})`,'aria-hidden':'true'});
-    cursor.append(svgElement('rect',{x:xpos-10,y:row.trebleY+9,width:24,height:row.bassY-row.trebleY+60,rx:9,fill:'#54a495','fill-opacity':'.12'}));
+    let xpos;try{xpos=(closest.note.getNoteHeadBeginX()+closest.note.getNoteHeadEndX())/2;}catch{return;}
+    // VexFlow applies display scale through the SVG viewBox. These coordinates
+    // already share its user space; a second scale displaced the playhead.
+    cursor=svgElement('g',{class:'notation-playhead','aria-hidden':'true'});
+    cursor.append(svgElement('rect',{x:xpos-12,y:row.trebleY+9,width:24,height:row.bassY-row.trebleY+60,rx:9,fill:'#54a495','fill-opacity':'.12'}));
     cursor.append(svgElement('path',{d:`M ${xpos-5} ${row.trebleY+1} L ${xpos+5} ${row.trebleY+1} L ${xpos} ${row.trebleY+7} Z`,fill:'#267c6c'}));
     row.svg.append(cursor);
     if(follow&&lastFollowRow!==row.index) {

@@ -1,0 +1,9 @@
+{
+  "path": "ftp/BachJS/BWV793/bwv793",
+  "name": "bwv793",
+  "sources": [
+    "ftp/BachJS/BWV793/bwv793/bwv793.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/BachJS/BWV793/bwv793/bwv793.mid",
+  "sha256": "f5f867400a1bef6a96fe5903558147c80b2886762d734202617364e170f363e3"
+}

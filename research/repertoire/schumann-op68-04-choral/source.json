@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-04-choral",
+  "name": "schumann-op68-04-choral",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-04-choral/schumann-op68-04-choral.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-04-choral/schumann-op68-04-choral.mid",
+  "sha256": "bd9d599df0929ae20a211fb40e528a1e17125c656ad979cebad2ad37499f2c86"
+}

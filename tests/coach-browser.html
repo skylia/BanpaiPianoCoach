@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><title>半拍 AI 界面模拟验证</title><link rel="stylesheet" href="/studio.css">
+<style>body{padding:30px;max-width:1000px;display:block}</style><h1>AI 界面验证（模拟服务，不调用 DeepSeek）</h1><button id="away">切换到别的页面</button><button id="back">返回 AI 报告</button><div id="host"></div>
+<script type="module">
+import {coachHTML,bindCoach} from '/coach.mjs';
+import {defaultLearning,normalizeActivity,dayKey} from '/progress-model.mjs';
+const host=document.querySelector('#host'),learning=defaultLearning(),activities=[normalizeActivity({id:'qa-manual',kind:'manual',title:'验证用曲目',date:dayKey(),seconds:1800,grade:10,category:'piece',note:'不应发送的私人笔记',updatedAt:new Date().toISOString()})];
+const mount=()=>{host.innerHTML=coachHTML();bindCoach(host,{learning,activities,demo:false,available:true});};document.querySelector('#away').onclick=()=>host.innerHTML='<p>其他页面</p>';document.querySelector('#back').onclick=mount;mount();
+</script>

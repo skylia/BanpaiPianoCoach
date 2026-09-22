@@ -2,7 +2,20 @@
 
 复核日期：2026-09-21。曲谱数据位于 `public/repertoire.mjs`，使用 schemaVersion 2，所有 `beat` 与 `duration` 均以四分音符一拍计。左右手按演奏手分组，不以高低音区猜测。
 
-## 已收录的教材内容
+## 0.4 分级曲库与采样
+
+2026-09-22 新增分级曲库 100 首，逐首目录见 [REPERTOIRE.md](./REPERTOIRE.md)。原有 9 条保留在旧版区，不参与每级计数。
+
+- 1 级：10 首公版旋律入门编配，包括《欢乐颂》主题、《小星星》《两只老虎》《玛丽有只小羊》等。代码在 `public/primer-songs.mjs`，编配数据使用 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)。移调至 C 大调、只保留右手旋律、以四分音符为拍组织练习小节。标注主题／副歌的条目是节选，不声称为完整钢琴作品或指定考级版本。
+- 2–10 级：90 首 Mutopia 转录。保留来源 MIDI 的所有音高、起音、时值、变速；明确按上下谱表轨道分手，没有按音高猜分手。MIDI 的反复与装饰未必等于印刷谱全部标记；网站重新生成五线谱，复调共用符干和延音线，细微时值按显示网格近似，未还原原版指法、力度、踏板和声部记谱。
+- 本地保存来源 MIDI、LilyPond 文件及 `source.json`，详见 `research/repertoire/`。逐首转录者、出处、底本、许可、SHA-256、手别轨道和导入提示记录在 [来源清单](./research/REPERTOIRE-MANIFEST.json)。构建脚本核对哈希和许可，再生成曲库；90 首均逐事件验证未改变源 MIDI 的音高／时间／手别。
+- 各条转录数据与其派生数据**分别沿用清单所列许可**，包括 Public Domain、[CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)、[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)、[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)、[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)、[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。保留署名、来源、同许可共享义务与改动说明；不将这些许可扩大到无关程序代码。
+
+钢琴采样：**Salamander Grand Piano，Alexander Holm，Yamaha C5**，来自 [Tonejs/audio 的 salamander 目录](https://github.com/Tonejs/audio/tree/master/salamander)，许可 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)。本项目取 30 个 MP3 单力度层样本，本地文件与原始 README 存于 `public/audio/salamander/`；`manifest.json` 记录下载地址、大小与 SHA-256。软件通过临近样本变调、滤波、音量与释放包络播放，未复制完整 SFZ、多力度层、踏板噪声或共鸣系统。
+
+分级参考中央音乐学院第四套的等级框架，但上述条目的官方教材归属未逐首核实，全部采用通用参考难度；见 [LEARNING-ROADMAP.md](./LEARNING-ROADMAP.md)。
+
+## 旧版基础教材内容
 
 | 条目 ID | 收录范围 | 拍号 | 单遍小节数 | 总拍数 | 音符数（双手合计） |
 | --- | --- | --- | ---: | ---: | ---: |
@@ -83,4 +96,4 @@
 | `hanon02.ily` | `4ad9998b9ad32e36d5226fa34c2dbc8a8e420ac6764f9ca377c8f59c406ca083` |
 | `PMLP08821-Practical_Method_for_Beginners.pdf` | `a24a9d33d16e435b7a56e7d1e42b2da5b26bb7b6479439f7eaca74f8db0a1b03` |
 
-全部 9 条均检查了唯一音符 ID、钢琴音域、非负起拍、正时值、曲终范围、左右手分类与最大 4096 音符／256 小节限制。曲谱中没有通过填充空音符伪造完整曲目。
+旧版 9 条均检查了唯一音符 ID、钢琴音域、非负起拍、正时值、曲终范围、左右手分类与最大 4096 音符／256 小节限制。曲谱中没有通过填充空音符伪造完整曲目。

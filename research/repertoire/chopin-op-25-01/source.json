@@ -1,0 +1,9 @@
+{
+  "path": "ftp/ChopinFF/O25/chopin-op-25-01",
+  "name": "chopin-op-25-01",
+  "sources": [
+    "ftp/ChopinFF/O25/chopin-op-25-01/chopin-op-25-01.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/ChopinFF/O25/chopin-op-25-01/chopin-op-25-01.mid",
+  "sha256": "d694598daa09b697e4ff9b3f58a61df498128a58cc761436c3eecfa65241d06b"
+}

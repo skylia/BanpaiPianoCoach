@@ -1,0 +1,9 @@
+{
+  "path": "ftp/ChopinFF/O10/10-02-i",
+  "name": "10-02-i",
+  "sources": [
+    "ftp/ChopinFF/O10/10-02-i/10-02-i.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/ChopinFF/O10/10-02-i/10-02-i.mid",
+  "sha256": "ebee39ee0f9bd743586cbcd4890d3f0e39f24808957302341316a734e42a7989"
+}

@@ -1,0 +1,9 @@
+{
+  "path": "ftp/BachJS/BWV790/bwv790",
+  "name": "bwv790",
+  "sources": [
+    "ftp/BachJS/BWV790/bwv790/bwv790.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/BachJS/BWV790/bwv790/bwv790.mid",
+  "sha256": "c9d765016f7be33e46195aeb8d87a4ac684a2b5bed262dd49a03d20b50eec18e"
+}

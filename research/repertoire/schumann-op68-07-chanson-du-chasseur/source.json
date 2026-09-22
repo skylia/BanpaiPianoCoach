@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-07-chanson-du-chasseur",
+  "name": "schumann-op68-07-chanson-du-chasseur",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-07-chanson-du-chasseur/schumann-op68-07-chanson-du-chasseur.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-07-chanson-du-chasseur/schumann-op68-07-chanson-du-chasseur.mid",
+  "sha256": "18e7ae891edeafdc39d46f61864a88d3a52d2604cd213c2bae8cb3d32e523a46"
+}

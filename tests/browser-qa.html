@@ -1,0 +1,24 @@
+<!doctype html><meta charset="utf-8"><title>半拍本地回归验证</title>
+<script src="/vendor/vexflow-bravura.js"></script>
+<style>body{font:16px sans-serif}#score{width:900px;height:400px;overflow:auto}.notation-system{position:relative}pre{white-space:pre-wrap}</style>
+<h1>半拍本地回归验证</h1><button id="run">检查 100 首谱面、播放柱与采样</button><p id="status">待检查</p><pre id="result"></pre><div id="score"></div>
+<script type="module">
+import {REPERTOIRE} from '/repertoire.mjs';
+import {normalizeScore} from '/score-model.mjs';
+import {renderNotation} from '/notation.mjs';
+import {PianoSound} from '/inputs.mjs';
+const output=document.querySelector('#result'),host=document.querySelector('#score');
+document.querySelector('#run').onclick=async()=>{
+ document.querySelector('#run').disabled=true;const failures=[],warnings=[],alignment=[];const oldWarn=console.warn;console.warn=(...args)=>{warnings.push(args.map(String).join(' '));oldWarn(...args);};let rendered=0,samples=0;
+ for(const s of REPERTOIRE.filter(s=>s.grade)){
+  document.querySelector('#status').textContent=`检查 ${s.title}（${rendered}/100）`;
+  let view;try{view=renderNotation(host,normalizeScore(s));if(!host.querySelector('.notation-note'))throw Error('没有音符');if(host.textContent.includes('此小节过于复杂'))throw Error('小节渲染降级');rendered++;}catch(e){failures.push(s.title+': '+e.message);}finally{view?.destroy();}await new Promise(requestAnimationFrame);
+ }
+ const fixture={title:'对齐验证',timeSignature:[4,4],keySignature:'C',totalBeats:8,notes:[{id:'r',pitch:64,beat:4,duration:1,hand:'right'},{id:'l',pitch:48,beat:5,duration:1,hand:'left'}]};
+ for(const scale of [.7,1,1.8])for(const hand of ['right','left']){
+  const view=renderNotation(host,fixture,{scale,selectedHand:hand,startBar:2,endBar:2});view.setProgress(hand==='right'?4:5,{follow:false});const c=host.querySelector('.notation-playhead rect').getBoundingClientRect(),h=host.querySelector('.notation-playing .vf-notehead').getBoundingClientRect(),delta=Math.abs(c.x+c.width/2-h.x-h.width/2);alignment.push({scale,hand,delta});if(delta>.5)failures.push('游标偏移 '+delta);view.destroy();
+ }
+ try{const piano=new PianoSound();await piano.ready();samples=piano.buffers.size;piano.tone(60,.8,.12);piano.keyOn(64);piano.keyOff(64);piano.setTimbre('warm');piano.tone(67,.8,.12);if(samples!==30)failures.push('采样数量 '+samples);}catch(e){failures.push('采样: '+e.message);}
+ console.warn=oldWarn;output.textContent=JSON.stringify({rendered,samples,alignment,failures,warnings},null,2);document.querySelector('#status').textContent=failures.length||warnings.length?'检查有问题':'全部通过';
+};
+</script>

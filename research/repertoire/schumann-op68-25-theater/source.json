@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-25-theater",
+  "name": "schumann-op68-25-theater",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-25-theater/schumann-op68-25-theater.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-25-theater/schumann-op68-25-theater.mid",
+  "sha256": "554cabd427d5dcc739281672fabe0cb24c82d68787721bd03d09fb11acb74aeb"
+}

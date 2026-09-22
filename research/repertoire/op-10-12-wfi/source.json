@@ -1,0 +1,9 @@
+{
+  "path": "ftp/ChopinFF/O10/op-10-12-wfi",
+  "name": "op-10-12-wfi",
+  "sources": [
+    "ftp/ChopinFF/O10/op-10-12-wfi/op-10-12-wfi.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/ChopinFF/O10/op-10-12-wfi/op-10-12-wfi.mid",
+  "sha256": "1902287905aa68175f9d13207e6cfc397894d4210617ec1a5c1ae38334c3c7d6"
+}

@@ -1,0 +1,9 @@
+{
+  "path": "ftp/BachJS/BWV797/bwv797",
+  "name": "bwv797",
+  "sources": [
+    "ftp/BachJS/BWV797/bwv797/bwv797.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/BachJS/BWV797/bwv797/bwv797.mid",
+  "sha256": "5d1b01e3c79e3cd86e963c5803b2f6787c5433b7f5c4c7855c87226befd4c0b4"
+}

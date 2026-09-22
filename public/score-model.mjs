@@ -85,6 +85,9 @@ export function normalizeScore(raw) {
     bpm: number(input.bpm ?? 80, '速度 bpm', 10, 1000),
     timeSignature: [...ts], keySignature, notes, totalBeats,
   };
+  if (input.grade !== undefined) result.grade=number(input.grade,'参考等级',1,10,true);
+  if (input.category !== undefined) {if(!['study','polyphony','piece','technique'].includes(input.category))fail('曲谱类别无效。');result.category=input.category;}
+  if (input.grading !== undefined) {if(!['general','ccom-fourth'].includes(input.grading))fail('分级依据无效。');result.grading=input.grading;}
   if (input.source !== undefined) {
     if (!record(input.source)) fail('来源 source 必须是对象。');
     result.source = {

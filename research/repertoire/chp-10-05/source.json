@@ -1,0 +1,10 @@
+{
+  "path": "ftp/ChopinFF/O10/chp-10-05",
+  "name": "chp-10-05",
+  "sources": [
+    "ftp/ChopinFF/O10/chp-10-05/chp-10-05-lys/chp-10-05-a4.ly",
+    "ftp/ChopinFF/O10/chp-10-05/chp-10-05-lys/chp-10-05-let.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/ChopinFF/O10/chp-10-05/chp-10-05.mid",
+  "sha256": "3b7c267dc6047e881b7404e47259de23dce3cfe8fe74966a1cc28adacf5e3336"
+}

@@ -12,9 +12,9 @@ const capture=(patch={})=>normalizeActivity({id:'take:a',kind:'capture',source:'
 const manual=(patch={})=>normalizeActivity({id:'manual-1',kind:'manual',title:'纸谱练习',date:today,seconds:1800,grade:3,category:'piece',note:'慢练',updatedAt:today+'T10:00:00Z',...patch});
 const plan={scoreId:score.id,fingerprint:musicFingerprint(score),hand:'right',targetBpm:120};
 const three=()=>[capture({id:'take:1',date:'2026-09-21',updatedAt:'2026-09-21T10:00:00Z'}),capture({id:'take:2',updatedAt:today+'T09:00:00Z'}),capture({id:'take:3',updatedAt:today+'T10:00:00Z'})];
-test('five levels contain 60 distinct learning tasks and no fabricated completion',()=>{
- assert.equal(GRADES.length,5);assert.equal(TASKS.length,60);assert.equal(new Set(TASKS.map(t=>t.id)).size,60);
- for(let grade=1;grade<=5;grade++){const p=gradeProgress(grade,defaultLearning(),TASKS);assert.deepEqual(p,{total:12,done:0,review:0,practicing:0,teacher:0,percent:0});}
+test('ten levels contain 120 distinct learning tasks and no fabricated completion',()=>{
+ assert.equal(GRADES.length,10);assert.equal(TASKS.length,120);assert.equal(new Set(TASKS.map(t=>t.id)).size,120);
+ for(let grade=1;grade<=10;grade++){const p=gradeProgress(grade,defaultLearning(),TASKS);assert.deepEqual(p,{total:12,done:0,review:0,practicing:0,teacher:0,percent:0});}
 });
 test('learning checklist separates teacher notes, self assessment and pending review',()=>{
  const l=defaultLearning();l.checks={'g3-technique-1':{state:'done',verifiedBy:'teacher'},'g3-technique-2':{state:'done',verifiedBy:'self'},'g3-study-1':{state:'review'},'g3-study-2':{state:'practicing'}};
@@ -72,4 +72,9 @@ test('portable backup roundtrip preserves notes, progress and unique summaries',
 });
 test('large multibyte personal notebooks remain importable beyond the former 32 MB limit',()=>{
  const row=manual({note:'琴'.repeat(1000)});const data=JSON.stringify({type:'banpai-progress',schemaVersion:1,learning:defaultLearning(),activities:Array.from({length:11000},(_,i)=>({...row,id:'manual-'+i}))});assert(new TextEncoder().encode(data).length>32*1024*1024);assert.equal(parseProgressBackup(data).activities.length,11000);
+});
+
+test('old progress survives upgrade while grade 10 plans and checks roundtrip',()=>{
+ const old={...defaultLearning(),checks:{'g3-technique-1':{state:'done',verifiedBy:'teacher'}}};const upgraded=normalizeLearning({...old,targetGrade:10,checks:{...old.checks,'g10-polyphony-2':{state:'review'}},plans:[{id:'grade-10',title:'高级作品',grade:10,targetBpm:80,hand:'both',status:'learning'}]});
+ const restored=parseProgressBackup(JSON.stringify({type:'banpai-progress',schemaVersion:1,learning:upgraded,activities:[manual({grade:10})]}));assert.deepEqual(restored.learning,upgraded);assert.equal(restored.learning.checks['g3-technique-1'].state,'done');assert.equal(restored.learning.targetGrade,10);assert.equal(restored.activities[0].grade,10);
 });

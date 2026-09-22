@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-02-marche-militaire",
+  "name": "schumann-op68-02-marche-militaire",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-02-marche-militaire/schumann-op68-02-marche-militaire.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-02-marche-militaire/schumann-op68-02-marche-militaire.mid",
+  "sha256": "7af6c1c20db09d34963adf9e18d99266e51b6b26c361f0ba8d0d09d001a46bb7"
+}

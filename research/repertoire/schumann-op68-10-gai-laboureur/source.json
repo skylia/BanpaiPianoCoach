@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-10-gai-laboureur",
+  "name": "schumann-op68-10-gai-laboureur",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-10-gai-laboureur/schumann-op68-10-gai-laboureur.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-10-gai-laboureur/schumann-op68-10-gai-laboureur.mid",
+  "sha256": "2cdada01ea988df090bfd0ab4bc377b28d97c7dee390a862822e541a47d921de"
+}
