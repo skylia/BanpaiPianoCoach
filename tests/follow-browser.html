@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>跟弹完整流程检查</title>
+<style>body{font:14px system-ui;margin:20px}iframe{width:100%;height:760px;border:1px solid #ddd}pre{white-space:pre-wrap}button{padding:12px;font:inherit}</style>
+<h1>跟弹完整流程检查</h1><p>使用本地隔离端口和模拟 MIDI，测试数据不会进入日常练习端口。</p><button id="run" disabled>检查跟弹完整流程</button><pre id="result">待检查</pre><iframe id="app" src="/follow-app-local.html"></iframe>
+<script type="module">
+const frame=document.querySelector('#app'),out=document.querySelector('#result'),checks=[];
+const pause=ms=>new Promise(r=>setTimeout(r,ms));
+const until=async(fn,label,ms=12000)=>{const start=performance.now();while(!await fn()){if(performance.now()-start>ms)throw Error('等待超时：'+label);await pause(35);}};
+const assert=(condition,label)=>{if(!condition)throw Error(label);checks.push(label);out.textContent=checks.join('\n');};
+const doc=()=>frame.contentDocument;
+const el=id=>doc().querySelector('#'+id);
+const click=id=>{if(!el(id)||el(id).disabled)throw Error('控件不可用：'+id);el(id).click();};
+const set=(id,value)=>{el(id).value=value;el(id).dispatchEvent(new Event('change',{bubbles:true}));};
+const press=(pitch,velocity=88)=>{frame.contentWindow.postMessage({banpaiFollowQA:true,pitch,velocity},location.origin);setTimeout(()=>frame.contentWindow.postMessage({banpaiFollowQA:true,pitch,off:true},location.origin),60);};
+const saved=()=>new Promise((resolve,reject)=>{const req=frame.contentWindow.indexedDB.open('banpai-studio-v2',2);req.onsuccess=()=>{const db=req.result,q=db.transaction('takes').objectStore('takes').getAll();q.onsuccess=()=>{resolve(q.result.filter(t=>t.score.id===fixture.id).sort((a,b)=>Date.parse(a.date)-Date.parse(b.date)));db.close();};q.onerror=reject;};req.onerror=reject;});
+const fixture={id:'qa-follow-'+Date.now(),title:'QA 跟弹双手片段 '+Date.now(),bpm:120,timeSignature:[4,4],totalBeats:8,notes:[{pitch:60,beat:0,duration:1},{pitch:62,beat:1,duration:1},{pitch:64,beat:2,duration:2},{pitch:48,beat:2,duration:2,hand:'left'},{pitch:65,beat:4,duration:1},{pitch:67,beat:5,duration:3}]};
+document.querySelector('#run').onclick=async()=>{
+ document.querySelector('#run').disabled=true;
+ try{
+  await until(()=>el('piece-title')?.textContent.includes('欢乐'),'应用初始化');
+  doc().querySelector('[data-view="library"]').click();click('import-button');click('import-paste-tab');el('json-paste').value=JSON.stringify(fixture);click('parse-json-paste');await until(()=>!el('confirm-import').disabled,'导入预览');click('confirm-import');
+  await until(()=>[...doc().querySelectorAll('.score-tile')].some(a=>a.querySelector('h3')?.textContent===fixture.title),'曲目保存');const tile=[...doc().querySelectorAll('.score-tile')].find(a=>a.querySelector('h3')?.textContent===fixture.title);fixture.id=tile.querySelector('[data-open-score]').dataset.openScore;tile.querySelector('[data-open-score]').click();click('connect-button');await until(()=>el('device-pill').textContent==='已连接','模拟 MIDI 连接');
+  set('practice-mode','follow');el('metronome').checked=false;
+  click('start-button');await until(()=>el('capture-status').textContent.includes('正在采集'),'倒数结束');
+  await pause(4700);assert(el('start-button').textContent.includes('结束'),'超过原曲时长仍等待');assert(el('follow-live').textContent.includes('第 1 / 5 组'),'静默不前进');
+  press(61);await until(()=>el('follow-live').textContent.includes('错误尝试 1 次'),'错误尝试计数');assert(el('follow-live').textContent.includes('第 1 / 5 组'),'错音不推进');await pause(500);assert(el('follow-live').textContent.includes('错误尝试 1 次'),'等待不重复累计错误');
+  press(60);await until(()=>el('follow-live').textContent.includes('第 2 / 5 组'),'正确前进');press(62);await until(()=>el('follow-live').textContent.includes('第 3 / 5 组'),'第二音前进');
+  press(64);await until(()=>el('follow-live').textContent.includes('错误尝试 2 次'),'和弦缺音');assert(el('follow-live').textContent.includes('第 3 / 5 组'),'半个和弦不前进');
+  press(48);press(64);press(66);await until(()=>el('follow-live').textContent.includes('错误尝试 3 次'),'额外音');assert(el('follow-live').textContent.includes('第 3 / 5 组'),'含额外音的和弦不前进');
+  press(64);press(48);await until(()=>el('follow-live').textContent.includes('第 4 / 5 组'),'双手和弦通过');
+  click('zoom-out');assert(el('follow-live').textContent.includes('第 4 / 5 组'),'缩放保留跟弹位置');press(65);await until(()=>el('follow-live').textContent.includes('第 5 / 5 组'),'下一音');press(67);
+  await until(()=>el('feedback-content').textContent.includes('跟弹练习已保存'),'自动完成');
+  const first=(await saved()).at(-1);assert(first.follow.errorAttempts===3,'错误次数进入本机记录');assert(first.elapsed>7,'实际时长未按曲长截断');assert(first.follow.completedGroups===5&&!first.interrupted,'完整通过后完成');assert(first.follow.rhythmSteady<first.follow.rhythmCount,'正确音高不等于节奏满分');assert(el('feedback-content').textContent.includes('首次起音合拍率'),'节奏评分可见');
+  click('replay-button');await until(()=>el('replay-button').textContent.includes('暂停'),'回听开始');click('replay-button');assert(el('replay-button').textContent.includes('继续'),'跟弹回听可暂停');click('replay-stop');
+  frame.contentWindow.location.reload();await until(()=>el('piece-title')?.textContent.includes('欢乐'),'刷新');await pause(200);doc().querySelector('[data-view="history"]').click();await until(()=>doc().querySelector(`[data-take="${first.id}"]`),'历史恢复');doc().querySelector(`[data-take="${first.id}"]`).click();assert(el('feedback-content').textContent.includes('错误尝试'),'刷新恢复跟弹反馈');assert(el('practice-mode').value==='follow','历史恢复练习模式');
+  click('retry-take');click('connect-button');await until(()=>el('device-pill').textContent==='已连接','刷新后连接');click('start-button');await until(()=>el('start-button').textContent.includes('取消倒数'),'取消前倒数启动');click('start-button');await pause(200);assert((await saved()).length===1,'取消倒数不保存记录');
+  click('start-button');await until(()=>el('capture-status').textContent.includes('正在采集'),'第二次倒数');press(61);await until(()=>el('follow-live').textContent.includes('错误尝试 1 次'),'第二遍从零计数');click('start-button');await until(()=>el('feedback-content').textContent.includes('未练'),'提前结束');const partial=(await saved()).at(-1);assert(partial.interrupted&&partial.follow.completedGroups===0&&partial.follow.errorAttempts===1,'提前结束不虚增未练部分错误');
+  click('retry-take');set('practice-mode','fixed');set('end-bar','1');click('start-button');await until(()=>el('capture-status').textContent.includes('正在采集'),'固定模式倒数');press(60);await until(()=>el('feedback-content').textContent.includes('音符准确率'),'固定模式自动完成');const fixed=(await saved()).at(-1);assert(fixed.options.practiceMode==='fixed'&&!fixed.follow,'固定速度流程兼容');
+  set('practice-mode','follow');set('practice-hand','right');set('loop-count','2');click('demo-button');
+  await until(async()=> (await saved()).filter(t=>t.source==='demo').length===2,'跟弹循环两遍',16000);await until(()=>!el('start-button').disabled,'循环保存完成');
+  const demos=(await saved()).filter(t=>t.source==='demo');assert(demos.every(t=>t.follow.errorAttempts===0&&t.follow.completedGroups===3),'两遍跟弹循环各自完成且计数重置');
+  click('retry-take');set('loop-count','1');click('virtual-button');await until(()=>el('device-pill').textContent==='体验模式','屏幕输入');click('start-button');await until(()=>el('capture-status').textContent.includes('正在采集'),'屏幕倒数');press(61);await pause(200);assert(el('follow-live').textContent.includes('错误尝试 0 次'),'屏幕模式不混入 MIDI 事件');
+  const key=(type,repeat=false)=>doc().body.dispatchEvent(new frame.contentWindow.KeyboardEvent(type,{key:'a',code:'KeyA',repeat,bubbles:true}));key('keydown');await until(()=>el('follow-live').textContent.includes('第 2 / 3 组'),'电脑键盘前进');key('keydown',true);key('keyup');await pause(200);assert(el('follow-live').textContent.includes('错误尝试 0 次'),'电脑长按重复事件不重复计数');click('start-button');await until(()=>!el('start-button').disabled,'屏幕记录保存');
+  click('retry-take');click('connect-button');await until(()=>el('device-pill').textContent==='已连接','恢复 MIDI');click('start-button');await until(()=>el('capture-status').textContent.includes('正在采集'),'断开测试倒数');press(61);await until(()=>el('follow-live').textContent.includes('错误尝试 1 次'),'断开前输入');frame.contentWindow.postMessage({banpaiFollowQA:true,disconnect:true},location.origin);await until(()=>el('feedback-content').textContent.includes('设备断开'),'断线保存');const disconnected=(await saved()).at(-1);assert(disconnected.reason==='设备断开'&&disconnected.follow.errorAttempts===1,'设备断开保留错误记录并结束');
+  out.textContent=JSON.stringify({pass:true,checks,follow:{errors:first.follow.errorAttempts,elapsed:first.elapsed,rhythmSteady:first.follow.rhythmSteady,rhythmCount:first.follow.rhythmCount},records:(await saved()).length},null,2);
+ }catch(e){out.textContent=JSON.stringify({pass:false,checks,error:e.stack},null,2);}
+ finally{document.querySelector('#run').disabled=false;}
+};
+document.querySelector('#run').disabled=false;
+</script></html>

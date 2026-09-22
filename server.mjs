@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {generateCoachReport} from './server/coach.mjs';
 const project=fileURLToPath(new URL('.',import.meta.url));
 export function createApp({apiKey=process.env.DEEPSEEK_API_KEY,model=process.env.DEEPSEEK_MODEL||'deepseek-flash',fetchImpl=fetch}={}) {
- const root=resolve(project,'public'),types={'.html':'text/html; charset=utf-8','.css':'text/css','.mjs':'text/javascript','.js':'text/javascript','.svg':'image/svg+xml','.woff':'font/woff','.json':'application/json','.mp3':'audio/mpeg','.txt':'text/plain; charset=utf-8'};let busy=false;
+ const root=resolve(project,'public'),types={'.html':'text/html; charset=utf-8','.css':'text/css','.mjs':'text/javascript','.js':'text/javascript','.svg':'image/svg+xml','.woff':'font/woff','.ttf':'font/ttf','.json':'application/json','.mp3':'audio/mpeg','.txt':'text/plain; charset=utf-8'};let busy=false;
  return createServer(async(req,res)=>{
   const json=(status,value)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'}).end(JSON.stringify(value));};
   try {

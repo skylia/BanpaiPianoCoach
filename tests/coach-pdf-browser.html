@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PDF 导出验证 · 模拟报告</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/studio.css">
+<style>body{padding:24px;display:block;max-width:1000px;margin:auto}#prepare{margin-bottom:20px}</style>
+<h1>PDF 导出验证</h1><p>仅使用模拟报告，保存在独立测试端口，不调用 DeepSeek。</p><button id="prepare" class="button" disabled>准备模拟报告</button><label><input id="fail-font" type="checkbox">模拟字体暂时不可用</label><p id="network-check">报告生成请求：0 次</p><div id="host"></div>
+<script type="module">
+import {coachHTML,bindCoach} from '/coach.mjs';
+import {putRecord} from '/storage.mjs';
+import {defaultLearning} from '/progress-model.mjs';
+import {coachPdfFixture} from '/coach-pdf-fixture.mjs';
+const host=document.querySelector('#host'),button=document.querySelector('#prepare');
+const originalFetch=window.fetch.bind(window);let generationRequests=0;
+window.fetch=(input,init)=>{const url=String(input);if(url.includes('/api/coach/report'))document.querySelector('#network-check').textContent=`报告生成请求：${++generationRequests} 次`;if(document.querySelector('#fail-font').checked&&url.endsWith('/fonts/banpai-report-400.ttf'))return Promise.resolve(new Response('QA unavailable',{status:503}));return originalFetch(input,init);};
+button.onclick=async()=>{button.disabled=true;await putRecord('settings',{id:'coach-reports',reports:[coachPdfFixture(),coachPdfFixture(30)]});host.innerHTML=coachHTML();await bindCoach(host,{learning:defaultLearning(),activities:[],demo:false,available:true});button.textContent='模拟报告已准备好，请打开历史报告并导出';};button.disabled=false;
+</script></html>
