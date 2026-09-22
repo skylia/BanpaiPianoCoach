@@ -175,3 +175,11 @@ test('refresh reports selected-device disconnection once and removes it from can
   input.refresh();
   assert.equal(Boolean(updates[1].lost), false);
 });
+
+test('sample playback continues at the pitch-adjusted offset and stopping silences active voices',async()=>{
+  const {PianoSound}=await import('../public/inputs.mjs');
+  const calls=[];const param=()=>({value:0,setValueAtTime(){},exponentialRampToValueAtTime(){}});
+  const sound=new PianoSound();sound.filter={};sound.buffers.set(60,{duration:8});
+  sound.context={currentTime:10,createGain:()=>({gain:param(),connect:node=>node,disconnect(){}}),createBufferSource:()=>({playbackRate:param(),connect:node=>node,disconnect(){},start:(...args)=>calls.push(['start',...args]),stop:(...args)=>calls.push(['stop',...args])})};
+  sound.tone(72,1,.12,.75);assert.deepEqual(calls[0],['start',10,1.5]);assert.equal(sound.voices.size,1);sound.stop();assert.deepEqual(calls.at(-1),['stop']);assert.equal(sound.voices.size,0);
+});

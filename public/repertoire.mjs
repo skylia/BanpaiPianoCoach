@@ -1,3 +1,5 @@
+import {EXPANDED_REPERTOIRE} from './repertoire-expanded.mjs';
+import {PRIMER_SONGS} from './primer-songs.mjs';
 // Canonical v2 repertoire. Musical time is measured in quarter-note beats.
 // The Hanon transcription data is adapted from Mutopia-2015/07/23-2037,
 // by Steve Taylor and Javier Ruiz-Alma, CC BY-SA 4.0. See ../SOURCES.md.
@@ -125,5 +127,7 @@ export const REPERTOIRE = [
   hanon(1, [0, 2, 3, 4, 5, 4, 3, 2], [0, -2, -3, -4, -5, -4, -3, -2], 15),
   hanon(2, [0, 2, 5, 4, 3, 4, 3, 2], [0, -3, -5, -4, -3, -4, -3, -2], 14),
   ...czernyStudies,
-  ...originals
+  ...originals,
+  ...PRIMER_SONGS,
+  ...EXPANDED_REPERTOIRE
 ];

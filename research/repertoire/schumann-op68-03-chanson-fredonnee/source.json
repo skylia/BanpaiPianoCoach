@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-03-chanson-fredonnee",
+  "name": "schumann-op68-03-chanson-fredonnee",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-03-chanson-fredonnee/schumann-op68-03-chanson-fredonnee.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-03-chanson-fredonnee/schumann-op68-03-chanson-fredonnee.mid",
+  "sha256": "9d8872ff88f556e4426b1c304947e8eb396807d06d593bc3e9a5e29c364c1462"
+}

@@ -1,0 +1,9 @@
+{
+  "path": "ftp/ChopinFF/O28/Chop-28-8",
+  "name": "Chop-28-8",
+  "sources": [
+    "ftp/ChopinFF/O28/Chop-28-8/Chop-28-8.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/ChopinFF/O28/Chop-28-8/Chop-28-8.mid",
+  "sha256": "0d55112de351bd6eaeb82daa7a255c5b653c4341f9f8017590894c54ad14158b"
+}

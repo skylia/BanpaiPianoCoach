@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-18-moissonneurs",
+  "name": "schumann-op68-18-moissonneurs",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-18-moissonneurs/schumann-op68-18-moissonneurs.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-18-moissonneurs/schumann-op68-18-moissonneurs.mid",
+  "sha256": "8cb3953a65f95d6b7cd5cd155b2690236b1e527ce4f91ae867055c82dd1093ca"
+}

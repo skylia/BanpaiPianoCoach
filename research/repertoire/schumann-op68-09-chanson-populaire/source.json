@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-09-chanson-populaire",
+  "name": "schumann-op68-09-chanson-populaire",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-09-chanson-populaire/schumann-op68-09-chanson-populaire.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-09-chanson-populaire/schumann-op68-09-chanson-populaire.mid",
+  "sha256": "97d723d1349f461d83a5744dec1151efd9f53b9d1e9fbe5ba4d4de7facf78908"
+}

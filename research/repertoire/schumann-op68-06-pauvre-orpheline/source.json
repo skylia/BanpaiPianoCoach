@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-06-pauvre-orpheline",
+  "name": "schumann-op68-06-pauvre-orpheline",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-06-pauvre-orpheline/schumann-op68-06-pauvre-orpheline.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-06-pauvre-orpheline/schumann-op68-06-pauvre-orpheline.mid",
+  "sha256": "e69b6b3a8bd76079bd3550e233b31c1bf49018e34352dfe9245e2903b9a3a509"
+}

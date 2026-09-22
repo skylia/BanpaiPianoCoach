@@ -1,0 +1,9 @@
+{
+  "path": "ftp/BachJS/BWVAnh120/BWV-120",
+  "name": "BWV-120",
+  "sources": [
+    "ftp/BachJS/BWVAnh120/BWV-120/BWV-120.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/BachJS/BWVAnh120/BWV-120/BWV-120.mid",
+  "sha256": "0946fa8ab89a3340e53edacb213bbc3e21e45522057b062614ccdfc8e99ffc66"
+}

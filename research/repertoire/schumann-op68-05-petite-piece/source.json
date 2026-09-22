@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-05-petite-piece",
+  "name": "schumann-op68-05-petite-piece",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-05-petite-piece/schumann-op68-05-petite-piece.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-05-petite-piece/schumann-op68-05-petite-piece.mid",
+  "sha256": "85e286ab96e4929d6d2c1fd340f57ce9452f21cedfed84504e9ad01d05577193"
+}

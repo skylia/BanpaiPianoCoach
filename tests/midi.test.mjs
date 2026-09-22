@@ -39,6 +39,22 @@ test('type 0 running status, zero-velocity note-off and multibyte delta are read
   assert.equal(parsed.bpm, 120);
 });
 
+test('source note-on velocities survive MIDI import, quantization and export',()=>{
+  const file=makeFile([0,0x90,60,25,96,60,0,0,64,110,96,64,0,...eot]);
+  for(const quantize of [0,.25]){
+    const score=midiToScore(parseMidi(file),{quantize});assert.deepEqual(score.notes.map(n=>n.velocity),[25,110]);
+    const exported=parseMidi(exportMidi(score));assert.deepEqual(exported.tracks.flatMap(t=>t.notes).map(n=>n.velocity),[25,110]);
+  }
+  assert(parseMidi(exportMidi(base())).tracks.flatMap(t=>t.notes).every(n=>n.velocity===80));
+});
+
+test('merged layered attacks keep the loudest velocity and longest duration regardless of track order',()=>{
+  const tracks=[{id:'a',notes:[{id:'a1',pitch:60,beat:0,duration:1,velocity:35}]},{id:'b',notes:[{id:'b1',pitch:60,beat:0,duration:2,velocity:110}]}];
+  for(const order of [tracks,[...tracks].reverse()]){
+    const s=midiToScore({tracks:order,timeSignature:[4,4],bpm:80},{quantize:0});assert.equal(s.notes.length,1);assert.equal(s.notes[0].duration,2);assert.equal(s.notes[0].velocity,110);
+  }
+});
+
 test('program, pressure, pitch bend and SysEx are skipped without losing note synchronization', () => {
   const file = makeFile([0,0xc0,0,0,0xd0,50,0,0xe0,0,64,0,0xf0,3,1,2,0xf7,0,0x90,60,80,96,0x80,60,0,...eot]);
   const parsed = parseMidi(file);

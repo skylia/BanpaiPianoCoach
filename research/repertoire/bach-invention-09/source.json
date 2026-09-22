@@ -1,0 +1,9 @@
+{
+  "path": "ftp/BachJS/BWV780/bach-invention-09",
+  "name": "bach-invention-09",
+  "sources": [
+    "ftp/BachJS/BWV780/bach-invention-09/bach-invention-09.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/BachJS/BWV780/bach-invention-09/bach-invention-09.mid",
+  "sha256": "fcba8eaa630cec1e4207eb024ffe25e9ad03c4382a68c415b7162b6baa58b0b0"
+}

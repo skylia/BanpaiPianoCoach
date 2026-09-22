@@ -1,0 +1,14 @@
+{
+  "path": "ftp/ClementiM/O36/sonatina-1",
+  "name": "clementi-op36-no1-movement2",
+  "sources": [
+    "ftp/ClementiM/O36/sonatina-1/sonatina-1.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/ClementiM/O36/sonatina-1/sonatina-1-mids.zip",
+  "archiveMember": "sonatina-1-1.mid",
+  "sha256": "0717762274f532c7e33763ba51e393f21a9e96249154c5757ad5f69fccf12972",
+  "archiveSha256": "d13263b200c89478ac167a97b617fd31747b292df9a8ddbe947c8c8d07d066ae",
+  "sourceSha256": "788160d26cfc5d637bd531124607d3136df105004ece2c2b1154629226751e04",
+  "work": "Op.36 No.1",
+  "movement": 2
+}

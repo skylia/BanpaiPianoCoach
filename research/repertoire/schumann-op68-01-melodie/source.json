@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-01-melodie",
+  "name": "schumann-op68-01-melodie",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-01-melodie/schumann-op68-01-melodie.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-01-melodie/schumann-op68-01-melodie.mid",
+  "sha256": "f05a2e1f1fa397f4617d13d6b7bf679550ad9ae8032ed8c6b0f8446d519f5419"
+}

@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-16-premier-chagrin",
+  "name": "schumann-op68-16-premier-chagrin",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-16-premier-chagrin/schumann-op68-16-premier-chagrin.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-16-premier-chagrin/schumann-op68-16-premier-chagrin.mid",
+  "sha256": "55156715e3a34eeebb8cc6e8066b6c77c703ecd6f2a76de2d98928efdc619a9c"
+}

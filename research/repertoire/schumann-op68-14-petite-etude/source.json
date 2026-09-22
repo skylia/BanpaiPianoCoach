@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-14-petite-etude",
+  "name": "schumann-op68-14-petite-etude",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-14-petite-etude/schumann-op68-14-petite-etude.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-14-petite-etude/schumann-op68-14-petite-etude.mid",
+  "sha256": "96fe02faefd0103097e5ff5892beb4cb9e4a7a4eaff11c1d80813d1a71fc62aa"
+}

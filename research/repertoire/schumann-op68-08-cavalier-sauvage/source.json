@@ -1,0 +1,9 @@
+{
+  "path": "ftp/SchumannR/O68/schumann-op68-08-cavalier-sauvage",
+  "name": "schumann-op68-08-cavalier-sauvage",
+  "sources": [
+    "ftp/SchumannR/O68/schumann-op68-08-cavalier-sauvage/schumann-op68-08-cavalier-sauvage.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/SchumannR/O68/schumann-op68-08-cavalier-sauvage/schumann-op68-08-cavalier-sauvage.mid",
+  "sha256": "197f870dea372a09c7905b9b02c6ed3b4c6b10b18a3b79c421ca01947dc45991"
+}

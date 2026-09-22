@@ -1,0 +1,12 @@
+{
+  "path": "ftp/ChopinFF/O25/PS-chopin-25-02",
+  "name": "PS-chopin-25-02",
+  "sources": [
+    "ftp/ChopinFF/O25/PS-chopin-25-02/PS-chopin-25-02-lys/a4-PS-chopin-25-02-i.ly",
+    "ftp/ChopinFF/O25/PS-chopin-25-02/PS-chopin-25-02-lys/a4-chopin-25-02-wfp.ly",
+    "ftp/ChopinFF/O25/PS-chopin-25-02/PS-chopin-25-02-lys/letter-PS-chopin-25-02-i.ly",
+    "ftp/ChopinFF/O25/PS-chopin-25-02/PS-chopin-25-02-lys/letter-chopin-25-02-wfp.ly"
+  ],
+  "midiUrl": "https://www.mutopiaproject.org/ftp/ChopinFF/O25/PS-chopin-25-02/PS-chopin-25-02.mid",
+  "sha256": "5f48d26f027abf905958571865de36ea3e86a513ed6953b76a24f2af5397e041"
+}

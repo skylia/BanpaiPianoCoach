@@ -68,6 +68,7 @@ export function normalizeScore(raw) {
     if (!['right','left'].includes(hand)) fail(`${label}的 hand 只能是 right 或 left。`);
     const result = { id, pitch: note.pitch, beat, duration, hand };
     if (note.finger !== undefined && note.finger !== null) result.finger = number(note.finger, `${label}的指法 finger`, 1, 5, true);
+    if (note.velocity !== undefined && note.velocity !== null) result.velocity = number(note.velocity, `${label}的力度 velocity`, 1, 127, true);
     return result;
   }).sort((a, b) => a.beat - b.beat || (a.hand === b.hand ? 0 : a.hand === 'right' ? -1 : 1) || (a.pitch ?? -1) - (b.pitch ?? -1));
   const noteEnd = notes.reduce((end, note) => Math.max(end, note.beat + note.duration), 0);
@@ -85,6 +86,9 @@ export function normalizeScore(raw) {
     bpm: number(input.bpm ?? 80, '速度 bpm', 10, 1000),
     timeSignature: [...ts], keySignature, notes, totalBeats,
   };
+  if (input.grade !== undefined) result.grade=number(input.grade,'参考等级',1,10,true);
+  if (input.category !== undefined) {if(!['study','polyphony','piece','technique'].includes(input.category))fail('曲谱类别无效。');result.category=input.category;}
+  if (input.grading !== undefined) {if(!['general','ccom-fourth'].includes(input.grading))fail('分级依据无效。');result.grading=input.grading;}
   if (input.source !== undefined) {
     if (!record(input.source)) fail('来源 source 必须是对象。');
     result.source = {
@@ -165,6 +169,7 @@ export function scoreDuration(score, options = {}) {
 }
 export function toLegacyExercise(score) {
   const normalized = normalizeScore(score);
+  if (normalized.notes.some(note => note.velocity !== undefined)) fail('旧版格式不能保留力度；请导出 v2 JSON。');
   let cursor = 0;
   for (const note of normalized.notes) {
     if (note.hand !== 'right' || note.pitch === null || Math.abs(note.beat - cursor) > EPS) fail('旧版格式只能保存连续的右手单音旋律；请导出 v2 JSON 以保留完整曲谱。');

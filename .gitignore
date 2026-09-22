@@ -6,3 +6,11 @@ artifacts/
 .env.*
 !.env.example
 *.log
+
+# Personal exports: keep practice history and AI reports on this machine.
+Banpai-Learning-Progress-*.json
+Banpai-Practice-*.json
+Banpai-AI-*.json
+Banpai-AI-*.pdf
+Banpai-My-Scores*.json
+/private-data/
