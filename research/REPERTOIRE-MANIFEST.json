@@ -14,6 +14,13 @@
     "title": "旋律 · Op.68 No.1",
     "notes": 303,
     "bars": 24,
+    "dynamics": {
+      "recorded": 303,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -41,6 +48,13 @@
     "title": "哼唱的小曲 · Op.68 No.3",
     "notes": 277,
     "bars": 24,
+    "dynamics": {
+      "recorded": 277,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -68,6 +82,13 @@
     "title": "圣咏 · Op.68 No.4",
     "notes": 230,
     "bars": 32,
+    "dynamics": {
+      "recorded": 230,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -95,6 +116,13 @@
     "title": "小曲 · Op.68 No.5",
     "notes": 279,
     "bars": 25,
+    "dynamics": {
+      "recorded": 279,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -122,6 +150,13 @@
     "title": "小步舞曲 · BWV Anh. 113",
     "notes": 259,
     "bars": 32,
+    "dynamics": {
+      "recorded": 259,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -149,6 +184,13 @@
     "title": "小步舞曲 · BWV Anh. 114",
     "notes": 204,
     "bars": 32,
+    "dynamics": {
+      "recorded": 204,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -176,6 +218,13 @@
     "title": "小步舞曲 · BWV Anh. 115",
     "notes": 199,
     "bars": 32,
+    "dynamics": {
+      "recorded": 199,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -203,6 +252,13 @@
     "title": "小步舞曲 · BWV Anh. 116",
     "notes": 310,
     "bars": 40,
+    "dynamics": {
+      "recorded": 310,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -230,6 +286,13 @@
     "title": "a 小调小步舞曲 · BWV Anh. 120",
     "notes": 165,
     "bars": 29,
+    "dynamics": {
+      "recorded": 165,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -257,6 +320,13 @@
     "title": "缪塞特舞曲 · BWV Anh. 126",
     "notes": 171,
     "bars": 20,
+    "dynamics": {
+      "recorded": 171,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -284,6 +354,13 @@
     "title": "士兵进行曲 · Op.68 No.2",
     "notes": 312,
     "bars": 48,
+    "dynamics": {
+      "recorded": 312,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -311,6 +388,13 @@
     "title": "可怜的孤儿 · Op.68 No.6",
     "notes": 373,
     "bars": 32,
+    "dynamics": {
+      "recorded": 373,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -338,6 +422,13 @@
     "title": "猎歌 · Op.68 No.7",
     "notes": 616,
     "bars": 56,
+    "dynamics": {
+      "recorded": 616,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -365,6 +456,13 @@
     "title": "勇敢的骑士 · Op.68 No.8",
     "notes": 417,
     "bars": 32,
+    "dynamics": {
+      "recorded": 417,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -392,6 +490,13 @@
     "title": "民歌 · Op.68 No.9",
     "notes": 329,
     "bars": 24,
+    "dynamics": {
+      "recorded": 329,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -419,6 +524,13 @@
     "title": "快乐的农夫 · Op.68 No.10",
     "notes": 352,
     "bars": 20,
+    "dynamics": {
+      "recorded": 352,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -446,6 +558,13 @@
     "title": "小练习曲 · Op.68 No.14",
     "notes": 570,
     "bars": 96,
+    "dynamics": {
+      "recorded": 570,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -473,6 +592,13 @@
     "title": "最初的忧愁 · Op.68 No.16",
     "notes": 314,
     "bars": 48,
+    "dynamics": {
+      "recorded": 314,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -500,6 +626,13 @@
     "title": "坦诉 · Op.100 No.1",
     "notes": 241,
     "bars": 23,
+    "dynamics": {
+      "recorded": 241,
+      "missing": 0,
+      "varied": true,
+      "min": 12,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -527,6 +660,13 @@
     "title": "天真烂漫 · Op.100 No.5",
     "notes": 215,
     "bars": 17,
+    "dynamics": {
+      "recorded": 215,
+      "missing": 0,
+      "varied": true,
+      "min": 34,
+      "max": 95
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -535,6 +675,123 @@
       {
         "id": "track-2-ch-1",
         "name": "down:VcII"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "path": "ftp/ClementiM/O36/sonatina-1",
+    "name": "clementi-op36-no1-movement1",
+    "sources": [
+      "ftp/ClementiM/O36/sonatina-1/sonatina-1.ly"
+    ],
+    "midiUrl": "https://www.mutopiaproject.org/ftp/ClementiM/O36/sonatina-1/sonatina-1-mids.zip",
+    "archiveMember": "sonatina-1.mid",
+    "sha256": "365dc51f22f89c005d71343df592d9b08fdc314042027989557f1eebcd8bc107",
+    "archiveSha256": "d13263b200c89478ac167a97b617fd31747b292df9a8ddbe947c8c8d07d066ae",
+    "sourceSha256": "788160d26cfc5d637bd531124607d3136df105004ece2c2b1154629226751e04",
+    "work": "Op.36 No.1",
+    "movement": 1,
+    "license": "Public Domain",
+    "maintainer": "Brian D. Rude",
+    "page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=804",
+    "grade": 3,
+    "title": "C 大调小奏鸣曲 · Op.36 No.1 · 第一乐章（Spiritoso）",
+    "notes": 333,
+    "bars": 38,
+    "dynamics": {
+      "recorded": 333,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
+    "handTracks": [
+      {
+        "id": "track-1-ch-0",
+        "name": "upper:"
+      },
+      {
+        "id": "track-2-ch-1",
+        "name": "lower:"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "path": "ftp/ClementiM/O36/sonatina-1",
+    "name": "clementi-op36-no1-movement2",
+    "sources": [
+      "ftp/ClementiM/O36/sonatina-1/sonatina-1.ly"
+    ],
+    "midiUrl": "https://www.mutopiaproject.org/ftp/ClementiM/O36/sonatina-1/sonatina-1-mids.zip",
+    "archiveMember": "sonatina-1-1.mid",
+    "sha256": "0717762274f532c7e33763ba51e393f21a9e96249154c5757ad5f69fccf12972",
+    "archiveSha256": "d13263b200c89478ac167a97b617fd31747b292df9a8ddbe947c8c8d07d066ae",
+    "sourceSha256": "788160d26cfc5d637bd531124607d3136df105004ece2c2b1154629226751e04",
+    "work": "Op.36 No.1",
+    "movement": 2,
+    "license": "Public Domain",
+    "maintainer": "Brian D. Rude",
+    "page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=804",
+    "grade": 3,
+    "title": "C 大调小奏鸣曲 · Op.36 No.1 · 第二乐章（Andante）",
+    "notes": 332,
+    "bars": 26,
+    "dynamics": {
+      "recorded": 332,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
+    "handTracks": [
+      {
+        "id": "track-1-ch-0",
+        "name": "upper:"
+      },
+      {
+        "id": "track-2-ch-1",
+        "name": "lower:"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "path": "ftp/ClementiM/O36/sonatina-1",
+    "name": "clementi-op36-no1-movement3",
+    "sources": [
+      "ftp/ClementiM/O36/sonatina-1/sonatina-1.ly"
+    ],
+    "midiUrl": "https://www.mutopiaproject.org/ftp/ClementiM/O36/sonatina-1/sonatina-1-mids.zip",
+    "archiveMember": "sonatina-1-2.mid",
+    "sha256": "7fab48c3f1e1f879831a7557a1c792a1fdbb2bb5ed9f29da08ce2bbe3f5f168f",
+    "archiveSha256": "d13263b200c89478ac167a97b617fd31747b292df9a8ddbe947c8c8d07d066ae",
+    "sourceSha256": "788160d26cfc5d637bd531124607d3136df105004ece2c2b1154629226751e04",
+    "work": "Op.36 No.1",
+    "movement": 3,
+    "license": "Public Domain",
+    "maintainer": "Brian D. Rude",
+    "page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=804",
+    "grade": 3,
+    "title": "C 大调小奏鸣曲 · Op.36 No.1 · 第三乐章（Vivace）",
+    "notes": 473,
+    "bars": 70,
+    "dynamics": {
+      "recorded": 473,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
+    "handTracks": [
+      {
+        "id": "track-1-ch-0",
+        "name": "upper:"
+      },
+      {
+        "id": "track-2-ch-1",
+        "name": "lower:"
       }
     ],
     "warnings": []
@@ -554,6 +811,13 @@
     "title": "阿拉伯风格曲 · Op.100 No.2",
     "notes": 283,
     "bars": 33,
+    "dynamics": {
+      "recorded": 283,
+      "missing": 0,
+      "varied": true,
+      "min": 69,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -581,6 +845,13 @@
     "title": "牧歌 · Op.100 No.3",
     "notes": 355,
     "bars": 29,
+    "dynamics": {
+      "recorded": 355,
+      "missing": 0,
+      "varied": true,
+      "min": 12,
+      "max": 98
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -608,6 +879,13 @@
     "title": "儿童联欢会 · Op.100 No.4",
     "notes": 395,
     "bars": 30,
+    "dynamics": {
+      "recorded": 395,
+      "missing": 0,
+      "varied": true,
+      "min": 12,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -635,6 +913,13 @@
     "title": "前进 · Op.100 No.6",
     "notes": 213,
     "bars": 16,
+    "dynamics": {
+      "recorded": 213,
+      "missing": 0,
+      "varied": true,
+      "min": 66,
+      "max": 123
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -662,6 +947,13 @@
     "title": "清澈的小溪 · Op.100 No.7",
     "notes": 219,
     "bars": 16,
+    "dynamics": {
+      "recorded": 219,
+      "missing": 0,
+      "varied": true,
+      "min": 62,
+      "max": 120
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -689,6 +981,13 @@
     "title": "优美 · Op.100 No.8",
     "notes": 318,
     "bars": 16,
+    "dynamics": {
+      "recorded": 318,
+      "missing": 0,
+      "varied": true,
+      "min": 34,
+      "max": 92
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -716,6 +1015,13 @@
     "title": "狩猎 · Op.100 No.9",
     "notes": 525,
     "bars": 57,
+    "dynamics": {
+      "recorded": 525,
+      "missing": 0,
+      "varied": true,
+      "min": 41,
+      "max": 98
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -743,6 +1049,13 @@
     "title": "娇嫩的花 · Op.100 No.10",
     "notes": 269,
     "bars": 24,
+    "dynamics": {
+      "recorded": 269,
+      "missing": 0,
+      "varied": true,
+      "min": 29,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -770,6 +1083,13 @@
     "title": "鹡鸰 · Op.100 No.11",
     "notes": 246,
     "bars": 30,
+    "dynamics": {
+      "recorded": 246,
+      "missing": 0,
+      "varied": true,
+      "min": 12,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -797,6 +1117,13 @@
     "title": "安慰 · Op.100 No.13",
     "notes": 280,
     "bars": 27,
+    "dynamics": {
+      "recorded": 280,
+      "missing": 0,
+      "varied": true,
+      "min": 69,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -824,6 +1151,13 @@
     "title": "再会 · Op.100 No.12",
     "notes": 601,
     "bars": 41,
+    "dynamics": {
+      "recorded": 601,
+      "missing": 0,
+      "varied": true,
+      "min": 41,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -851,6 +1185,13 @@
     "title": "斯提利亚人 · Op.100 No.14",
     "notes": 331,
     "bars": 37,
+    "dynamics": {
+      "recorded": 331,
+      "missing": 0,
+      "varied": true,
+      "min": 12,
+      "max": 95
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -880,6 +1221,13 @@
     "title": "叙事曲 · Op.100 No.15",
     "notes": 756,
     "bars": 96,
+    "dynamics": {
+      "recorded": 756,
+      "missing": 0,
+      "varied": true,
+      "min": 12,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -909,6 +1257,13 @@
     "title": "温柔的忧伤 · Op.100 No.16",
     "notes": 261,
     "bars": 18,
+    "dynamics": {
+      "recorded": 261,
+      "missing": 0,
+      "varied": true,
+      "min": 12,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -936,6 +1291,13 @@
     "title": "饶舌 · Op.100 No.17",
     "notes": 287,
     "bars": 35,
+    "dynamics": {
+      "recorded": 287,
+      "missing": 0,
+      "varied": true,
+      "min": 63,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -963,6 +1325,13 @@
     "title": "烦恼 · Op.100 No.18",
     "notes": 322,
     "bars": 31,
+    "dynamics": {
+      "recorded": 322,
+      "missing": 0,
+      "varied": true,
+      "min": 63,
+      "max": 120
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -990,6 +1359,13 @@
     "title": "圣诞老人 · Op.68 No.12",
     "notes": 1378,
     "bars": 112,
+    "dynamics": {
+      "recorded": 1378,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1019,6 +1395,13 @@
     "title": "五月，可爱的五月 · Op.68 No.13",
     "notes": 784,
     "bars": 52,
+    "dynamics": {
+      "recorded": 784,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1046,6 +1429,13 @@
     "title": "收割者之歌 · Op.68 No.18",
     "notes": 466,
     "bars": 44,
+    "dynamics": {
+      "recorded": 466,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1073,6 +1463,13 @@
     "title": "剧场的回声 · Op.68 No.25",
     "notes": 1086,
     "bars": 62,
+    "dynamics": {
+      "recorded": 1086,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1100,6 +1497,13 @@
     "title": "二部创意曲 No.1 · BWV 772",
     "notes": 458,
     "bars": 22,
+    "dynamics": {
+      "recorded": 458,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1127,6 +1531,13 @@
     "title": "二部创意曲 No.2 · BWV 773",
     "notes": 634,
     "bars": 27,
+    "dynamics": {
+      "recorded": 634,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1154,6 +1565,13 @@
     "title": "二部创意曲 No.3 · BWV 774",
     "notes": 495,
     "bars": 60,
+    "dynamics": {
+      "recorded": 495,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1181,6 +1599,13 @@
     "title": "二部创意曲 No.4 · BWV 775",
     "notes": 443,
     "bars": 52,
+    "dynamics": {
+      "recorded": 443,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1208,6 +1633,13 @@
     "title": "二部创意曲 No.6 · BWV 777",
     "notes": 547,
     "bars": 62,
+    "dynamics": {
+      "recorded": 547,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1235,6 +1667,13 @@
     "title": "二部创意曲 No.7 · BWV 778",
     "notes": 473,
     "bars": 23,
+    "dynamics": {
+      "recorded": 473,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1262,6 +1701,13 @@
     "title": "二部创意曲 No.8 · BWV 779",
     "notes": 598,
     "bars": 34,
+    "dynamics": {
+      "recorded": 598,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1289,6 +1735,13 @@
     "title": "二部创意曲 No.10 · BWV 781",
     "notes": 439,
     "bars": 32,
+    "dynamics": {
+      "recorded": 439,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1316,6 +1769,13 @@
     "title": "二部创意曲 No.13 · BWV 784",
     "notes": 564,
     "bars": 25,
+    "dynamics": {
+      "recorded": 564,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1343,6 +1803,13 @@
     "title": "二部创意曲 No.14 · BWV 785",
     "notes": 592,
     "bars": 20,
+    "dynamics": {
+      "recorded": 592,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1370,6 +1837,13 @@
     "title": "二部创意曲 No.5 · BWV 776",
     "notes": 734,
     "bars": 32,
+    "dynamics": {
+      "recorded": 734,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1397,6 +1871,13 @@
     "title": "二部创意曲 No.9 · BWV 780",
     "notes": 558,
     "bars": 34,
+    "dynamics": {
+      "recorded": 558,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1424,6 +1905,13 @@
     "title": "二部创意曲 No.11 · BWV 782",
     "notes": 568,
     "bars": 23,
+    "dynamics": {
+      "recorded": 568,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1451,6 +1939,13 @@
     "title": "二部创意曲 No.12 · BWV 783",
     "notes": 685,
     "bars": 21,
+    "dynamics": {
+      "recorded": 685,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1478,6 +1973,13 @@
     "title": "二部创意曲 No.15 · BWV 786",
     "notes": 477,
     "bars": 22,
+    "dynamics": {
+      "recorded": 477,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1505,6 +2007,13 @@
     "title": "三部创意曲 No.1 · BWV 787",
     "notes": 557,
     "bars": 21,
+    "dynamics": {
+      "recorded": 557,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1532,6 +2041,13 @@
     "title": "三部创意曲 No.3 · BWV 789",
     "notes": 665,
     "bars": 25,
+    "dynamics": {
+      "recorded": 665,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1559,6 +2075,13 @@
     "title": "三部创意曲 No.4 · BWV 790",
     "notes": 547,
     "bars": 23,
+    "dynamics": {
+      "recorded": 547,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1586,6 +2109,13 @@
     "title": "三部创意曲 No.8 · BWV 794",
     "notes": 557,
     "bars": 23,
+    "dynamics": {
+      "recorded": 557,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1613,6 +2143,13 @@
     "title": "三部创意曲 No.10 · BWV 796",
     "notes": 623,
     "bars": 33,
+    "dynamics": {
+      "recorded": 623,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1640,6 +2177,13 @@
     "title": "三部创意曲 No.2 · BWV 788",
     "notes": 732,
     "bars": 32,
+    "dynamics": {
+      "recorded": 732,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1667,6 +2211,13 @@
     "title": "三部创意曲 No.5 · BWV 791",
     "notes": 427,
     "bars": 38,
+    "dynamics": {
+      "recorded": 427,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1694,6 +2245,13 @@
     "title": "三部创意曲 No.6 · BWV 792",
     "notes": 503,
     "bars": 41,
+    "dynamics": {
+      "recorded": 503,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1721,6 +2279,13 @@
     "title": "三部创意曲 No.7 · BWV 793",
     "notes": 725,
     "bars": 44,
+    "dynamics": {
+      "recorded": 725,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1748,6 +2313,13 @@
     "title": "三部创意曲 No.9 · BWV 795",
     "notes": 650,
     "bars": 35,
+    "dynamics": {
+      "recorded": 650,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -1775,6 +2347,13 @@
     "title": "三部创意曲 No.11 · BWV 797",
     "notes": 518,
     "bars": 72,
+    "dynamics": {
+      "recorded": 518,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1802,6 +2381,13 @@
     "title": "三部创意曲 No.12 · BWV 798",
     "notes": 757,
     "bars": 31,
+    "dynamics": {
+      "recorded": 757,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1829,6 +2415,13 @@
     "title": "三部创意曲 No.13 · BWV 799",
     "notes": 630,
     "bars": 64,
+    "dynamics": {
+      "recorded": 630,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1856,6 +2449,13 @@
     "title": "三部创意曲 No.14 · BWV 800",
     "notes": 613,
     "bars": 24,
+    "dynamics": {
+      "recorded": 613,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1883,6 +2483,13 @@
     "title": "三部创意曲 No.15 · BWV 801",
     "notes": 670,
     "bars": 39,
+    "dynamics": {
+      "recorded": 670,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -1910,6 +2517,13 @@
     "title": "前奏曲 · Op.28 No.3",
     "notes": 663,
     "bars": 33,
+    "dynamics": {
+      "recorded": 663,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -1937,6 +2551,13 @@
     "title": "前奏曲 · Op.28 No.5",
     "notes": 459,
     "bars": 39,
+    "dynamics": {
+      "recorded": 459,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -1966,6 +2587,13 @@
     "title": "前奏曲 · Op.28 No.8",
     "notes": 1559,
     "bars": 34,
+    "dynamics": {
+      "recorded": 1559,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -1995,6 +2623,13 @@
     "title": "前奏曲 · Op.28 No.10",
     "notes": 316,
     "bars": 18,
+    "dynamics": {
+      "recorded": 316,
+      "missing": 0,
+      "varied": true,
+      "min": 90,
+      "max": 110
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2024,6 +2659,13 @@
     "title": "前奏曲 · Op.28 No.12",
     "notes": 1250,
     "bars": 81,
+    "dynamics": {
+      "recorded": 1250,
+      "missing": 0,
+      "varied": true,
+      "min": 90,
+      "max": 110
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2053,6 +2695,13 @@
     "title": "前奏曲 · Op.28 No.14",
     "notes": 434,
     "bars": 19,
+    "dynamics": {
+      "recorded": 434,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2081,6 +2730,13 @@
     "title": "前奏曲 · Op.28 No.17",
     "notes": 2490,
     "bars": 90,
+    "dynamics": {
+      "recorded": 2490,
+      "missing": 0,
+      "varied": true,
+      "min": 90,
+      "max": 110
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2108,6 +2764,13 @@
     "title": "前奏曲 · Op.28 No.19",
     "notes": 1237,
     "bars": 72,
+    "dynamics": {
+      "recorded": 1237,
+      "missing": 0,
+      "varied": true,
+      "min": 69,
+      "max": 114
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2137,6 +2800,13 @@
     "title": "前奏曲 · Op.28 No.22",
     "notes": 632,
     "bars": 42,
+    "dynamics": {
+      "recorded": 632,
+      "missing": 0,
+      "varied": true,
+      "min": 61,
+      "max": 122
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2166,6 +2836,13 @@
     "title": "前奏曲 · Op.28 No.23",
     "notes": 560,
     "bars": 22,
+    "dynamics": {
+      "recorded": 560,
+      "missing": 0,
+      "varied": true,
+      "min": 90,
+      "max": 110
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2195,6 +2872,13 @@
     "title": "练习曲 · Op.10 No.2",
     "notes": 1458,
     "bars": 49,
+    "dynamics": {
+      "recorded": 1458,
+      "missing": 0,
+      "varied": true,
+      "min": 90,
+      "max": 95
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2222,6 +2906,13 @@
     "title": "练习曲 · Op.10 No.9",
     "notes": 1227,
     "bars": 67,
+    "dynamics": {
+      "recorded": 1227,
+      "missing": 0,
+      "varied": true,
+      "min": 34,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2252,6 +2943,13 @@
     "title": "练习曲 · Op.10 No.1",
     "notes": 1337,
     "bars": 79,
+    "dynamics": {
+      "recorded": 1337,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -2282,6 +2980,13 @@
     "title": "黑键练习曲 · Op.10 No.5",
     "notes": 1628,
     "bars": 85,
+    "dynamics": {
+      "recorded": 1628,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-1",
@@ -2311,6 +3016,13 @@
     "title": "革命练习曲 · Op.10 No.12",
     "notes": 2082,
     "bars": 84,
+    "dynamics": {
+      "recorded": 2082,
+      "missing": 0,
+      "varied": true,
+      "min": 12,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2341,6 +3053,13 @@
     "title": "练习曲 · Op.25 No.2",
     "notes": 1203,
     "bars": 70,
+    "dynamics": {
+      "recorded": 1203,
+      "missing": 0,
+      "varied": false,
+      "min": 127,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2370,6 +3089,13 @@
     "title": "练习曲 · Op.25 No.1",
     "notes": 2213,
     "bars": 50,
+    "dynamics": {
+      "recorded": 2213,
+      "missing": 0,
+      "varied": true,
+      "min": 63,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2399,6 +3125,13 @@
     "title": "前奏曲 · Op.28 No.16",
     "notes": 1199,
     "bars": 46,
+    "dynamics": {
+      "recorded": 1199,
+      "missing": 0,
+      "varied": false,
+      "min": 90,
+      "max": 90
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2428,6 +3161,13 @@
     "title": "前奏曲 · Op.28 No.24",
     "notes": 1468,
     "bars": 77,
+    "dynamics": {
+      "recorded": 1468,
+      "missing": 0,
+      "varied": true,
+      "min": 90,
+      "max": 110
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",
@@ -2457,6 +3197,13 @@
     "title": "前奏曲 · Op.28 No.18",
     "notes": 569,
     "bars": 21,
+    "dynamics": {
+      "recorded": 569,
+      "missing": 0,
+      "varied": true,
+      "min": 90,
+      "max": 127
+    },
     "handTracks": [
       {
         "id": "track-1-ch-0",

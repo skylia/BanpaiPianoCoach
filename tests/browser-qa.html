@@ -1,24 +1,39 @@
 <!doctype html><meta charset="utf-8"><title>半拍本地回归验证</title>
 <script src="/vendor/vexflow-bravura.js"></script>
-<style>body{font:16px sans-serif}#score{width:900px;height:400px;overflow:auto}.notation-system{position:relative}pre{white-space:pre-wrap}</style>
-<h1>半拍本地回归验证</h1><button id="run">检查 100 首谱面、播放柱与采样</button><p id="status">待检查</p><pre id="result"></pre><div id="score"></div>
+<link rel="stylesheet" href="/notation.css">
+<style>body{font:16px sans-serif}#score{width:1000px;height:500px;overflow:auto}pre{white-space:pre-wrap}</style>
+<h1>半拍本地回归验证</h1><button id="run">检查全曲库谱面、播放柱与采样</button><p id="status">待检查</p><div id="score"></div><pre id="result"></pre>
 <script type="module">
 import {REPERTOIRE} from '/repertoire.mjs';
 import {normalizeScore} from '/score-model.mjs';
 import {renderNotation} from '/notation.mjs';
 import {PianoSound} from '/inputs.mjs';
-const output=document.querySelector('#result'),host=document.querySelector('#score');
+const output=document.querySelector('#result'),host=document.querySelector('#score'),graded=REPERTOIRE.filter(s=>s.grade);
 document.querySelector('#run').onclick=async()=>{
- document.querySelector('#run').disabled=true;const failures=[],warnings=[],alignment=[];const oldWarn=console.warn;console.warn=(...args)=>{warnings.push(args.map(String).join(' '));oldWarn(...args);};let rendered=0,samples=0;
- for(const s of REPERTOIRE.filter(s=>s.grade)){
-  document.querySelector('#status').textContent=`检查 ${s.title}（${rendered}/100）`;
+ document.querySelector('#run').disabled=true;const failures=[],warnings=[],alignment=[],reading=[];const oldWarn=console.warn;console.warn=(...args)=>{warnings.push(args.map(String).join(' '));oldWarn(...args);};let rendered=0,samples=0;
+ for(const s of graded){
+  document.querySelector('#status').textContent=`检查 ${s.title}（${rendered}/${graded.length}）`;
   let view;try{view=renderNotation(host,normalizeScore(s));if(!host.querySelector('.notation-note'))throw Error('没有音符');if(host.textContent.includes('此小节过于复杂'))throw Error('小节渲染降级');rendered++;}catch(e){failures.push(s.title+': '+e.message);}finally{view?.destroy();}await new Promise(requestAnimationFrame);
  }
  const fixture={title:'对齐验证',timeSignature:[4,4],keySignature:'C',totalBeats:8,notes:[{id:'r',pitch:64,beat:4,duration:1,hand:'right'},{id:'l',pitch:48,beat:5,duration:1,hand:'left'}]};
- for(const scale of [.7,1,1.8])for(const hand of ['right','left']){
+ for(const scale of [.5,.8,1.8])for(const hand of ['right','left']){
   const view=renderNotation(host,fixture,{scale,selectedHand:hand,startBar:2,endBar:2});view.setProgress(hand==='right'?4:5,{follow:false});const c=host.querySelector('.notation-playhead rect').getBoundingClientRect(),h=host.querySelector('.notation-playing .vf-notehead').getBoundingClientRect(),delta=Math.abs(c.x+c.width/2-h.x-h.width/2);alignment.push({scale,hand,delta});if(delta>.5)failures.push('游标偏移 '+delta);view.destroy();
  }
+ const readingScore={title:'多行预读验证',timeSignature:[4,4],keySignature:'C',totalBeats:128,notes:Array.from({length:512},(_,i)=>({id:'preview-'+i,pitch:(i%2?48:60)+[0,4,5,7,9,7,5,4][Math.floor(i/2)%8],beat:Math.floor(i/2)*.5,duration:.5,hand:i%2?'left':'right'}))};
+ let view=renderNotation(host,readingScore);host.scrollTop=0;
+ const systems=[...host.querySelectorAll('.notation-system')],firstBars=systems[0].querySelectorAll('.notation-bar-number').length,outerScroll=window.scrollY;
+ const visible=()=>{const bounds=host.getBoundingClientRect();return systems.filter(row=>{const r=row.getBoundingClientRect();return r.top>=bounds.top&&r.bottom<=bounds.bottom;});};
+ reading.push({firstBars,visibleRows:visible().length});if(firstBars<4||visible().length<2)failures.push('默认谱面预读空间不足');
+ for(const rowIndex of [1,2,4,0]){
+  const firstBar=Number(systems[rowIndex].querySelector('.notation-bar-number').textContent);view.setProgress((firstBar-1)*4);
+  const shown=visible(),currentVisible=shown.includes(systems[rowIndex]),nextVisible=shown.includes(systems[rowIndex+1]);
+  reading.push({rowIndex,currentVisible,nextVisible});if(!currentVisible||!nextVisible)failures.push('跟谱未完整显示当前行与下一行 '+rowIndex);
+ }
+ const oldTop=host.scrollTop;view.setProgress(100,{follow:false});if(host.scrollTop!==oldTop)failures.push('关闭跟谱后仍滚动');view.setProgress(100,{follow:true});if(host.scrollTop===oldTop)failures.push('重新启用跟谱未恢复位置');
+ if(window.scrollY!==outerScroll)failures.push('跟谱滚动了外层页面');view.destroy();
+ // At narrow widths, the score may scroll horizontally; its host must stay bounded.
+ host.style.width='340px';view=renderNotation(host,readingScore);view.setProgress(32);const narrowRect=host.getBoundingClientRect(),active=host.querySelector('.notation-playhead').closest('.notation-system').getBoundingClientRect();reading.push({narrowCurrentVisible:active.top>=narrowRect.top&&active.bottom<=narrowRect.bottom});if(active.top<narrowRect.top||active.bottom>narrowRect.bottom)failures.push('窄屏当前行被裁切');view.destroy();host.style.width='1000px';
  try{const piano=new PianoSound();await piano.ready();samples=piano.buffers.size;piano.tone(60,.8,.12);piano.keyOn(64);piano.keyOff(64);piano.setTimbre('warm');piano.tone(67,.8,.12);if(samples!==30)failures.push('采样数量 '+samples);}catch(e){failures.push('采样: '+e.message);}
- console.warn=oldWarn;output.textContent=JSON.stringify({rendered,samples,alignment,failures,warnings},null,2);document.querySelector('#status').textContent=failures.length||warnings.length?'检查有问题':'全部通过';
+ console.warn=oldWarn;output.textContent=JSON.stringify({rendered,samples,alignment,reading,failures,warnings},null,2);document.querySelector('#status').textContent=failures.length||warnings.length?'检查有问题':'全部通过';
 };
 </script>

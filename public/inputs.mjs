@@ -1,4 +1,5 @@
 // All adapters emit {type, pitch, velocity, at}. Future audio/mobile adapters share this contract.
+import {velocityVolume,EVEN_PLAYBACK_VOLUME} from './expression.mjs';
 export class MidiInput{
  constructor(onEvent,onState){this.onEvent=onEvent;this.onState=onState;this.access=null;this.selected=null;this.selectionVersion=0;}
  async connect(){
@@ -27,14 +28,16 @@ export class PianoSound {
  constructor(){this.context=null;this.voices=new Set();this.buffers=new Map();this.held=new Map();this.loading=null;this.timbre='grand';this.samples=Array.from({length:30},(_,i)=>21+i*3).concat(108).filter((p,i,a)=>a.indexOf(p)===i&&p<=108);}
  async ready(){
   const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;
-  if(!this.context){this.context=new Audio();this.filter=this.context.createBiquadFilter();this.filter.type='lowpass';this.filter.frequency.value=this.timbre==='warm'?4500:16000;this.master=this.context.createDynamicsCompressor();this.filter.connect(this.master).connect(this.context.destination);}
+  if(!this.context){this.context=new Audio();this.connectOutput();}
   if(this.context.state==='suspended')await this.context.resume();
   if(this.buffers.size===this.samples.length)return;
   this.loading??=Promise.all(this.samples.map(async pitch=>{if(this.buffers.has(pitch))return;const names=['C','Cs','D','Ds','E','F','Fs','G','Gs','A','As','B'];const name=names[pitch%12]+(Math.floor(pitch/12)-1);const res=await fetch(new URL(`./audio/salamander/${name}.mp3`,import.meta.url));if(!res.ok)throw Error('钢琴采样加载失败');this.buffers.set(pitch,await this.context.decodeAudioData(await res.arrayBuffer()));})).finally(()=>{this.loading=null;});
   await this.loading;
  }
+ connectOutput(){this.filter=this.context.createBiquadFilter();this.filter.type='lowpass';this.filter.frequency.value=this.timbre==='warm'?4500:16000;this.master=this.context.createDynamicsCompressor();this.filter.connect(this.master).connect(this.context.destination);}
  setTimbre(value){this.timbre=['grand','warm','simple'].includes(value)?value:'grand';if(this.filter)this.filter.frequency.value=this.timbre==='warm'?4500:16000;}
- tone(pitch,duration=.4,volume=.16){
+ playNote(note,duration=note.duration,offset=0,{dynamics=true}={}){return this.tone(note.pitch,duration,dynamics?velocityVolume(note.velocity):EVEN_PLAYBACK_VOLUME,offset);}
+ tone(pitch,duration=.4,volume=.16,offset=0){
   if(!this.context)return;const c=this.context,t=c.currentTime,gain=c.createGain();let source;
   if(this.timbre!=='simple'&&this.buffers.size){const anchor=[...this.buffers.keys()].reduce((a,b)=>Math.abs(b-pitch)<Math.abs(a-pitch)?b:a);source=c.createBufferSource();source.buffer=this.buffers.get(anchor);source.playbackRate.value=2**((pitch-anchor)/12);}
   else{source=c.createOscillator();source.type='triangle';source.frequency.value=440*2**((pitch-69)/12);}
@@ -43,7 +46,7 @@ export class PianoSound {
   else gain.gain.exponentialRampToValueAtTime(.0001,t+Math.max(.08,duration));
   source.connect(gain).connect(this.filter);const voice={source,gain,level,release:()=>{const now=c.currentTime;gain.gain.cancelAndHoldAtTime(now);gain.gain.exponentialRampToValueAtTime(.0001,now+.18);try{source.stop(now+.2);}catch{}}};
   if(this.voices.size>=64){const oldest=this.voices.values().next().value;try{oldest.source.stop();}catch{}this.voices.delete(oldest);}
-  this.voices.add(voice);source.onended=()=>{this.voices.delete(voice);gain.disconnect();source.disconnect();};source.start(t);source.stop(t+Math.max(.08,duration)+.35);return voice;
+  this.voices.add(voice);source.onended=()=>{this.voices.delete(voice);gain.disconnect();source.disconnect();};if(source.buffer)source.start(t,Math.min(source.buffer.duration,Math.max(0,offset)*source.playbackRate.value));else source.start(t);source.stop(t+Math.max(.08,duration)+.35);return voice;
  }
  keyOn(pitch,volume){this.keyOff(pitch);const voice=this.tone(pitch,12,volume);if(voice)this.held.set(pitch,voice);}
  keyOff(pitch){this.held.get(pitch)?.release();this.held.delete(pitch);}

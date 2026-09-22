@@ -162,6 +162,7 @@ export function midiToScore(parsed, { trackIds, rightTrackIds, leftTrackIds, qua
     beat: Math.max(0, snap(note.beat)),
     duration: Math.max(quantize || 1 / (parsed.ticksPerBeat || 480), snap(note.beat + note.duration) - snap(note.beat)),
     hand: right.has(track.id) ? 'right' : left.has(track.id) ? 'left' : note.pitch < 60 ? 'left' : 'right',
+    ...(note.velocity === undefined ? {} : { velocity: note.velocity }),
   })));
   if (!notes.length) fail('所选轨道没有可练习的钢琴音符。');
   // Files often layer the same piano notes. Do not count those as two key strikes.
@@ -169,7 +170,10 @@ export function midiToScore(parsed, { trackIds, rightTrackIds, leftTrackIds, qua
   for (const note of notes) {
     const key = `${note.hand}:${note.pitch}:${note.beat.toFixed(7)}`;
     const previous = unique.get(key);
-    if (previous) previous.duration = Math.max(previous.duration, note.duration);
+    if (previous) {
+      previous.duration = Math.max(previous.duration, note.duration);
+      if (note.velocity !== undefined) previous.velocity = Math.max(previous.velocity ?? 0, note.velocity);
+    }
     else unique.set(key, note);
   }
   const selectedNotes = [...unique.values()];
@@ -177,7 +181,7 @@ export function midiToScore(parsed, { trackIds, rightTrackIds, leftTrackIds, qua
   const end = selectedNotes.reduce((last, note) => Math.max(last, note.beat + note.duration), 0);
   const totalBeats = Math.ceil((end - 1e-7) / barBeats) * barBeats;
   const tempoMap = (parsed.tempoMap ?? []).filter(tempo => tempo.beat < totalBeats);
-  return normalizeScore({ schemaVersion: 2, title: title || parsed.title || '导入的 MIDI 练习', composer: '', collection: '我的曲谱', level: '自定义', bpm: parsed.bpm, timeSignature: parsed.timeSignature, keySignature: parsed.keySignature || 'C', notes: selectedNotes, totalBeats, tempoMap, source: { label: 'MIDI 文件导入', note: quantize ? `音符已按 ${quantize} 个四分音符拍对齐；请核对手别与谱面。` : '保留原始起音和时值；请核对手别与谱面。' }, tags: ['MIDI 导入'] });
+  return normalizeScore({ schemaVersion: 2, title: title || parsed.title || '导入的 MIDI 练习', composer: '', collection: '我的曲谱', level: '自定义', bpm: parsed.bpm, timeSignature: parsed.timeSignature, keySignature: parsed.keySignature || 'C', notes: selectedNotes, totalBeats, tempoMap, source: { label: 'MIDI 文件导入', note: quantize ? `音符已按 ${quantize} 个四分音符拍对齐，保留按键力度；请核对手别与谱面。` : '保留原始起音、时值和按键力度；请核对手别与谱面。' }, tags: ['MIDI 导入'] });
 }
 
 const u16 = value => [(value >>> 8) & 255, value & 255];
@@ -220,7 +224,7 @@ export function exportMidi(value) {
     const events = [{ tick: 0, order: 0, bytes: meta(3, encoded(hand === 'right' ? 'Right hand · 右手' : 'Left hand · 左手')) }, { tick: 0, order: 1, bytes: [0xc0 | channel, 0] }];
     for (const note of score.notes.filter(note => note.hand === hand && note.pitch !== null)) {
       const tick = Math.round(note.beat * ppq), end = Math.max(tick + 1, Math.round((note.beat + note.duration) * ppq));
-      events.push({ tick, order: 3, bytes: [0x90 | channel, note.pitch, 80] }, { tick: end, order: 2, bytes: [0x80 | channel, note.pitch, 0] });
+      events.push({ tick, order: 3, bytes: [0x90 | channel, note.pitch, note.velocity ?? 80] }, { tick: end, order: 2, bytes: [0x80 | channel, note.pitch, 0] });
     }
     output.push(...writeTrack(events, endTick));
   }

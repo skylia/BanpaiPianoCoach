@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>钢琴力度声音检查</title>
+<style>body{font:16px system-ui;margin:32px;max-width:1000px}pre{white-space:pre-wrap}button{font:inherit;padding:12px}</style>
+<h1>钢琴力度声音检查</h1><p>使用正式的采样、音量、滤波和压缩器，在离线音频上下文中测量；不播放出声。</p>
+<button id="run">检查强弱声音</button><pre id="result">尚未运行</pre>
+<script type="module">
+import {PianoSound} from '/inputs.mjs';
+const output=document.querySelector('#result');
+document.querySelector('#run').onclick=async()=>{
+ document.querySelector('#run').disabled=true;output.textContent='正在解码采样并测量…';
+ const loaded=new PianoSound();
+ try{
+  await loaded.ready();const results=[];
+  for(const timbre of ['grand','warm','simple'])for(const pitch of [48,60,84]){
+   const row={timbre,pitch,source:[],even:[]};
+   for(const dynamics of [true,false])for(const velocity of [35,80,115]){
+    const sound=new PianoSound();sound.context=new OfflineAudioContext(1,44100*1.2,44100);sound.buffers=loaded.buffers;sound.setTimbre(timbre);sound.connectOutput();
+    sound.playNote({pitch,velocity},.65,0,{dynamics});const buffer=await sound.context.startRendering(),data=buffer.getChannelData(0);
+    let sum=0,peak=0;const from=Math.round(.04*44100),to=Math.round(.4*44100);
+    for(let i=from;i<to;i++)sum+=data[i]**2;for(const x of data)peak=Math.max(peak,Math.abs(x));
+    row[dynamics?'source':'even'].push({velocity,rms:Math.sqrt(sum/(to-from)),peak});
+   }
+   row.contrastDb=20*Math.log10(row.source[2].rms/row.source[0].rms);
+   row.pass=row.source[0].rms>0&&row.source[0].rms<row.source[1].rms&&row.source[1].rms<row.source[2].rms&&row.contrastDb>3&&row.source.every(x=>x.peak<1)&&row.even.every(x=>Math.abs(x.rms-row.even[0].rms)<1e-8);
+   results.push(row);
+  }
+  output.textContent=JSON.stringify({pass:results.every(r=>r.pass),samples:loaded.buffers.size,results},null,2);
+ }catch(error){output.textContent='FAIL: '+error.stack;}
+ finally{loaded.stop();if(loaded.context)await loaded.context.close();document.querySelector('#run').disabled=false;}
+};
+</script></html>

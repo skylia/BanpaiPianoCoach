@@ -1,8 +1,25 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {buildNotationBars,notationTime,chooseNotationClefs} from '../public/notation.mjs';
+import {buildNotationBars,notationTime,chooseNotationClefs,notationFollowTarget} from '../public/notation.mjs';
 const base={title:'Notation test',timeSignature:[4,4],keySignature:'C',totalBeats:8,bpm:80,notes:[]};
 const n=(id,pitch,beat,duration,hand='right')=>({id,pitch,beat,duration,hand});
+
+test('follow keeps the page still while current and next systems are fully visible',()=>{
+  assert.equal(notationFollowTarget({top:36,height:198,nextBottom:438,scrollTop:0,viewportHeight:470}),null);
+});
+test('follow reveals the next system before the current one reaches the viewport bottom',()=>{
+  // The active system itself fits, but the following system is clipped.
+  assert.equal(notationFollowTarget({top:238,height:198,nextBottom:640,scrollTop:0,viewportHeight:470}),238);
+});
+test('enlarged notation keeps the current system whole when two cannot fit',()=>{
+  assert.equal(notationFollowTarget({top:36,height:355,nextBottom:752,scrollTop:0,viewportHeight:470}),null);
+  assert.equal(notationFollowTarget({top:397,height:355,nextBottom:1113,scrollTop:0,viewportHeight:470}),397);
+});
+test('follow handles backwards playback, the final system, and a system taller than the viewport',()=>{
+  assert.equal(notationFollowTarget({top:36,height:198,nextBottom:438,scrollTop:420,viewportHeight:470}),36);
+  assert.equal(notationFollowTarget({top:36,height:198,nextBottom:null,scrollTop:0,viewportHeight:470}),null);
+  assert.equal(notationFollowTarget({top:4,height:900,nextBottom:null,scrollTop:0,viewportHeight:470}),4);
+});
 
 test('notation splits an eight-beat sustained note across bars without losing its id or duration',()=>{
   const result=buildNotationBars({...base,notes:[n('held',60,0,8)]});

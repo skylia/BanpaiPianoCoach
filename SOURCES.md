@@ -4,16 +4,32 @@
 
 ## 0.4 分级曲库与采样
 
-2026-09-22 新增分级曲库 100 首，逐首目录见 [REPERTOIRE.md](./REPERTOIRE.md)。原有 9 条保留在旧版区，不参与每级计数。
+2026-09-22 分级曲库共 103 个练习条目（含后续增加的克列门蒂三个乐章），逐首目录见 [REPERTOIRE.md](./REPERTOIRE.md)。原有 9 条保留在旧版区，不参与每级计数。
 
 - 1 级：10 首公版旋律入门编配，包括《欢乐颂》主题、《小星星》《两只老虎》《玛丽有只小羊》等。代码在 `public/primer-songs.mjs`，编配数据使用 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)。移调至 C 大调、只保留右手旋律、以四分音符为拍组织练习小节。标注主题／副歌的条目是节选，不声称为完整钢琴作品或指定考级版本。
-- 2–10 级：90 首 Mutopia 转录。保留来源 MIDI 的所有音高、起音、时值、变速；明确按上下谱表轨道分手，没有按音高猜分手。MIDI 的反复与装饰未必等于印刷谱全部标记；网站重新生成五线谱，复调共用符干和延音线，细微时值按显示网格近似，未还原原版指法、力度、踏板和声部记谱。
-- 本地保存来源 MIDI、LilyPond 文件及 `source.json`，详见 `research/repertoire/`。逐首转录者、出处、底本、许可、SHA-256、手别轨道和导入提示记录在 [来源清单](./research/REPERTOIRE-MANIFEST.json)。构建脚本核对哈希和许可，再生成曲库；90 首均逐事件验证未改变源 MIDI 的音高／时间／手别。
+- 2–10 级：93 个 Mutopia 转录条目。保留来源 MIDI 的所有音高、起音、时值、按键力度、变速；明确按上下谱表轨道分手，没有按音高猜分手。MIDI 的反复与装饰未必等于印刷谱全部标记；网站重新生成五线谱，复调共用符干和延音线，细微时值按显示网格近似，未还原原版指法、p / f 等力度符号、踏板和声部记谱。
+- 本地保存来源 MIDI、LilyPond 文件及 `source.json`，详见 `research/repertoire/`。逐首转录者、出处、底本、许可、SHA-256、手别轨道和导入提示记录在 [来源清单](./research/REPERTOIRE-MANIFEST.json)。构建脚本核对哈希和许可，再生成曲库；全部转录条目均逐事件验证未改变源 MIDI 的音高／时间／手别。
+
+来源清单的 `dynamics` 记录逐音力度覆盖数、是否变化及最小／最大值。93 个源条目中，30 个存在力度变化，63 个使用固定力度；这些数字描述源文件，不代表已完成音乐表现审校。程序只恢复原 MIDI Note On 的 velocity，不为固定力度文件或入门编配自动添加强弱、重音或随机起音。
 - 各条转录数据与其派生数据**分别沿用清单所列许可**，包括 Public Domain、[CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)、[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)、[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)、[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)、[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。保留署名、来源、同许可共享义务与改动说明；不将这些许可扩大到无关程序代码。
 
 钢琴采样：**Salamander Grand Piano，Alexander Holm，Yamaha C5**，来自 [Tonejs/audio 的 salamander 目录](https://github.com/Tonejs/audio/tree/master/salamander)，许可 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)。本项目取 30 个 MP3 单力度层样本，本地文件与原始 README 存于 `public/audio/salamander/`；`manifest.json` 记录下载地址、大小与 SHA-256。软件通过临近样本变调、滤波、音量与释放包络播放，未复制完整 SFZ、多力度层、踏板噪声或共鸣系统。
 
 分级参考中央音乐学院第四套的等级框架，但上述条目的官方教材归属未逐首核实，全部采用通用参考难度；见 [LEARNING-ROADMAP.md](./LEARNING-ROADMAP.md)。
+
+## 三级新增：克列门蒂 Op.36 No.1
+
+三个乐章分别作为三级练习条目加入，原有十首保留。依据 [Mutopia 804 来源页](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=804) 的 Brian D. Rude 排版，底本为 G. Schirmer《Sonatina Album》，1893；该排版标为 Public Domain。全套 [LilyPond 源谱](https://www.mutopiaproject.org/ftp/ClementiM/O36/sonatina-1/sonatina-1.ly) 与 [MIDI 压缩包](https://www.mutopiaproject.org/ftp/ClementiM/O36/sonatina-1/sonatina-1-mids.zip) 属于同一版本。
+
+| 乐章 | 压缩包成员 | 拍号 / 调性 | 小节 | 音符（双手合计） | 四分音符 BPM |
+| --- | --- | --- | ---: | ---: | ---: |
+| I · Spiritoso | `sonatina-1.mid` | 2/2 · C 大调 | 38 | 333 | 156 |
+| II · Andante | `sonatina-1-1.mid` | 3/4 · F 大调 | 26 | 332 | 92 |
+| III · Vivace | `sonatina-1-2.mid` | 3/8 · C 大调 | 70 | 473 | 80 |
+
+注意压缩包中无数字后缀的文件才是第一乐章，`-1` 和 `-2` 分别是第二、三乐章。已按源谱的三个 `score`、`upper` / `lower` 声部、小节数、调号和开头旋律核对；第三乐章的八分音符速度 160 对应应用四分音符 BPM 80，不能直接填为 160。第一乐章完整保留 38 小节，反复段各弹一遍、不展开反复；第二乐章保留源 MIDI 的三连音和装饰音时值，谱面仍会提示网格近似。
+
+三个源 MIDI、完整 LilyPond 源谱和下载元信息保存在 `research/repertoire/clementi-op36-no1-movement{1,2,3}/`。清单记录 MIDI、源谱及源压缩包的 SHA-256，以及各乐章的压缩包成员名。三个 MIDI 的逐音力度全部为 90，示范保持固定力度。程序重新排版，不复制原版力度符号、指法、连奏线或反复符号；三级归属按本次用户要求采用通用参考等级，不标为已核实的央音指定教材。
 
 ## 旧版基础教材内容
 

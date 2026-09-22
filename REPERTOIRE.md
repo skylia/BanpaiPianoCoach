@@ -1,6 +1,6 @@
 # 1–10 级分级曲库
 
-每级 10 首，共 100 首。等级全部为通用参考难度，不是央音指定教材清单。1 级为公版旋律的入门编配，主题／副歌节选已标明；2–10 级完整保留所列 MIDI 的全部音符，反复和装饰以源 MIDI 为准，软件重新排版。原有 9 个基础条目另存旧版区，不计入本表。
+每级至少 10 个练习条目，共 103 个。三级保留原有 10 首，另增克列门蒂 Op.36 No.1 三个完整乐章，分别列出以便独立跟练。各级条目数：10 / 10 / 13 / 10 / 10 / 10 / 10 / 10 / 10 / 10。等级全部为通用参考难度，不是央音指定教材清单。1 级为公版旋律的入门编配，主题／副歌节选已标明；2–10 级完整保留所列 MIDI 的全部音符，反复和装饰以源 MIDI 为准，软件重新排版。原有 9 个基础条目另存旧版区，不计入本表。
 
 | 参考等级 | 曲目 | 作曲者 | 收录版本 |
 | --- | --- | --- | --- |
@@ -34,6 +34,9 @@
 | 3 | 最初的忧愁 · Op.68 No.16 | 舒曼 | [MIDI 转录与许可](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=676) |
 | 3 | 坦诉 · Op.100 No.1 | 布格缪勒 | [MIDI 转录与许可](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=202) |
 | 3 | 天真烂漫 · Op.100 No.5 | 布格缪勒 | [MIDI 转录与许可](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=214) |
+| 3 | C 大调小奏鸣曲 · Op.36 No.1 · 第一乐章（Spiritoso） | 克列门蒂 | [MIDI 转录与许可](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=804) |
+| 3 | C 大调小奏鸣曲 · Op.36 No.1 · 第二乐章（Andante） | 克列门蒂 | [MIDI 转录与许可](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=804) |
+| 3 | C 大调小奏鸣曲 · Op.36 No.1 · 第三乐章（Vivace） | 克列门蒂 | [MIDI 转录与许可](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=804) |
 | 4 | 阿拉伯风格曲 · Op.100 No.2 | 布格缪勒 | [MIDI 转录与许可](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=203) |
 | 4 | 牧歌 · Op.100 No.3 | 布格缪勒 | [MIDI 转录与许可](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=218) |
 | 4 | 儿童联欢会 · Op.100 No.4 | 布格缪勒 | [MIDI 转录与许可](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=219) |
