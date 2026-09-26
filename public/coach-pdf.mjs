@@ -104,8 +104,13 @@ export async function createCoachPdf(report,{loadFonts=defaultAssets}={}) {
     const metrics=[[e.current.minutes,'记录练习 / 分钟'],[`${e.current.practiceDays} / ${e.period.days}`,'有练习的日子'],[e.current.sessions,'练习记录 / 条']];
     rect(MARGIN,y,CONTENT,83,C.pale);
     metrics.forEach(([value,label],i)=>{const x=MARGIN+18+i*CONTENT/3;draw(String(value),x,y+12,25,true,C.ink);draw(label,x,y+51,9,false,C.muted);});y+=98;
-    paragraph(`固定速度  ·  音符准确率 ${percent(e.current.pitch)}  ·  起音合拍率 ${percent(e.current.rhythm)}`,{size:9.2,lineHeight:16,gap:5,ink:C.muted});
-    if(e.current.follow.sessions)paragraph(`跟弹 ${e.current.follow.sessions} 遍  ·  错误尝试 ${e.current.follow.errorAttempts} 次  ·  首次通过率 ${percent(e.current.follow.firstPass)}  ·  首次起音合拍率 ${percent(e.current.follow.rhythm)}`,{size:9.2,lineHeight:16,gap:8,ink:C.muted});
+    paragraph(`旧版固定速度  ·  音符准确率 ${percent(e.current.pitch)}  ·  起音合拍率 ${percent(e.current.rhythm)}`,{size:9.2,lineHeight:16,gap:5,ink:C.muted});
+    if(e.current.follow.sessions)paragraph(`旧版跟弹 ${e.current.follow.sessions} 遍  ·  错误尝试 ${e.current.follow.errorAttempts} 次  ·  首次通过率 ${percent(e.current.follow.firstPass)}  ·  首次起音合拍率 ${percent(e.current.follow.rhythm)}`,{size:9.2,lineHeight:16,gap:8,ink:C.muted});
+    for(const group of e.current.profiles.filter(p=>p.evaluationProfile!=='legacy')) {
+      const label=group.evaluationProfile==='musical'?'乐曲反馈':'基本功成绩',mode=group.practiceMode==='follow'?'跟弹':'完整演奏';
+      const detail=group.evaluationProfile==='musical'?`节奏关系提示 ${group.observations.rhythmChanges} 处，装饰音待复核 ${group.observations.ornamentIssues} 处；停留与变速需结合回听`:`${group.practiceMode==='follow'?'首次通过率':'音符准确率'} ${percent(group.practiceMode==='follow'?group.firstPass:group.pitch)}，节奏 ${percent(group.rhythm)}`;
+      paragraph(`${label} · ${mode} · ${group.sessions} 遍 / ${group.minutes} 分钟 · ${detail}`,{size:9.2,lineHeight:16,gap:5,ink:C.muted});
+    }
     y+=7;
   }
   for(const block of document.blocks) {
@@ -117,19 +122,19 @@ export async function createCoachPdf(report,{loadFonts=defaultAssets}={}) {
     newPage();draw('THE FACTS BEHIND THIS REPORT',MARGIN,y,8,true,C.accent);y+=21;
     heading('本次点评的练习依据',{major:true});
     paragraph('以下来自生成报告时保存的数据快照，与正文使用同一统计周期。',{size:9.5,ink:C.muted,gap:6});
-    const rows=[['记录练习时长',`${e.current.minutes} 分钟`,`${e.previous.minutes} 分钟`],['有练习的日子',`${e.current.practiceDays} 天`,`${e.previous.practiceDays} 天`],['练习记录',`${e.current.sessions} 条`,`${e.previous.sessions} 条`],['自动采集 / 手动补记',`${e.current.captureMinutes} / ${e.current.manualMinutes} 分钟`,`${e.previous.captureMinutes} / ${e.previous.manualMinutes} 分钟`],['固定速度音符准确率',percent(e.current.pitch),percent(e.previous.pitch)],['固定速度起音合拍率',percent(e.current.rhythm),percent(e.previous.rhythm)]];
+    const rows=[['记录练习时长',`${e.current.minutes} 分钟`,`${e.previous.minutes} 分钟`],['有练习的日子',`${e.current.practiceDays} 天`,`${e.previous.practiceDays} 天`],['练习记录',`${e.current.sessions} 条`,`${e.previous.sessions} 条`],['自动采集 / 手动补记',`${e.current.captureMinutes} / ${e.current.manualMinutes} 分钟`,`${e.previous.captureMinutes} / ${e.previous.manualMinutes} 分钟`],['旧版音符准确率',percent(e.current.pitch),percent(e.previous.pitch)],['旧版起音合拍率',percent(e.current.rhythm),percent(e.previous.rhythm)]];
     const xs=[MARGIN+12,MARGIN+220,MARGIN+355];
     rect(MARGIN,y,CONTENT,29,C.pale);['统计项目',`本期 ${e.period.days} 天`,`此前 ${e.period.days} 天`].forEach((t,i)=>draw(t,xs[i],y+8,9,true));y+=29;
     for(const row of rows){row.forEach((v,i)=>draw(v,xs[i],y+6,9));y+=25;rule(y);}
     y+=10;
     paragraph(`实琴采集 ${e.current.midiSessions} 遍 · 屏幕琴键 ${e.current.virtualSessions} 遍 · 提前结束 ${e.current.incompleteSessions} 遍。学习目标 ${e.targetGrade} 级，每周计划 ${e.weeklyMinutes} 分钟。`,{size:9,lineHeight:15,gap:5,ink:C.muted});
-    if(e.current.follow.sessions)paragraph(`跟弹单列：${e.current.follow.sessions} 遍，错误尝试 ${e.current.follow.errorAttempts} 次，纠错等待约 ${Math.round(e.current.follow.correctionSeconds)} 秒；首次通过率 ${percent(e.current.follow.firstPass)}，首次起音合拍率 ${percent(e.current.follow.rhythm)}。比例只计完整跟弹。`,{size:9,lineHeight:15,gap:5,ink:C.muted});
+    if(e.current.follow.sessions)paragraph(`旧版跟弹单列：${e.current.follow.sessions} 遍，错误尝试 ${e.current.follow.errorAttempts} 次，纠错等待约 ${Math.round(e.current.follow.correctionSeconds)} 秒；首次通过率 ${percent(e.current.follow.firstPass)}，首次起音合拍率 ${percent(e.current.follow.rhythm)}。比例只计完整跟弹。`,{size:9,lineHeight:15,gap:5,ink:C.muted});
     if(e.pieces.length) {
       heading('本期曲目与练习范围',{compact:true});
       for(const p of e.pieces) {
-        const mode=p.practiceMode==='follow'?'跟弹':'固定速度',hand={left:'左手',right:'右手',both:'双手'}[p.hand];
+        const mode=({musical:'乐曲',technique:'基本功',legacy:'旧版'}[p.evaluationProfile]||'旧版')+' · '+(p.practiceMode==='follow'?'跟弹':p.evaluationProfile==='musical'?'完整演奏':'固定速度'),hand={left:'左手',right:'右手',both:'双手'}[p.hand];
         const context=`${mode} · ${hand} · 第 ${p.startBar}-${p.endBar} 小节 · ${p.bpm} BPM · ${p.source==='midi'?'实琴':'屏幕琴键'}`;
-        const metric=p.practiceMode==='follow'?`错误尝试 ${p.errorAttempts} 次 · 最近完整一遍首次通过率 ${percent(p.last?.firstPass)}`:`最近完整一遍音符准确率 ${percent(p.last?.pitch)}`;
+        const metric=p.evaluationProfile==='musical'?'按问题位置与文字反馈复核，不与旧版百分比混算':p.practiceMode==='follow'?`错误尝试 ${p.errorAttempts} 次 · 最近完整一遍首次通过率 ${percent(p.last?.firstPass)}`:`最近完整一遍音符准确率 ${percent(p.last?.pitch)}`;
         const title=wrap(p.title,CONTENT,10.5,true);ensure(title.length*19+66);
         paragraph(p.title,{bold:true,lineHeight:17,gap:1});paragraph(context,{size:8.7,lineHeight:14,gap:1,ink:C.muted});
         paragraph(`${p.attempts} 遍 / 完整 ${p.complete} 遍 / ${p.minutes} 分钟 · ${metric}`,{size:8.7,lineHeight:14,gap:7,ink:C.muted});

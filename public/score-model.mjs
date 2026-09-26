@@ -1,3 +1,4 @@
+import {validateEvaluationProfile} from './evaluation.mjs';
 // Portable score format. All beat values are quarter-note beats; all playback
 // times are seconds. This module deliberately knows nothing about the input UI.
 export const SCORE_LIMITS = Object.freeze({ notes: 4096, bars: 256, jsonBytes: 2 * 1024 * 1024 });
@@ -86,6 +87,24 @@ export function normalizeScore(raw) {
     bpm: number(input.bpm ?? 80, '速度 bpm', 10, 1000),
     timeSignature: [...ts], keySignature, notes, totalBeats,
   };
+  if(input.evaluationProfile!==undefined)result.evaluationProfile=validateEvaluationProfile(input.evaluationProfile);
+  if(input.ornaments!==undefined){
+    if(!Array.isArray(input.ornaments)||input.ornaments.length>256)fail('装饰音标记最多 256 个。');
+    const ornamentIds=new Set(),claimed=new Set();
+    result.ornaments=input.ornaments.map((o,i)=>{
+      if(!record(o)||o.type!=='trill')fail('目前仅支持明确标注的颤音。');
+      const id=identifier(o.id,'装饰音 id',`ornament-${i+1}`),note=notes.find(n=>n.id===o.noteId);
+      if(ornamentIds.has(id)||!note||note.pitch===null||claimed.has(note.id))fail('装饰音主音或 id 无效。');
+      ornamentIds.add(id);claimed.add(note.id);
+      const auxiliaryPitch=number(o.auxiliaryPitch,'颤音辅助音',21,108,true),endBeat=number(o.endBeat,'装饰音结束拍',note.beat+.000001,totalBeats);
+      if(auxiliaryPitch===note.pitch||Math.abs(auxiliaryPitch-note.pitch)>2)fail('颤音辅助音应为相邻音级。');
+      if(!Array.isArray(o.graceNoteIds??[])||(o.graceNoteIds??[]).length>16)fail('装饰尾奏音符无效。');
+      const graceNoteIds=(o.graceNoteIds??[]).map(id=>{const n=notes.find(n=>n.id===id);if(!n||n.pitch===null||n.hand!==note.hand||n.beat<=note.beat||n.beat>=endBeat||claimed.has(id))fail('装饰尾奏必须位于同声部装饰时段内且不重复。');claimed.add(id);return id;});
+      if(notes.some(n=>n.hand===note.hand&&n.beat>note.beat&&n.beat<endBeat&&!graceNoteIds.includes(n.id)))fail('装饰音时段不能覆盖未标注的同声部主干音。');
+      return {id,type:'trill',noteId:note.id,auxiliaryPitch,endBeat,graceNoteIds};
+    });
+    for(let i=0;i<result.ornaments.length;i++)for(let j=0;j<i;j++){const a=result.ornaments[i],b=result.ornaments[j],an=notes.find(n=>n.id===a.noteId),bn=notes.find(n=>n.id===b.noteId);if(an.hand===bn.hand&&an.beat<b.endBeat&&bn.beat<a.endBeat)fail('同声部装饰音时段不能重叠。');}
+  }
   if (input.grade !== undefined) result.grade=number(input.grade,'参考等级',1,10,true);
   if (input.category !== undefined) {if(!['study','polyphony','piece','technique'].includes(input.category))fail('曲谱类别无效。');result.category=input.category;}
   if (input.grading !== undefined) {if(!['general','ccom-fourth'].includes(input.grading))fail('分级依据无效。');result.grading=input.grading;}
@@ -155,13 +174,16 @@ function range(score, options = {}) {
 export function scoreToTimedNotes(score, options = {}) {
   const { start, end, bpm, hand } = range(score, options);
   const startTime = beatToSeconds(start, score, bpm);
-  return score.notes.map((note, index) => ({ ...note, index }))
+  const timed=score.notes.map((note, index) => ({ ...note, index }))
     .filter(note => note.pitch !== null && (hand === 'both' || note.hand === hand) && note.beat >= start - EPS && note.beat < end - EPS)
     .map(note => {
       const endBeat = Math.min(note.beat + note.duration, end);
       const time = beatToSeconds(note.beat, score, bpm);
       return { ...note, time: time - startTime, duration: beatToSeconds(endBeat, score, bpm) - time, beats: endBeat - note.beat, bar: Math.floor((note.beat + EPS) / beatsPerBar(score)) + 1 };
     });
+  const ornaments=(score.ornaments??[]).flatMap(o=>{const note=timed.find(n=>n.id===o.noteId);if(!note||o.endBeat>end+EPS)return [];return [{...o,mainPitch:note.pitch,hand:note.hand,beat:note.beat,bar:note.bar,time:note.time,endTime:beatToSeconds(o.endBeat,score,bpm)-startTime,gracePitches:o.graceNoteIds.map(id=>score.notes.find(n=>n.id===id).pitch)}];});
+  Object.defineProperty(timed,'ornaments',{value:ornaments,enumerable:false});
+  return timed;
 }
 export function scoreDuration(score, options = {}) {
   const { start, end, bpm } = range(score, options);
@@ -169,6 +191,7 @@ export function scoreDuration(score, options = {}) {
 }
 export function toLegacyExercise(score) {
   const normalized = normalizeScore(score);
+  if(normalized.ornaments?.length)fail('旧版格式不能保留装饰音标记；请导出 v2 JSON。');
   if (normalized.notes.some(note => note.velocity !== undefined)) fail('旧版格式不能保留力度；请导出 v2 JSON。');
   let cursor = 0;
   for (const note of normalized.notes) {

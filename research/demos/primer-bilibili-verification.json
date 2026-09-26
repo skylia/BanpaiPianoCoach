@@ -1,0 +1,38 @@
+{
+  "verifiedOn": "2026-09-27",
+  "method": "Bilibili public page metadata and native Chrome CUA playback screenshots; publication provenance cross-check. This is not a note-by-note listening assessment.",
+  "resources": [
+    {
+      "scoreId": "gurlitt-op117-15",
+      "sourceUrl": "https://www.bilibili.com/video/BV1pS4y1b7wc/",
+      "title": "Gurlitt The Hunt Level 1",
+      "publisher": "风汉火龙",
+      "performer": "John Maul",
+      "instrument": "Roland LX-15 digital piano, played by a person",
+      "durationSeconds": 380,
+      "provenanceUrl": "https://www.pianistmagazine.com/blogs/professionaladvice/learn-how-to-play-11-beginner-piano-pieces/",
+      "workIdentityUrl": "https://azure2.wgp-cdn.co.uk/app-pianist/posts/COMPLETE151.pdf",
+      "workIdentity": "Pianist's official complete score list explicitly identifies The Hunt, Op.117 No.15 in issue 69. The video opening credits identify Gurlitt The Hunt, Pianist issue 69 page 29, John Maul and Roland LX-15.",
+      "visualEvidence": "The opening credits were visible at 00:09. At 00:21 an overhead view shows both hands playing the keyboard; at 00:26 a side view shows the teacher playing. By 00:54 he is addressing the camera, and the remainder contains teaching and demonstrations. This is an opening performance followed by a lesson, not a six-minute uninterrupted performance.",
+      "coverage": "Use the whole original page from the beginning, retaining the brief title card. Do not invent a precise automatically-clipped time range.",
+      "rights": "Original platform playback only; no audio or video copied. Public availability is not a redistribution license."
+    },
+    {
+      "scoreId": "bach-bwv514",
+      "sourceUrl": "https://www.bilibili.com/video/BV1tf4y1s7uw/",
+      "title": "英皇钢琴1级 巴赫 赞美诗 愿神降罚与我 - ABRSM Grade1 A5 Deal with Me Lord BWV514",
+      "publisher": "肖邦同学",
+      "performer": "Piano with Beth",
+      "durationSeconds": 36,
+      "visualEvidence": "The published description explicitly identifies Piano with Beth as performer and the title identifies BWV514. At 00:08/00:36, native Chrome CUA playback shows both hands playing a K.Kawai acoustic piano.",
+      "coverage": "Complete standalone piano performance of BWV514. The recording's piano realization may supply harmony beyond the application's historical melody and bass voices; it is a listening reference, not an exact-note scoring template.",
+      "rights": "Original platform playback only; no audio or video copied. Public availability is not a redistribution license."
+    }
+  ],
+  "rejected": [
+    {
+      "sourceUrl": "https://www.bilibili.com/video/BV16d4y1F765/",
+      "reason": "20-second adult sight-reading candidate; uploader describes hand coordination still being uncertain. Not adopted as a formal complete-performance reference."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "verifiedOn": "2026-09-27",
+  "scoreId": "turk-ballet",
+  "score": {
+    "path": "research/primer/turk-handstucke-1797.pdf",
+    "sha256": "96c56d4a2473831b4d43d5e9ced30b0c47b7cc6f6cb4dc0c8773ae329798df7a",
+    "edition": "1797 second edition, Volume 1, No.19 Das Ballett, printed p.6 / PDF p.10",
+    "license": "Public Domain"
+  },
+  "recording": {
+    "path": "public/audio/demos/primer-turk-ballet-mcpp.mp3",
+    "sha256": "2a55fafad246d20de49850a08664a3a51297fe6dcddd39e7e50dee700e94b850",
+    "source": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)#IMSLP601847",
+    "originalUrl": "https://s9.imslp.org/files/imglnks/usimg/4/4a/IMSLP601847-PMLP173513-Level_1_-_Turk_The_Ballet_from_Handstücke_für_angehende_Klavierspieler,_Vol._1.mp3",
+    "performer": "Mississippi College Piano Pedagogy",
+    "year": 2019,
+    "license": "CC BY-NC-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "catalogueNumber": "Modern performance listing No.18; historical score No.19",
+    "durationSeconds": 43.21231292517007
+  },
+  "identityCheck": {
+    "method": "Chromium Web Audio decodeAudioData at 44100 Hz; first 8 seconds inspected with Hann-windowed FFT (32768-point transform), compared to the printed opening score.",
+    "observations": [
+      {"timeSeconds": 0.7, "prominentFrequencyHz": [441], "scorePitches": ["A4 pickup"]},
+      {"timeSeconds": 1.3, "prominentFrequencyHz": [587, 370], "scorePitches": ["D5", "F#4"]},
+      {"timeSeconds": 2.3, "prominentFrequencyHz": [370, 295], "scorePitches": ["F#4", "D4"]},
+      {"timeSeconds": 3.7, "prominentFrequencyHz": [392, 334], "scorePitches": ["G4", "E4"]}
+    ],
+    "conclusion": "The opening pickup and both-hand pitch patterns establish that the differently numbered historical score and modern recording are the same composition.",
+    "limits": "This is score/audio frequency verification, not ear listening, a performance-quality assessment, full note-by-note audio transcription, or time-to-bar alignment. Repeats and ornament realization may differ. The audio bytes are unchanged."
+  },
+  "difficulty": {
+    "source": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+    "evidence": "RCM Piano Syllabus 2022, Level 1 List A, The Ballet, printed p.21."
+  }
+}

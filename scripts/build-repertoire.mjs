@@ -48,9 +48,6 @@ writeFileSync(new URL('../public/repertoire-expanded.mjs',import.meta.url),'// G
 writeFileSync(new URL('../research/REPERTOIRE-MANIFEST.json',import.meta.url),JSON.stringify(rows.map(r=>r.source),null,2));
 console.log('Built',rows.length,'Mutopia scores; total notes',rows.reduce((n,r)=>n+r.score.notes.length,0));
 
-const {REPERTOIRE}=await import('../public/repertoire.mjs');
-const graded=REPERTOIRE.filter(s=>s.grade),counts=Array.from({length:10},(_,i)=>graded.filter(s=>s.grade===i+1).length);
-const repertoireLines=['# 1–10 级分级曲库','', `每级至少 10 个练习条目，共 ${graded.length} 个。三级保留原有 10 首，另增克列门蒂 Op.36 No.1 三个完整乐章，分别列出以便独立跟练。各级条目数：${counts.join(' / ')}。等级全部为通用参考难度，不是央音指定教材清单。1 级为公版旋律的入门编配，主题／副歌节选已标明；2–10 级完整保留所列 MIDI 的全部音符，反复和装饰以源 MIDI 为准，软件重新排版。原有 9 个基础条目另存旧版区，不计入本表。`,'', '| 参考等级 | 曲目 | 作曲者 | 收录版本 |','| --- | --- | --- | --- |'];
-for(const score of REPERTOIRE.filter(s=>s.grade).sort((a,b)=>a.grade-b.grade))repertoireLines.push(`| ${score.grade} | ${score.title} | ${score.composer} | ${score.source.url?'[MIDI 转录与许可]('+score.source.url+')':'半拍入门旋律编配 · CC0'} |`);
-repertoireLines.push('', '来源下载、SHA-256、转录者、许可和左右手轨道见 research/REPERTOIRE-MANIFEST.json；本地源文件见 research/repertoire。可用 npm run repertoire:build 重建。');
-writeFileSync(new URL('../REPERTOIRE.md',import.meta.url),repertoireLines.join('\n')+'\n');
+const {buildPrimer} = await import('./build-primer.mjs');
+buildPrimer();
+await import('./build-repertoire-index.mjs');

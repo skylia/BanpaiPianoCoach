@@ -34,3 +34,10 @@ test('long paragraphs, URLs, special symbols and 30-day historical reports still
   report.evidence=undefined;
   const result=await createCoachPdf(report,{loadFonts});assert(result.pages>3);assert(result.pages<20);assert(result.filename.endsWith('-30days.pdf'));assert(result.substitutions.includes('[U+1F3B9]'));
 });
+
+test('PDF retains separate musical and technique evidence without inventing musical percentages',async()=>{
+ const report=coachPdfFixture();
+ report.evidence.current.profiles=[{evaluationProfile:'musical',analysisVersion:'banpai-musical-1',practiceMode:'fixed',sessions:2,minutes:10,pitch:null,rhythm:null,firstPass:null,errorAttempts:0,observations:{pauses:1,rhythmChanges:2,tempoChanges:1,ornamentIssues:1,velocityVariationSessions:2}},{evaluationProfile:'technique',analysisVersion:'banpai-technique-1',practiceMode:'follow',sessions:3,minutes:15,pitch:null,rhythm:82,firstPass:90,errorAttempts:4,observations:{}}];
+ const document=coachDocument(report);assert.equal(document.evidence.current.profiles[0].pitch,null);assert.equal(document.evidence.current.profiles[0].observations.velocityVariationSessions,2);
+ const result=await createCoachPdf(report,{loadFonts});assert.deepEqual(result.substitutions,[]);assert(result.pages>=3&&result.pages<=5);
+});

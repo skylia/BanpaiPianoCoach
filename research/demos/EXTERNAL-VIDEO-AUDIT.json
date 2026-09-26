@@ -1,0 +1,452 @@
+{
+  "verifiedOn": "2026-09-27",
+  "provider": "bilibili",
+  "evidence": "BILIBILI-AUDIT.json",
+  "scope": "44 musical pieces from grades 2–10. Grade1 resource audit is recorded independently in research/primer. Bundled recordings use their respective audio provenance records.",
+  "resources": [
+    {
+      "scoreId": "mutopia-25ef-04",
+      "title": "儿童联欢会 · Op.100 No.4 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 4,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=4",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 4 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-05",
+      "title": "天真烂漫 · Op.100 No.5 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 5,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=5",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 5 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-07",
+      "title": "清澈的小溪 · Op.100 No.7 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 7,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=7",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 7 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-08",
+      "title": "优美 · Op.100 No.8 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 8,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=8",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 8 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-09",
+      "title": "狩猎 · Op.100 No.9 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 9,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=9",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 9 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-10",
+      "title": "娇嫩的花 · Op.100 No.10 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 10,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=10",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 10 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-11",
+      "title": "鹡鸰 · Op.100 No.11 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 11,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=11",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 11 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-12",
+      "title": "再会 · Op.100 No.12 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 12,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=12",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 12 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-13",
+      "title": "安慰 · Op.100 No.13 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 13,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=13",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 13 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-14",
+      "title": "斯提利亚人 · Op.100 No.14 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 14,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=14",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 14 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-16",
+      "title": "温柔的忧伤 · Op.100 No.16 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 16,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=16",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 16 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-25ef-17",
+      "title": "饶舌 · Op.100 No.17 · 真人钢琴",
+      "bvid": "BV1rK4y187gL",
+      "page": 17,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rK4y187gL/?p=17",
+      "performer": "爱荷华大学钢琴教育录音项目（UIPianoPed）",
+      "publisher": "JeremyWeasley",
+      "coverage": "完整单曲演奏，打开合集第 17 分P。项目使用不同钢琴家；此处按项目署名。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-02-marche-militaire",
+      "title": "士兵进行曲 · Op.68 No.2 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 2,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=2",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 2 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-03-chanson-fredonnee",
+      "title": "哼唱的小曲 · Op.68 No.3 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 3,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=3",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 3 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-04-choral",
+      "title": "圣咏 · Op.68 No.4 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 4,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=4",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 4 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-06-pauvre-orpheline",
+      "title": "可怜的孤儿 · Op.68 No.6 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 6,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=6",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 6 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-07-chanson-du-chasseur",
+      "title": "猎歌 · Op.68 No.7 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 7,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=7",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 7 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-09-chanson-populaire",
+      "title": "民歌 · Op.68 No.9 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 9,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=9",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 9 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-12-pere-fouettard",
+      "title": "圣诞老人 · Op.68 No.12 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 12,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=12",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 12 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-13-mai-cher-mai",
+      "title": "五月，可爱的五月 · Op.68 No.13 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 13,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=13",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 13 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-16-premier-chagrin",
+      "title": "最初的忧愁 · Op.68 No.16 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 16,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=16",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 16 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-18-moissonneurs",
+      "title": "收割者之歌 · Op.68 No.18 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 18,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=18",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 18 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-schumann-op68-25-theater",
+      "title": "剧场的回声 · Op.68 No.25 · 真人钢琴",
+      "bvid": "BV1Gb411Y766",
+      "page": 25,
+      "sourceUrl": "https://www.bilibili.com/video/BV1Gb411Y766/?p=25",
+      "performer": "Jörg Demus（约尔格·德穆斯）",
+      "publisher": "ChochoAngel",
+      "coverage": "完整单曲演奏，打开合集第 25 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-02",
+      "title": "二部创意曲 No.2 · BWV 773 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 27,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=27",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 27 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-03",
+      "title": "二部创意曲 No.3 · BWV 774 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 15,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=15",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 15 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-05",
+      "title": "二部创意曲 No.5 · BWV 776 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 17,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=17",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 17 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-06",
+      "title": "二部创意曲 No.6 · BWV 777 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 29,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=29",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 29 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-09",
+      "title": "二部创意曲 No.9 · BWV 780 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 21,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=21",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 21 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-10",
+      "title": "二部创意曲 No.10 · BWV 781 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 9,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=9",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 9 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-11",
+      "title": "二部创意曲 No.11 · BWV 782 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 25,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=25",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 25 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-12",
+      "title": "二部创意曲 No.12 · BWV 783 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 31,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=31",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 31 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-14",
+      "title": "二部创意曲 No.14 · BWV 785 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 13,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=13",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 13 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-15",
+      "title": "二部创意曲 No.15 · BWV 786 · 真人钢琴",
+      "bvid": "BV1o7411b7ef",
+      "page": 23,
+      "sourceUrl": "https://www.bilibili.com/video/BV1o7411b7ef/?p=23",
+      "performer": "吴元",
+      "publisher": "孤独的天才少女",
+      "coverage": "完整单曲演奏，打开合集第 23 分P。反复和装饰音处理可能与练习谱不同。"
+    },
+    {
+      "scoreId": "mutopia-bach-invention-07",
+      "title": "二部创意曲 No.7 · BWV 778 · 真人钢琴",
+      "bvid": "BV1x8411R7yM",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1x8411R7yM/?p=1",
+      "performer": "淇淇（指导：徐念枷）",
+      "publisher": "淇淇钢琴CJQ",
+      "coverage": "BWV 778 完整单曲，2022-10-23录制，时长1分56秒。平台的部分高清清晰度需要登录。"
+    },
+    {
+      "scoreId": "mutopia-chop-28-8",
+      "title": "前奏曲 · Op.28 No.8 · 真人钢琴",
+      "bvid": "BV1fH4y1Z7hS",
+      "page": 12,
+      "sourceUrl": "https://www.bilibili.com/video/BV1fH4y1Z7hS/?p=12",
+      "performer": "李名强",
+      "publisher": "Franz-van-Chopin",
+      "coverage": "1960年肖邦钢琴比赛现场录音，合集第12分P：Prelude Op.28 No.8，时长1分47秒。"
+    },
+    {
+      "scoreId": "mutopia-chop-28-16",
+      "title": "前奏曲 · Op.28 No.16 · 真人钢琴",
+      "bvid": "BV1rj411R7of",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1rj411R7of/?p=1",
+      "performer": "Ivo Pogorelich（伊沃·波格莱里奇）",
+      "publisher": "ujigawanoseoto",
+      "coverage": "同曲两个完整版本：00:00 为1990年DG录音，01:06 为1988年现场录音。视频会继续播放第二个版本。"
+    },
+    {
+      "scoreId": "mutopia-chop-28-18",
+      "title": "前奏曲 · Op.28 No.18 · 真人钢琴",
+      "bvid": "BV1QG4y1a7fq",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1QG4y1a7fq/?p=1&t=1707",
+      "performer": "Éric Heidsieck（埃里克·海德西克）",
+      "publisher": "塞琉西亚拆迁队",
+      "startTime": 1707,
+      "endTime": 1763,
+      "coverage": "1972年真人录音合集中的第18首，28:27–29:23；链接从本曲起点打开。原平台会继续播放后续曲目，不会在片段末自动停止，部分播放条件可能要求登录。"
+    },
+    {
+      "scoreId": "mutopia-chop-28-19",
+      "title": "前奏曲 · Op.28 No.19 · 真人钢琴",
+      "bvid": "BV1QG4y1a7fq",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1QG4y1a7fq/?p=1&t=1763",
+      "performer": "Éric Heidsieck（埃里克·海德西克）",
+      "publisher": "塞琉西亚拆迁队",
+      "startTime": 1763,
+      "endTime": 1848,
+      "coverage": "1972年真人录音合集中的第19首，29:23–30:48；链接从本曲起点打开。原平台会继续播放后续曲目，不会在片段末自动停止，部分播放条件可能要求登录。"
+    },
+    {
+      "scoreId": "mutopia-anna-magdalena-03",
+      "title": "小步舞曲 · BWV Anh. 113 · 真人钢琴",
+      "bvid": "BV1ES4y1M7B1",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1ES4y1M7B1/?p=1",
+      "performer": "Daniil Trifonov（丹尼尔·特里福诺夫）",
+      "publisher": "塞琉西亚拆迁队",
+      "coverage": "BWV Anh.113 F大调小步舞曲独立完整录音，时长2分57秒。DG 2021录音，制作人David Frost，录音Silas Brown，母带Marcus Herzog；仅通过原平台收听。"
+    },
+    {
+      "scoreId": "mutopia-bwv-120",
+      "title": "a 小调小步舞曲 · BWV Anh. 120 · 真人钢琴",
+      "bvid": "BV1km4y1X7qu",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1km4y1X7qu/?p=1",
+      "performer": "Daniil Trifonov（丹尼尔·特里福诺夫）",
+      "publisher": "塞琉西亚拆迁队",
+      "coverage": "BWV Anh.120 a小调小步舞曲独立完整录音，时长1分34秒。DG 2021录音，制作人David Frost，录音Silas Brown，母带Marcus Herzog；仅通过原平台收听。"
+    },
+    {
+      "scoreId": "mutopia-anna-magdalena-22",
+      "title": "缪塞特舞曲 · BWV Anh. 126 · 真人钢琴",
+      "bvid": "BV1ff4y1r7CU",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1ff4y1r7CU/?p=1",
+      "performer": "沈文裕",
+      "publisher": "沈文裕音乐世界",
+      "coverage": "演奏者本人发布的BWV Anh.126完整钢琴录像，约40秒，采用较快速度；速度和反复处理是演绎选择，不是慢练的速度要求。"
+    },
+    {
+      "scoreId": "mutopia-anna-magdalena-04",
+      "title": "小步舞曲 · BWV Anh. 114 · 真人钢琴",
+      "bvid": "BV15aKozJEXn",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV15aKozJEXn/?p=1",
+      "performer": "新爱琴教学示范演奏者",
+      "publisher": "新爱琴",
+      "coverage": "BWV Anh.114 独立完整钢琴示范，时长1分48秒，视频显示真人双手演奏。页面未列出个人演奏者姓名，按发布教学机构署名。"
+    },
+    {
+      "scoreId": "mutopia-anna-magdalena-05",
+      "title": "小步舞曲 · BWV Anh. 115 · 真人钢琴",
+      "bvid": "BV1vaKozJEHH",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1vaKozJEHH/?p=1",
+      "performer": "新爱琴教学示范演奏者",
+      "publisher": "新爱琴",
+      "coverage": "BWV Anh.115 独立完整钢琴示范，时长1分48秒，视频显示真人双手演奏。页面未列出个人演奏者姓名，按发布教学机构署名。"
+    },
+    {
+      "scoreId": "mutopia-anna-magdalena-07",
+      "title": "小步舞曲 · BWV Anh. 116 · 真人钢琴",
+      "bvid": "BV1UgJCzPEWt",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1UgJCzPEWt/?p=1",
+      "performer": "陈若涵",
+      "publisher": "新爱琴",
+      "coverage": "BWV Anh.116 独立完整钢琴示范，时长1分51秒；片头明确署名“演奏：陈若涵”，画面为真人双手演奏。"
+    }
+  ]
+}

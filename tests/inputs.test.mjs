@@ -18,6 +18,20 @@ function adapter(devices, onEvent = () => {}, onState = () => {}) {
   return input;
 }
 
+async function withMidiBrowser(permission,fn){
+ const savedWindow=Object.getOwnPropertyDescriptor(globalThis,'window'),savedNavigator=Object.getOwnPropertyDescriptor(globalThis,'navigator');
+ let requests=0;const port=device('auto');const access={inputs:new Map([[port.id,port]])};
+ Object.defineProperty(globalThis,'window',{configurable:true,value:{isSecureContext:true}});
+ Object.defineProperty(globalThis,'navigator',{configurable:true,value:{permissions:{query:async()=>({state:permission})},requestMIDIAccess:async()=>{requests++;return access;}}});
+ try{await fn({requests:()=>requests,access});}finally{if(savedWindow)Object.defineProperty(globalThis,'window',savedWindow);else delete globalThis.window;if(savedNavigator)Object.defineProperty(globalThis,'navigator',savedNavigator);else delete globalThis.navigator;}
+}
+test('automatic MIDI startup never requests permission when access has not been granted',async()=>{
+ for(const permission of ['prompt','denied'])await withMidiBrowser(permission,async browser=>{const midi=new MidiInput(()=>{},()=>{});assert.equal(await midi.connect({silent:true}),false);assert.equal(browser.requests(),0);});
+});
+test('already granted MIDI reconnects silently and concurrent connect calls share one request',async()=>{
+ await withMidiBrowser('granted',async browser=>{let changes=0;const midi=new MidiInput(()=>{},()=>changes++);await Promise.all([midi.connect({silent:true}),midi.connect({silent:true})]);assert.equal(browser.requests(),1);assert.equal(midi.access,browser.access);assert.equal(changes,1);assert.equal(typeof browser.access.onstatechange,'function');});
+});
+
 test('opening a replacement preserves the working input until success', async () => {
   const opening = deferred();
   const old = device('old'), next = device('next', () => opening.promise);

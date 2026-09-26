@@ -1,0 +1,97 @@
+{
+  "verifiedOn": "2026-09-27",
+  "scoreId": "turk-hunting-horns-echo",
+  "score": {
+    "file": "research/primer/turk-handstucke-1797.pdf",
+    "sha256": "96c56d4a2473831b4d43d5e9ced30b0c47b7cc6f6cb4dc0c8773ae329798df7a",
+    "label": "Schwickert / Hemmerde und Schwetschke 1797 · IMSLP #299257 · 公版原谱",
+    "url": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)",
+    "downloadUrl": "https://s9.imslp.org/files/imglnks/usimg/7/7d/IMSLP299257-PMLP173513-turk_60_handstucke_pt1_ed2.pdf",
+    "edition": "120 Handstücke, Volume 1, second edition, Leipzig/Halle, 1797",
+    "license": "Public Domain",
+    "gradeUrl": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)#IMSLP601848",
+    "gradeEvidence": "MCPP录音标题和原文件标注Level1；以曲名、原调与开头音型确认1797版No.24对应现代No.23。",
+    "page": "printed p.9 / PDF p.13",
+    "workNumber": "1797 second edition: No.24"
+  },
+  "recording": {
+    "path": "public/audio/demos/primer-turk-hunting-horns-mcpp.mp3",
+    "sha256": "42100bbee065b4125b5d65df9acecdb7c7184b7ad5b7dfe2f19e989034cb1860",
+    "source": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)#IMSLP601848",
+    "performer": "Mississippi College Piano Pedagogy",
+    "year": 2019,
+    "license": "CC BY-NC-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "catalogueNumber": "Modern performance listing No.23; historical score No.24",
+    "durationSeconds": 48.639977324263036
+  },
+  "identityCheck": {
+    "method": "Chromium Web Audio decodeAudioData at 44100 Hz; first 8 seconds inspected with 120 ms Hann-windowed FFT (32768 points) and compared to the printed D-major opening.",
+    "observations": [
+      {
+        "timeSeconds": 0.5,
+        "scoreMidiPitches": [
+          62,
+          54
+        ],
+        "fundamentalPeakHz": [
+          293.39,
+          184.38
+        ]
+      },
+      {
+        "timeSeconds": 1.1,
+        "scoreMidiPitches": [
+          62,
+          54
+        ],
+        "fundamentalPeakHz": [
+          293.39,
+          184.38
+        ]
+      },
+      {
+        "timeSeconds": 2.1,
+        "scoreMidiPitches": [
+          64,
+          57
+        ],
+        "fundamentalPeakHz": [
+          329.73,
+          219.37
+        ]
+      },
+      {
+        "timeSeconds": 2.7,
+        "scoreMidiPitches": [
+          64,
+          57
+        ],
+        "fundamentalPeakHz": [
+          327.04,
+          220.72
+        ]
+      },
+      {
+        "timeSeconds": 3.0,
+        "scoreMidiPitches": [
+          66,
+          62
+        ],
+        "fundamentalPeakHz": [
+          372.79,
+          292.04
+        ]
+      }
+    ],
+    "conclusion": "The opening D4/F#3 repetitions, following E4/A3, and F#4/D4 identify the same composition despite the edition numbering difference.",
+    "limits": "This is opening-pitch identity verification, not ear listening, a performance-quality assessment, full note-by-note audio transcription, or time-to-bar mapping. No recording bytes were altered."
+  },
+  "sourceReview": {
+    "bars": 10,
+    "quarterBeats": 40,
+    "rightPitchedOnsets": 43,
+    "leftPitchedOnsets": 41,
+    "correction": "Historical bar 8 left-hand F#4 quarter tied into the following dotted eighth is one onset of 1.75 beats. Independently confirmed from scan by another agent."
+  }
+}

@@ -55,7 +55,10 @@ export function buildNotationBars(score, options = {}) {
   const time = notationTime(score);
   const warnings = new Set();
   let adjusted = false;
-  const notes = (Array.isArray(score.notes) ? score.notes : []).map((n, i) => {
+  const rawNotes=Array.isArray(score.notes)?score.notes:[],ornaments=score.ornaments??[],graceIds=new Set(ornaments.flatMap(o=>o.graceNoteIds));
+  const notes = rawNotes.filter(n=>!graceIds.has(n.id)).map((original, i) => {
+    const trill=ornaments.find(o=>o.noteId===original.id),preceding=ornaments.find(o=>{const main=rawNotes.find(n=>n.id===o.noteId);return main?.hand===original.hand&&rawNotes.filter(n=>n.hand===main.hand&&!graceIds.has(n.id)&&n.beat>=o.endBeat-EPS).toSorted((a,b)=>a.beat-b.beat)[0]?.id===original.id;});
+    const n={...original,...(trill?{duration:trill.endBeat-original.beat,trill:true}:{}),...(preceding?{graceNotes:preceding.graceNoteIds.map(id=>rawNotes.find(n=>n.id===id))}:{})};
     const rawBeat = Math.max(0, finite(n.beat, 0));
     const rawDuration = Math.max(.01, finite(n.duration, 1));
     const start = Math.round(rawBeat * GRID), end = Math.max(start + 1, Math.round((rawBeat + rawDuration) * GRID));
@@ -214,6 +217,10 @@ export function renderNotation(container, score, options = {}) {
               if(options.showFingering!==false && n.finger>=1 && n.finger<=5 && Math.abs(segment.beat-n.start/GRID)<EPS) {
                 const fingering=new V.FretHandFinger(String(n.finger));fingering.setPosition(hand==='right'?V.Modifier.Position.ABOVE:V.Modifier.Position.BELOW);note.addModifier(fingering,index);
               }
+              if(Math.abs(segment.beat-n.start/GRID)<EPS){
+                if(n.trill)note.addModifier(new V.Ornament('tr'),index);
+                if(n.graceNotes?.length){const graces=n.graceNotes.map(g=>new V.GraceNote({keys:[pitchKey(g.pitch,prepared.keySignature)],duration:'16',clef,slash:false}));note.addModifier(new V.GraceNoteGroup(graces,false).beamNotes(),index);}
+              }
               if(options.showLabels && Math.abs(segment.beat-n.start/GRID)<EPS && index===segment.notes.length-1) {const annotation=new V.Annotation(keys[index].replace('/','').toUpperCase()).setFont('Arial',10);annotation.setVerticalJustification(V.Annotation.VerticalJustify.BOTTOM);note.addModifier(annotation,index);}
             });
             const d={note,segment,source,rowIndex,bar:bar.number,stave,hand};drawings.push(d);
@@ -252,7 +259,7 @@ export function renderNotation(container, score, options = {}) {
       }catch(error){console.warn('Notation tie fallback',error?.message);}
     }
     for(const d of drawings) {
-      const el=d.note.getSVGElement?.();if(el){d.element=el;el.classList.add('notation-note');if(d.source.length){el.dataset.noteId=d.source[0].id;el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',`${d.bar} 小节，${d.segment.hand==='left'?'左手':'右手'}，${d.segment.notes.length?d.segment.notes.map(n=>pitchKey(n.pitch,prepared.keySignature).replace('/','').toUpperCase()).join('、'):'休止符'}`);const click=()=>options.onNoteClick?.(d.source[0].id);el.addEventListener('click',click);el.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();click();}});}}
+      const el=d.note.getSVGElement?.();if(el){d.element=el;el.classList.add('notation-note');if(d.source.length){el.dataset.noteId=d.source[0].id;el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',`${d.bar} 小节，${d.segment.hand==='left'?'左手':'右手'}，${d.segment.notes.length?d.segment.notes.map(n=>pitchKey(n.pitch,prepared.keySignature).replace('/','').toUpperCase()).join('、'):'休止符'}${d.source.some(n=>n.trill)?'，颤音':''}${d.source.some(n=>n.graceNotes?.length)?'，前有结尾装饰音':''}`);const click=()=>options.onNoteClick?.(d.source[0].id);el.addEventListener('click',click);el.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();click();}});}}
     }
     if(selected!==null)selectNote(selected);
     if(progress!==null)setProgress(progress,{follow:following});

@@ -1,0 +1,28 @@
+{
+  "sources": {
+    "bach-bwv514": {
+      "label": "Paul Waldersee · Bach-Gesellschaft 1894 · IMSLP #02320 · 公版原谱",
+      "url": "https://imslp.org/wiki/Notebooks_for_Anna_Magdalena_Bach_(Bach,_Johann_Sebastian)",
+      "file": "research/primer/anna-magdalena1725-waldersee1894.pdf",
+      "sha256": "3b693b6e1df65ecbf7bcdeed1556d5ebd1018ca22205e7bdae391a0fb9c7b7d4",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Johann_Sebastian_Bach_-_Notebook_for_Anna_Magdalena_Bach_%281725%29%2C_sheet_music.pdf",
+      "mirrorUrl": "https://commons.wikimedia.org/wiki/File:Johann_Sebastian_Bach_-_Notebook_for_Anna_Magdalena_Bach_(1725),_sheet_music.pdf",
+      "edition": "Bach-Gesellschaft Ausgabe, Band 43.2, edited by Paul Waldersee. Leipzig: Breitkopf & Härtel, 1894. Plate B.W. XLIII(2), No.XXXV, printed p.48 (PDF p.43).",
+      "license": "Public Domain",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, Chorale BWV 514, printed p.20",
+      "verifiedOn": "2026-09-27"
+    }
+  },
+  "transcription": {
+    "id": "bach-bwv514",
+    "bars": 16,
+    "beats": 48,
+    "rightNotes": 47,
+    "leftNotes": 51,
+    "license": "CC0-1.0",
+    "note": "据 1894 Bach-Gesellschaft Ausgabe 第 43.2 卷第 48 页 No.XXXV 独立转录完整 16 小节，反复段只弹一遍。原作是旋律与数字低音两声部，上谱使用女高音 C 谱号；应用改用钢琴双谱表分配右、左手，保留全部实际音高、音区与时值，不补配低音数字所暗示的和弦。原谱实值十六分音符全部保留；歌词、数字低音标记、连奏线和延长记号未编码。沿笔记本及考纲署名 J. S. Bach。RCM 2022 钢琴大纲 Level 1 List A（印刷第 20 页）列有 Chorale BWV 514。"
+  },
+  "comparisonOnly": "https://abcnotation.com/tunePage?a=trillian.mit.edu/~jc/music/abc/mirror/musicaviva.com/tunes/bach-johann-sebastian/bwv0514/bwv0514-pno2/0000",
+  "recording": "Bilibili Piano with Beth, BV1tf4y1s7uw: verified separately by human_repertoire; performance catalog is maintained by the main builder."
+}

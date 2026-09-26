@@ -72,8 +72,8 @@ test('high-register left hand uses treble consistently and empty hands keep conv
   assert.deepEqual(chooseNotationClefs({...base,notes:[n('low',48,0,4)]}),{right:'bass',left:'bass'});
 });
 test('Czerny 599 reading studies retain original registers with two treble clefs',async()=>{
-  const {REPERTOIRE}=await import('../public/repertoire.mjs');
-  const studies=REPERTOIRE.filter(score=>score.id.startsWith('czerny-599-'));
+  const {LEGACY_REPERTOIRE}=await import('../public/repertoire.mjs');
+  const studies=LEGACY_REPERTOIRE.filter(score=>score.id.startsWith('czerny-599-'));
   assert(studies.length>=2);
   for(const score of studies) assert.deepEqual(buildNotationBars(score).clefs,{right:'treble',left:'treble'});
 });
