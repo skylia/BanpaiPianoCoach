@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Preserve checksum-verified upstream notation exactly, including its whitespace.
+research/hanon/mutopia/** -text -whitespace

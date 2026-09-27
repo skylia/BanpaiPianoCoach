@@ -1,0 +1,438 @@
+{
+  "verifiedOn": "2026-09-27",
+  "sources": {
+    "gurlitt": {
+      "file": "research/primer/gurlitt-op117-schirmer1895.pdf",
+      "sha256": "f86d232e9fe4bc6f390f6c981056922a13df4fbc1c410f20c1871ef53fbf7a08",
+      "label": "G. Schirmer 1895 · IMSLP #400775 · 公版原谱",
+      "url": "https://imslp.org/wiki/Anfangs-Stunden,_Op.117_(Gurlitt,_Cornelius)",
+      "downloadUrl": "https://ks15.imslp.org/files/imglnks/usimg/a/a1/IMSLP400775-PMLP648794-Gurlitt_-_The_First_Lessons_Op_117.pdf",
+      "edition": "G. Schirmer, New York, 1895, No.324",
+      "license": "Public Domain",
+      "gradeUrl": "https://www.pianistmagazine.com/blogs/professionaladvice/learn-how-to-play-11-beginner-piano-pieces/",
+      "gradeEvidence": "Op.117为The First Lessons初学曲集；No.13 MCPP入门教学录音，No.15 Pianist beginner/Level1教师示范。"
+    },
+    "turk1797": {
+      "file": "research/primer/turk-handstucke-1797.pdf",
+      "sha256": "96c56d4a2473831b4d43d5e9ced30b0c47b7cc6f6cb4dc0c8773ae329798df7a",
+      "label": "Schwickert / Hemmerde und Schwetschke 1797 · IMSLP #299257 · 公版原谱",
+      "url": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)",
+      "downloadUrl": "https://s9.imslp.org/files/imglnks/usimg/7/7d/IMSLP299257-PMLP173513-turk_60_handstucke_pt1_ed2.pdf",
+      "edition": "120 Handstücke, Volume 1, second edition, Leipzig/Halle, 1797",
+      "license": "Public Domain",
+      "gradeUrl": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)#IMSLP601848",
+      "gradeEvidence": "MCPP录音标题和原文件标注Level1；以曲名、原调与开头音型确认1797版No.24对应现代No.23。"
+    },
+    "turk-ballet": {
+      "file": "research/primer/turk-handstucke-1797.pdf",
+      "sha256": "96c56d4a2473831b4d43d5e9ced30b0c47b7cc6f6cb4dc0c8773ae329798df7a",
+      "url": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)",
+      "label": "1797年第2版 · IMSLP #299257 · 公版原谱",
+      "edition": "Leipzig: Schwickert; Halle: Hemmerde und Schwetschke, 1797, 2nd edition, Volume 1, No.19 Das Ballett, printed p.6 (PDF p.10).",
+      "license": "Public Domain",
+      "pages": [
+        10
+      ],
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, The Ballet, printed p.21.",
+      "verifiedOn": "2026-09-27"
+    },
+    "mozart-k3": {
+      "label": "Breitkopf & Härtel 1878 · IMSLP #56704 · 公版原谱",
+      "url": "https://imslp.org/wiki/Allegro_in_B-flat_major,_K.3_(Mozart,_Wolfgang_Amadeus)",
+      "file": "research/primer/mozart-k3-breitkopf1878.pdf",
+      "sha256": "613d86999be27ce2a3615efb8731f5445798762ac4995bbed8a96b0f7da5aa32",
+      "downloadUrl": "https://ks15.imslp.org/files/imglnks/usimg/1/11/IMSLP56704-PMLP116955-Mozart_Werke_Breitkopf_Serie_22_KV3.pdf",
+      "edition": "Mozarts Werke, Serie XXII, Kleinere Stücke für das Pianoforte No.12, Leipzig: Breitkopf & Härtel, 1878, plate W.A.M.3, p.2 (38).",
+      "license": "Public Domain",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, printed p.21",
+      "verifiedOn": "2026-09-27"
+    },
+    "beethoven-woo86": {
+      "label": "Breitkopf & Härtel 贝多芬全集 · IMSLP #318765 · 公版原谱",
+      "url": "https://imslp.org/wiki/Ecossaise,_WoO_86_(Beethoven,_Ludwig_van)",
+      "file": "research/primer/beethoven-woo86-breitkopf.pdf",
+      "sha256": "9ead23b63f9ef298abca4eec0f5412cb817968054a44e891627d7c9fa5be61e0",
+      "downloadUrl": "https://ks15.imslp.org/files/imglnks/usimg/5/57/IMSLP318765-PMLP09922-Beethoven%2C_Ludwig_van-Werke_Breitkopf_Kalmus_Band_32_B305_WoO_86_scan.pdf",
+      "edition": "Ludwig van Beethovens Werke, Serie 25, No.305, Leipzig: Breitkopf & Härtel [1862–90], plate B.305, p.366.",
+      "license": "Public Domain",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, printed p.21",
+      "verifiedOn": "2026-09-27"
+    },
+    "mozart-k2": {
+      "label": "Breitkopf & Härtel 1878 · IMSLP #56677 · 公版原谱",
+      "url": "https://imslp.org/wiki/Minuet_in_F_major,_K.2_(Mozart,_Wolfgang_Amadeus)",
+      "file": "research/primer/mozart-k2-breitkopf1878.pdf",
+      "sha256": "85d62b56eeec2ba73935ffa93d05b6c188eec6a84ace06b59e10649e85c128fb",
+      "downloadUrl": "https://ks15.imslp.org/files/imglnks/usimg/4/40/IMSLP56677-PMLP116890-Mozart_Werke_Breitkopf_Serie_22_KV2.pdf",
+      "edition": "Mozarts Werke, Serie XXII, Kleinere Stücke für das Pianoforte No.2, Leipzig: Breitkopf & Härtel, 1878, plate W.A.M.2.4, p.3.",
+      "license": "Public Domain",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, printed p.21",
+      "verifiedOn": "2026-09-27"
+    },
+    "krieger": {
+      "file": "research/primer/krieger-minuet-heidtmann.pdf",
+      "sha256": "c92d9be66fc95c096f2be3508dbcf763035852e0129455c3229a39b7c71bb1a9",
+      "bytes": 26310,
+      "url": "https://imslp.org/wiki/6_Musikalische_Partien_(Krieger,_Johann)",
+      "downloadUrl": "https://s9.imslp.org/files/imglnks/usimg/f/f5/IMSLP797875-PMLP196320-Krieger_Appendix_Menuet_Bourree_a_6_Musicalische_Partien_original_neu.pdf",
+      "label": "Klaus Heidtmann 2022 · IMSLP #797875 · CC BY-SA 4.0",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "editor": "Klaus Heidtmann",
+      "edition": "Appendix: Menuet and Bourrée in A minor, 6 Musicalische Partien, 2022",
+      "pages": [
+        1
+      ],
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "gradePage": 21,
+      "gradeEvidence": "Royal Conservatory Piano Syllabus 2022, Level 1 List A, Minuet in A Minor from Partita No.6"
+    },
+    "jcbach-wa22": {
+      "label": "RSB 2012 · IMSLP #169623 · CC BY 3.0",
+      "url": "https://imslp.org/wiki/March_in_F_major,_W.A_22_(Bach,_Johann_Christian)",
+      "file": "research/primer/jcbach-wa22-rsb.pdf",
+      "sha256": "98220c86956e85cc8331d124bd02455ea781158418339eb3158281a6f8c4c96d",
+      "edition": "RSB, Air BWV Anh.131, 2012, complete one-page score.",
+      "editor": "RSB",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, Aria in F Major BWV Anh.131 / W.A22, printed p.20",
+      "verifiedOn": "2026-09-27"
+    },
+    "bach-bwv514": {
+      "label": "Paul Waldersee · Bach-Gesellschaft 1894 · IMSLP #02320 · 公版原谱",
+      "url": "https://imslp.org/wiki/Notebooks_for_Anna_Magdalena_Bach_(Bach,_Johann_Sebastian)",
+      "file": "research/primer/anna-magdalena1725-waldersee1894.pdf",
+      "sha256": "3b693b6e1df65ecbf7bcdeed1556d5ebd1018ca22205e7bdae391a0fb9c7b7d4",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Johann_Sebastian_Bach_-_Notebook_for_Anna_Magdalena_Bach_%281725%29%2C_sheet_music.pdf",
+      "mirrorUrl": "https://commons.wikimedia.org/wiki/File:Johann_Sebastian_Bach_-_Notebook_for_Anna_Magdalena_Bach_(1725),_sheet_music.pdf",
+      "edition": "Bach-Gesellschaft Ausgabe, Band 43.2, edited by Paul Waldersee. Leipzig: Breitkopf & Härtel, 1894. Plate B.W. XLIII(2), No.XXXV, printed p.48 (PDF p.43).",
+      "license": "Public Domain",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, Chorale BWV 514, printed p.20",
+      "verifiedOn": "2026-09-27"
+    }
+  },
+  "entries": [
+    {
+      "id": "gurlitt-op117-13",
+      "sourceKey": "gurlitt",
+      "page": 7,
+      "gradeEvidence": "本应用依据《The First Lessons》初学教材定位、本曲24小节的双手交替与简单双音选作通用参考1级；MCPP提供对应真人演奏，未声称该曲获得RCM或其他考试机构一级认证",
+      "gradeUrl": "https://imslp.org/wiki/Anfangs-Stunden,_Op.117_(Gurlitt,_Cornelius)",
+      "transcriptionLicense": "CC0"
+    },
+    {
+      "id": "gurlitt-op117-15",
+      "sourceKey": "gurlitt",
+      "page": 8,
+      "gradeEvidence": "Pianist magazine 将 The Hunt 纳入11首初级钢琴教学作品；John Maul 演奏与教学页标为Level1，Pianist官方曲谱清单确认Op.117 No.15",
+      "gradeUrl": "https://www.pianistmagazine.com/blogs/professionaladvice/learn-how-to-play-11-beginner-piano-pieces/",
+      "transcriptionLicense": "CC0"
+    },
+    {
+      "id": "turk-hunting-horns-echo",
+      "sourceKey": "turk1797",
+      "page": 9,
+      "gradeEvidence": "MCPP录音标题和原文件标注Level1；以曲名、原调与开头音型确认1797版No.24对应现代No.23。",
+      "gradeUrl": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)#IMSLP601848",
+      "transcriptionLicense": "CC0"
+    },
+    {
+      "id": "turk-ballet",
+      "sourceKey": "turk-ballet",
+      "page": 10,
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, The Ballet, printed p.21.",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "transcriptionLicense": "CC0"
+    },
+    {
+      "id": "beethoven-woo86",
+      "sourceKey": "beethoven-woo86",
+      "page": 366,
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, printed p.21",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "transcriptionLicense": "CC0"
+    },
+    {
+      "id": "mozart-k2",
+      "sourceKey": "mozart-k2",
+      "page": 3,
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, printed p.21",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "transcriptionLicense": "CC0"
+    },
+    {
+      "id": "mozart-k3",
+      "sourceKey": "mozart-k3",
+      "page": 38,
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, printed p.21",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "transcriptionLicense": "CC0"
+    },
+    {
+      "id": "krieger-minuet-a-minor",
+      "sourceKey": "krieger",
+      "page": 1,
+      "gradeEvidence": "Royal Conservatory Piano Syllabus 2022, Level 1 List A, Minuet in A Minor from Partita No.6",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "transcriptionLicense": "CC BY-SA 4.0"
+    },
+    {
+      "id": "jcbach-wa22",
+      "sourceKey": "jcbach-wa22",
+      "page": 1,
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, Aria in F Major BWV Anh.131 / W.A22, printed p.20",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "transcriptionLicense": "CC BY 3.0"
+    },
+    {
+      "id": "bach-bwv514",
+      "sourceKey": "bach-bwv514",
+      "page": 48,
+      "gradeEvidence": "RCM Piano Syllabus 2022, Level 1 List A, Chorale BWV 514, printed p.20",
+      "gradeUrl": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "transcriptionLicense": "CC0"
+    }
+  ],
+  "performances": [
+    {
+      "id": "gurlitt-op117-13-mcpp2019",
+      "scoreIds": [
+        "gurlitt-op117-13"
+      ],
+      "kind": "audio",
+      "title": "古尔利特 · 清晨的问候 Op.117 No.13",
+      "performer": "Mississippi College Piano Pedagogy",
+      "instrument": "钢琴",
+      "year": 2019,
+      "src": "./audio/demos/primer-gurlitt-op117-13-mcpp.mp3",
+      "type": "audio/mpeg",
+      "sha256": "65a44b42313d0b5d9646db7661eab45408f758338a61c94a5fc34e3242abff04",
+      "sourceUrl": "https://imslp.org/wiki/Anfangs-Stunden,_Op.117_(Gurlitt,_Cornelius)#IMSLP601842",
+      "sourceLabel": "IMSLP · #601842",
+      "downloadUrl": "https://ks15.imslp.org/files/imglnks/usimg/e/ed/IMSLP601842-PMLP648794-Morning_Greeting,_Op._117,_No._13_by_Cornelius_Gurlitt.mp3",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "attribution": "古尔利特 · 清晨的问候 Op.117 No.13. Piano: Mississippi College Piano Pedagogy (2019). IMSLP #601842. CC BY-NC-SA 4.0. Audio is unchanged.",
+      "coverage": "完整真人钢琴示范。演奏中的反复和速度处理供演绎参考，本谱反复各弹一次；未校准跟谱。",
+      "mapping": null,
+      "verifiedOn": "2026-09-27"
+    },
+    {
+      "id": "gurlitt-op117-15-john-maul-bilibili",
+      "scoreIds": [
+        "gurlitt-op117-15"
+      ],
+      "kind": "external",
+      "title": "狩猎 Op.117 No.15 · John Maul 示范与教学",
+      "performer": "John Maul",
+      "instrument": "数码键盘（真人弹奏）",
+      "sourceUrl": "https://www.bilibili.com/video/BV1pS4y1b7wc/",
+      "sourceLabel": "Bilibili · 风汉火龙转载 · Pianist magazine / John Maul",
+      "license": "原发布平台播放；未取得音视频再分发许可",
+      "licenseUrl": "",
+      "attribution": "C. Gurlitt: The Hunt, Op.117 No.15. Piano and teaching: John Maul, Pianist magazine, Issue 69, p.29. Bilibili uploader: 风汉火龙.",
+      "coverage": "教师现场示范与讲解。开场为双手完整演奏，随后进入教学；保留原平台片头。真人数码钢琴演绎参考，未校准小节或逐音跟谱。",
+      "mapping": null,
+      "verifiedOn": "2026-09-27"
+    },
+    {
+      "id": "turk-hunting-horns-echo-mcpp2019",
+      "scoreIds": [
+        "turk-hunting-horns-echo"
+      ],
+      "kind": "audio",
+      "title": "蒂尔克 · 猎号与回声",
+      "performer": "Mississippi College Piano Pedagogy",
+      "instrument": "钢琴",
+      "year": 2019,
+      "src": "./audio/demos/primer-turk-hunting-horns-mcpp.mp3",
+      "type": "audio/mpeg",
+      "sha256": "42100bbee065b4125b5d65df9acecdb7c7184b7ad5b7dfe2f19e989034cb1860",
+      "sourceUrl": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)#IMSLP601848",
+      "sourceLabel": "IMSLP · #601848",
+      "downloadUrl": "https://s9.imslp.org/files/imglnks/usimg/7/70/IMSLP601848-PMLP173513-Level_1_-_turk_The_Hunting_Horns_and_the_Echo_from_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler,_Vol._1_(1).mp3",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "attribution": "蒂尔克 · 猎号与回声. Piano: Mississippi College Piano Pedagogy (2019). IMSLP #601848. CC BY-NC-SA 4.0. Audio is unchanged.",
+      "coverage": "完整真人钢琴示范。录音标题编号23，对应1797第二版第一册同名作品No.24，已按D大调与开头D4/F#3音型核对。反复与速度采用演奏版本，未校准跟谱。",
+      "mapping": null,
+      "verifiedOn": "2026-09-27"
+    },
+    {
+      "id": "turk-ballet-mcpp2019",
+      "scoreIds": [
+        "turk-ballet"
+      ],
+      "kind": "audio",
+      "title": "芭蕾舞 · Mississippi College 真人演奏",
+      "performer": "Mississippi College Piano Pedagogy",
+      "instrument": "钢琴",
+      "year": 2019,
+      "src": "./audio/demos/primer-turk-ballet-mcpp.mp3",
+      "type": "audio/mpeg",
+      "sha256": "2a55fafad246d20de49850a08664a3a51297fe6dcddd39e7e50dee700e94b850",
+      "sourceUrl": "https://imslp.org/wiki/120_Handst%C3%BCcke_f%C3%BCr_angehende_Klavierspieler_(T%C3%BCrk,_Daniel_Gottlob)#IMSLP601847",
+      "sourceLabel": "IMSLP #601847 · Mississippi College Piano Pedagogy, 2019",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "attribution": "Daniel Gottlob Türk: The Ballet, Handstücke für angehende Klavierspieler, Vol.1. Piano: Mississippi College Piano Pedagogy, 2019. IMSLP #601847. CC BY-NC-SA 4.0. Original MP3 retained without alteration. Recording license, including its noncommercial condition, is separate from the application code license.",
+      "coverage": "独立完整真人钢琴演奏，43秒。IMSLP现代编号18对应1797版的第19首，已按开头原谱音高与录音频谱确认；反复、倚音和乐句处理按演奏者版本。本谱每段只弹一遍，未校准小节跟谱。",
+      "mapping": null,
+      "verifiedOn": "2026-09-27"
+    },
+    {
+      "id": "mozart-k3-smirnow2024",
+      "scoreIds": [
+        "mozart-k3"
+      ],
+      "kind": "audio",
+      "title": "K.3 · Jewgeni Smirnow 真人演奏",
+      "performer": "Jewgeni Smirnow",
+      "instrument": "数码键盘（真人弹奏）",
+      "src": "./audio/demos/mozart-k3-smirnow2024.mp3",
+      "type": "audio/mpeg",
+      "sha256": "8a30d593fa264f9e5c3c62442db85c69437b3d46b50da35ef0a511d8c11ad283",
+      "sourceUrl": "https://imslp.org/wiki/Allegro_in_B-flat_major,_K.3_(Mozart,_Wolfgang_Amadeus)",
+      "sourceLabel": "IMSLP #902696 · Jewgeni Smirnow, 2024",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Wolfgang Amadeus Mozart: Allegro in B-flat major, K.3. Jewgeni Smirnow, digital keyboard, 2024. IMSLP #902696. CC BY 4.0. Original MP3 retained without alteration.",
+      "coverage": "独立完整数码键盘真人演奏，来自 IMSLP 的 Recordings 栏；录音反复、倚音时值及乐句处理按演奏者版本。未校准小节或逐音跟谱。",
+      "mapping": null,
+      "verifiedOn": "2026-09-27"
+    },
+    {
+      "id": "beethoven-woo86-mcpp2017",
+      "scoreIds": [
+        "beethoven-woo86"
+      ],
+      "kind": "audio",
+      "title": "WoO 86 · Mississippi College 真人演奏",
+      "performer": "Mississippi College Piano Pedagogy",
+      "instrument": "钢琴",
+      "src": "./audio/demos/beethoven-woo86-mcpp2017.mp3",
+      "type": "audio/mpeg",
+      "sha256": "eab866b202846b30c3f6d5ef1f895d6f31c3494bef67845a91a2a27b147ff49e",
+      "sourceUrl": "https://imslp.org/wiki/Ecossaise,_WoO_86_(Beethoven,_Ludwig_van)",
+      "sourceLabel": "IMSLP #469938 · Mississippi College Piano Pedagogy, 2017",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Ludwig van Beethoven: Écossaise in E-flat major, WoO 86. Piano: Mississippi College Piano Pedagogy, 2017. IMSLP #469938. CC BY-SA 4.0. Original MP3 retained without alteration.",
+      "coverage": "独立完整录音；反复与节奏处理按演奏者版本，本练习谱各段只弹一遍、采用第二结尾。未校准小节或逐音跟谱。",
+      "mapping": null,
+      "verifiedOn": "2026-09-27"
+    },
+    {
+      "id": "mozart-k2-smirnow2024",
+      "scoreIds": [
+        "mozart-k2"
+      ],
+      "kind": "audio",
+      "title": "K.2 · Jewgeni Smirnow 真人演奏",
+      "performer": "Jewgeni Smirnow",
+      "instrument": "数码键盘（真人弹奏）",
+      "src": "./audio/demos/mozart-k2-smirnow2024.mp3",
+      "type": "audio/mpeg",
+      "sha256": "ef065da54ffad7efae98f5e3ec4b47fca345904b6ad184e62139b9a085fa63f0",
+      "sourceUrl": "https://imslp.org/wiki/Minuet_in_F_major,_K.2_(Mozart,_Wolfgang_Amadeus)",
+      "sourceLabel": "IMSLP #906552 · Jewgeni Smirnow, 2024",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Wolfgang Amadeus Mozart: Minuet in F major, K.2. Jewgeni Smirnow, digital keyboard, 2024. IMSLP #906552. CC BY 4.0. Original MP3 retained without alteration.",
+      "coverage": "独立完整数码键盘真人演奏，来自 IMSLP 的 Recordings 栏；本练习谱开头反复只弹一遍。未校准小节或逐音跟谱。",
+      "mapping": null,
+      "verifiedOn": "2026-09-27"
+    },
+    {
+      "id": "krieger-minuet-mcpp",
+      "kind": "audio",
+      "scoreIds": [
+        "krieger-minuet-a-minor"
+      ],
+      "title": "a 小调小步舞曲 · 真人钢琴录音",
+      "performer": "Mississippi College Piano Pedagogy",
+      "instrument": "钢琴",
+      "year": 2019,
+      "src": "./audio/demos/krieger-minuet-mcpp.mp3",
+      "type": "audio/mpeg",
+      "sourceUrl": "https://imslp.org/wiki/6_Musikalische_Partien_(Krieger,_Johann)#IMSLP601850",
+      "sourceLabel": "IMSLP · 密西西比学院钢琴教学项目 · #601850",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "attribution": "Johann Krieger: Minuet in A minor, 6 Musicalische Partien. Piano: Mississippi College Piano Pedagogy (2019). IMSLP #601850. CC BY-NC-SA 4.0. Original audio retained without alteration; recording license is separate from application code.",
+      "coverage": "完整小步舞曲真人钢琴录音，包含反复；练习谱反复各弹一遍。来源标为Level1。用于听乐句与表达，未逐小节对齐。",
+      "mapping": null,
+      "sha256": "903cff1c1c4fd776d769d3c8cc33b7901f9ebeda3400afdfb9d306ba674f67bc",
+      "bytes": 771770,
+      "downloadUrl": "https://s9.imslp.org/files/imglnks/usimg/e/e5/IMSLP601850-PMLP196320-Level_1_Krieger_Minuet_in_A_Minor,_from_Partita_No._6_in_B-Flat_Major_in_Sechs_musicalische_Partien.mp3",
+      "verifiedOn": "2026-09-27"
+    },
+    {
+      "id": "jcbach-wa22-mcpp2015",
+      "scoreIds": [
+        "jcbach-wa22"
+      ],
+      "kind": "audio",
+      "title": "W.A 22 · Mississippi College 真人演奏",
+      "performer": "Mississippi College Piano Pedagogy",
+      "instrument": "钢琴",
+      "year": 2015,
+      "src": "./audio/demos/primer-jcbach-wa22-mcpp.mp3",
+      "type": "audio/mpeg",
+      "sha256": "ecbc0435c34407bd9341173b38f6d324af014e76730b08d8d3ae8b75eef8df25",
+      "bytes": 896103,
+      "sourceUrl": "https://imslp.org/wiki/March_in_F_major,_W.A_22_(Bach,_Johann_Christian)#IMSLP399487",
+      "sourceLabel": "IMSLP #399487 · Mississippi College Piano Pedagogy, 2015",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Johann Christian Bach: Air / March in F major, W.A 22 (BWV Anh.131). Piano: Mississippi College Piano Pedagogy, 2015. IMSLP #399487. CC BY-SA 4.0. Original MP3 retained without alteration.",
+      "coverage": "独立完整真人钢琴录音；反复、装饰与乐句按演奏者版本，本练习谱采用RSB版且反复各弹一遍。未校准小节或逐音跟谱。",
+      "mapping": null,
+      "verifiedOn": "2026-09-27"
+    },
+    {
+      "id": "bach-bwv514-bilibili-beth",
+      "scoreIds": [
+        "bach-bwv514"
+      ],
+      "kind": "external",
+      "title": "BWV 514 · Piano with Beth 真人演奏",
+      "performer": "Piano with Beth",
+      "instrument": "钢琴",
+      "provider": "bilibili",
+      "bvid": "BV1tf4y1s7uw",
+      "publisher": "肖邦同学",
+      "sourceUrl": "https://www.bilibili.com/video/BV1tf4y1s7uw/",
+      "sourceLabel": "哔哩哔哩 · Piano with Beth 演奏转载",
+      "license": "原平台播放 · 录音版权归原权利人，未复制音视频",
+      "licenseUrl": "https://www.bilibili.com/video/BV1tf4y1s7uw/",
+      "attribution": "J. S. Bach: Chorale, BWV 514. Piano: Piano with Beth. Bilibili 发布者：肖邦同学。仅链接原平台演奏，未下载或再分发。",
+      "coverage": "独立完整钢琴演奏，36秒；已在原平台确认双手弹奏 K.Kawai 钢琴。录音采用钢琴演奏版本，可能补充本应用历史原谱旋律与低音两声部之外的和声；用于聆听表达，不作为逐音评分模板。未校准小节跟谱。",
+      "mapping": null,
+      "verifiedOn": "2026-09-27"
+    }
+  ],
+  "archive": {
+    "ids": [
+      "gurlitt-op117-1",
+      "gurlitt-op117-2",
+      "gurlitt-op117-3",
+      "gurlitt-op117-4",
+      "gurlitt-op117-5",
+      "gurlitt-op117-6",
+      "gurlitt-op117-7",
+      "gurlitt-op117-8",
+      "gurlitt-op117-9",
+      "gurlitt-op117-10"
+    ],
+    "provenanceFile": "research/primer/archive-source.json",
+    "note": "Former Gurlitt Op.117 Nos.1–10 remain unchanged for saved history and plans; not offered in the current graded library."
+  }
+}

@@ -1,5 +1,8 @@
 import {EXPANDED_REPERTOIRE} from './repertoire-expanded.mjs';
 import {PRIMER_SONGS} from './primer-songs.mjs';
+import {PRIMER_REPERTOIRE,PRIMER_ARCHIVE} from './primer-repertoire.mjs';
+import {HANON_REPERTOIRE} from './hanon-repertoire.mjs';
+import {annotateBuiltinScore} from './score-annotations.mjs';
 // Canonical v2 repertoire. Musical time is measured in quarter-note beats.
 // The Hanon transcription data is adapted from Mutopia-2015/07/23-2037,
 // by Steve Taylor and Javier Ruiz-Alma, CC BY-SA 4.0. See ../SOURCES.md.
@@ -122,12 +125,19 @@ const legacy = EXERCISES.map(exercise => ({
   }, tags: ['右手', '入门', exercise.id === 'steps' ? '原创' : '旋律节选']
 }));
 
-export const REPERTOIRE = [
+// Keep original IDs and note snapshots readable for saved plans/history.
+export const LEGACY_REPERTOIRE = [
   ...legacy,
+  ...PRIMER_SONGS,
+  ...PRIMER_ARCHIVE,
   hanon(1, [0, 2, 3, 4, 5, 4, 3, 2], [0, -2, -3, -4, -5, -4, -3, -2], 15),
   hanon(2, [0, 2, 5, 4, 3, 4, 3, 2], [0, -3, -5, -4, -3, -4, -3, -2], 14),
   ...czernyStudies,
-  ...originals,
-  ...PRIMER_SONGS,
+  ...originals
+].map(annotateBuiltinScore);
+
+export const REPERTOIRE = [
+  ...HANON_REPERTOIRE,
+  ...PRIMER_REPERTOIRE,
   ...EXPANDED_REPERTOIRE
-];
+].map(annotateBuiltinScore);

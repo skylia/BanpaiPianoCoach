@@ -1,4 +1,17 @@
-# 半拍 0.4：技术结构与数据约定
+# 半拍 0.5：技术结构与数据约定
+
+## 0.5 评价、练习恢复与真人示范
+
+- `evaluationProfile`（`musical` / `technique`）与 `practiceMode`（`fixed` / `follow`）独立。未带 profile 的历史记录继续旧口径，分析版本不混算。乐曲的 `fixed` 指完整演奏，采集随手动结束；不能复用旧的参考时长自动停止。
+- `musical-analysis.mjs` 按主干音匹配、局部音符间隔比例分析；`score-annotations.mjs` 提供人工确认的装饰音片段。颤音不吞掉左手事件。`performance-position.mjs` 用输入更新乐曲位置，不能用匀速时间冒充弹奏位置。
+- `practice-context.mjs` 在本机 localStorage 保存练习设置及谱面位置，刷新只恢复准备状态。练习明细、长期摘要与个人谱面仍用原 IndexedDB；`practice-summary.mjs` 仅汇总真实记录。
+- `demo-library.mjs` 逐曲关联真人示范。`src` 录音使用 `HumanDemoTransport`，已核对 `startTime` / `endTime` 可截取对应乐章，UI 时间相对该乐章；`mapping` 的小节时间若存在则仍使用原录音绝对秒数，只有带审核信息的映射才生效。当前未内置小节映射。
+- `kind: external` 使用原平台来源和可选嵌入地址，点击后才载入 iframe，停止／切曲／开始练习会移除本页 iframe。用户自行在新窗口打开的第三方页面由该页面控制。
+- `human-demo-storage.mjs` 使用独立的本机 IndexedDB `banpai-human-demos-v1` 保存每曲一份音频 Blob；不上传、不进入进度备份。标准音符示范、真人示范和当前练习互斥。
+- `LEGACY_REPERTOIRE` 只为历史计划、曲谱快照及恢复提供兼容，不进入当前分级／基本功列表。编辑已绑定的旧计划时保留原曲谱与指纹。
+- AI 摘要和 PDF 区分旧版、新乐曲与新基本功。MIDI 力度变化只作为观测计数，不推断实际音量、音色、手型、踏板或表达质量。
+
+下方为原有模块和数据约定；涉及固定时间评分的部分仅适用于严格节拍及历史口径。
 
 ## 运行边界
 
@@ -22,7 +35,7 @@
 | `public/score-model.mjs` | v2 谱子校验、JSON、旧格式转换、变速积分、目标时间轴 |
 | `public/import-ui.mjs` | 文件/粘贴预览、轨道手别、容量限制、备份与逐首保存 |
 | `public/midi.mjs` | 纯 JavaScript SMF 读取、分轨、量化、MIDI 导出 |
-| `public/repertoire.mjs` | 有来源说明的 9 条内置谱子 |
+| `public/repertoire.mjs` | 汇总当前分级乐曲、基本功训练与历史兼容曲谱 |
 | `public/notation.mjs` | VexFlow 五线谱、调号 / 时值 / 休止 / 和弦 / 延音线、游标与跟谱 |
 | `public/editor.mjs` | 图形卷帘编辑、属性检查、撤销 / 重做、即时谱面预览 |
 | `public/analysis.mjs` | 音符名称、兼容旧旋律、和弦起音分组与稀疏序列匹配 |

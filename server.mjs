@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {generateCoachReport} from './server/coach.mjs';
 const project=fileURLToPath(new URL('.',import.meta.url));
 export function createApp({apiKey=process.env.DEEPSEEK_API_KEY,model=process.env.DEEPSEEK_MODEL||'deepseek-flash',fetchImpl=fetch}={}) {
- const root=resolve(project,'public'),types={'.html':'text/html; charset=utf-8','.css':'text/css','.mjs':'text/javascript','.js':'text/javascript','.svg':'image/svg+xml','.woff':'font/woff','.ttf':'font/ttf','.json':'application/json','.mp3':'audio/mpeg','.txt':'text/plain; charset=utf-8'};let busy=false;
+ const root=resolve(project,'public'),types={'.html':'text/html; charset=utf-8','.css':'text/css','.mjs':'text/javascript','.js':'text/javascript','.svg':'image/svg+xml','.woff':'font/woff','.ttf':'font/ttf','.json':'application/json','.mp3':'audio/mpeg','.m4a':'audio/mp4','.ogg':'audio/ogg','.txt':'text/plain; charset=utf-8'};let busy=false;
  return createServer(async(req,res)=>{
   const json=(status,value)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'}).end(JSON.stringify(value));};
   try {
@@ -25,7 +25,19 @@ export function createApp({apiKey=process.env.DEEPSEEK_API_KEY,model=process.env
    }
    if(!['GET','HEAD'].includes(req.method)){res.writeHead(405).end();return;}
    const p=resolve(root,'.'+decodeURIComponent(url.pathname));if(!p.startsWith(root+'/')&&p!==root){res.writeHead(403).end();return;}
-   const file=p===root?root+'/index.html':p,body=await readFile(file);res.writeHead(200,{'Content-Type':types[extname(file)]||'application/octet-stream','Cache-Control':'no-cache','Permissions-Policy':'midi=(self)','X-Content-Type-Options':'nosniff'}).end(req.method==='HEAD'?undefined:body);
+   const file=p===root?root+'/index.html':p,body=await readFile(file);
+   const headers={'Content-Type':types[extname(file)]||'application/octet-stream','Content-Length':body.length,'Accept-Ranges':'bytes','Cache-Control':'no-cache','Permissions-Policy':'midi=(self)','X-Content-Type-Options':'nosniff'};
+   // Browsers seek within long recordings using byte ranges. HEAD always describes the full file.
+   if(req.method==='GET'&&req.headers.range){
+    const match=/^bytes=(\d*)-(\d*)$/.exec(req.headers.range);
+    if(match&&(match[1]||match[2])){
+     const start=match[1]?Number(match[1]):Math.max(0,body.length-Number(match[2]));
+     const end=match[1]&&match[2]?Math.min(body.length-1,Number(match[2])):body.length-1;
+     if(!Number.isSafeInteger(start)||!Number.isSafeInteger(end)||start>end||start>=body.length){res.writeHead(416,{'Content-Range':`bytes */${body.length}`}).end();return;}
+     res.writeHead(206,{...headers,'Content-Length':end-start+1,'Content-Range':`bytes ${start}-${end}/${body.length}`}).end(body.subarray(start,end+1));return;
+    }
+   }
+   res.writeHead(200,headers).end(req.method==='HEAD'?undefined:body);
   }catch {if(!res.headersSent)res.writeHead(404).end('Not found');}
  });
 }

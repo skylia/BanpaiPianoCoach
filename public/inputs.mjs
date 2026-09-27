@@ -2,11 +2,22 @@
 import {velocityVolume,EVEN_PLAYBACK_VOLUME} from './expression.mjs';
 export class MidiInput{
  constructor(onEvent,onState){this.onEvent=onEvent;this.onState=onState;this.access=null;this.selected=null;this.selectionVersion=0;}
- async connect(){
+ async connect({silent=false}={}){
+  if(silent){
+   if(!window.isSecureContext||!navigator.requestMIDIAccess)return false;
+   try{if((await navigator.permissions.query({name:'midi',sysex:false})).state!=='granted')return false;}catch{return false;}
+  }
   if(!window.isSecureContext)throw new Error('请通过 HTTPS 地址打开练习室，才能连接琴键。');
   if(!navigator.requestMIDIAccess)throw new Error('当前浏览器不支持连接琴键。请使用电脑版 Chrome 或 Edge，也可以先试用屏幕琴键。');
-  try{this.access=await navigator.requestMIDIAccess({sysex:false});}catch(e){throw new Error(e.name==='NotAllowedError'||e.name==='SecurityError'?'连接权限未开启。请在浏览器地址栏的网站权限中允许音乐设备访问，再重试。':'暂时无法连接琴键，请检查数据线、设备驱动并重试。');}
-  this.access.onstatechange=()=>this.refresh();this.refresh();
+  if(this.connecting)return this.connecting;
+  this.connecting=(async()=>{
+   try{
+    const access=await navigator.requestMIDIAccess({sysex:false});
+    if(this.access&&this.access!==access){this.detach();this.access.onstatechange=null;}
+    this.access=access;this.access.onstatechange=()=>this.refresh();this.refresh();return true;
+   }catch(e){if(silent)return false;throw new Error(e.name==='NotAllowedError'||e.name==='SecurityError'?'连接权限未开启。请在浏览器地址栏的网站权限中允许音乐设备访问，再重试。':'暂时无法连接琴键，请检查数据线、设备驱动并重试。');}
+  })();
+  try{return await this.connecting;}finally{this.connecting=null;}
  }
  refresh(){const devices=[...this.access.inputs.values()].filter(d=>d.state==='connected');const lost=this.selected&&!devices.some(d=>d.id===this.selected);if(lost)this.selected=null;this.onState({devices,lost,selected:this.selected});}
  async select(id){

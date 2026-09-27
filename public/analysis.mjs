@@ -1,3 +1,5 @@
+import {analyzeMusical} from './musical-analysis.mjs';
+import {validateEvaluationProfile,evaluationVersion} from './evaluation.mjs';
 // Input-independent musical model. Time is seconds relative to the recording start.
 export const EXERCISES=[
  {id:'joy',title:'欢乐颂',subtitle:'第一句 · 右手旋律',composer:'贝多芬',level:'入门',bpm:80,pitches:[64,64,65,67,67,65,64,62,60,60,62,64,64,62,62],lengths:[1,1,1,1,1,1,1,1,1,1,1,1,1.5,.5,2],tip:'右手从 mi 开始。最后一小节，留意附点节奏与结尾的长音。'},
@@ -32,7 +34,8 @@ function lowerGroup(groups,time){let low=0,high=groups.length;while(low<high){co
 
 // Sparse weighted sequence alignment. A Fenwick tree stores the best path ending
 // before each performed onset; no score.length × events.length matrix is allocated.
-export function analyze(score,events,bpm,{interrupted=false}={}){
+export function analyze(score,events,bpm,{interrupted=false,evaluationProfile,ornaments=score.ornaments??[]}={}){
+ validateEvaluationProfile(evaluationProfile);if(evaluationProfile==='musical')return analyzeMusical(score,events,bpm,{interrupted,ornaments});
  const actual=events.filter(n=>n&&Number.isFinite(n.pitch)&&Number.isFinite(n.time)&&n.time>=0).toSorted((a,b)=>a.time-b.time);
  if(!actual.length)return {empty:true,interrupted,rows:[],extras:[],count:0};
  const n=score.length,m=actual.length,beat=60/bpm;
@@ -56,6 +59,6 @@ export function analyze(score,events,bpm,{interrupted=false}={}){
  const tolerance=Math.max(.12,beat*.22),used=new Set(),rows=score.map(expected=>({expected,played:null,status:'missing',delta:null,timing:null}));
  for(let node=bestBefore(actualGroups.length);node;node=node.previous)for(const [e,a]of matchGroups(expectedGroups[node.i],actualGroups[node.j],beat).pairs){const expected=e.note,played=a.note,delta=played.time-expected.time;used.add(a.ordinal);rows[e.ordinal]={expected,played,status:expected.pitch===played.pitch?'correct':'wrong',delta,timing:Math.abs(delta)<=tolerance?'steady':delta<0?'early':'late'};}
  const extras=actual.filter((_,ordinal)=>!used.has(ordinal)),correct=rows.filter(r=>r.status==='correct').length,wrong=rows.filter(r=>r.status==='wrong').length,missing=rows.filter(r=>r.status==='missing').length,paired=rows.filter(r=>r.played),steady=paired.filter(r=>r.timing==='steady').length;
- return {empty:false,interrupted,rows,extras,count:m,correct,wrong,missing,pitch:n+extras.length?Math.round(correct/(n+extras.length)*100):0,rhythm:paired.length>=3?Math.round(steady/paired.length*100):null,tolerance,averageDeviation:paired.length?Math.round(paired.reduce((s,r)=>s+Math.abs(r.delta),0)/paired.length*1000):null,coverage:n?Math.round(paired.length/n*100):0};
+ return {...(evaluationProfile?{evaluationProfile,analysisVersion:evaluationVersion(evaluationProfile)}:{}),empty:false,interrupted,rows,extras,count:m,correct,wrong,missing,pitch:n+extras.length?Math.round(correct/(n+extras.length)*100):0,rhythm:paired.length>=3?Math.round(steady/paired.length*100):null,tolerance,averageDeviation:paired.length?Math.round(paired.reduce((s,r)=>s+Math.abs(r.delta),0)/paired.length*1000):null,coverage:n?Math.round(paired.length/n*100):0};
 }
 export function makeDemo(score){return score.filter((_,i)=>i!==9).map((n,i)=>({pitch:n.pitch+(n.index===5?2:0),time:n.time+(n.index===11?.28:.035),duration:n.duration*.8,velocity:80}));}

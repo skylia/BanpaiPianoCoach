@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {REPERTOIRE} from '../public/repertoire.mjs';
+import {LEGACY_REPERTOIRE} from '../public/repertoire.mjs';
 import {normalizeScore,scoreToTimedNotes,scoreDuration,barCount} from '../public/score-model.mjs';
 import {TASKS,GRADES} from '../public/curriculum.mjs';
 import {ANALYSIS_VERSION,dayKey,validDay,shiftDay,monday,musicFingerprint,takeActivity,normalizeActivity,defaultLearning,normalizeLearning,gradeProgress,aggregateActivities,planEvidence,parseProgressBackup} from '../public/progress-model.mjs';
 const today='2026-09-22';
-const score=normalizeScore(REPERTOIRE.find(s=>s.id==='joy'));
+const score=normalizeScore(LEGACY_REPERTOIRE.find(s=>s.id==='joy'));
 const options={bpm:120,hand:'right',startBar:1,endBar:barCount(score)};
 const makeTake=(patch={})=>({id:'a',score,options,bpm:120,source:'midi',date:today+'T11:00:12.350Z',startedAt:today+'T11:00:00Z',events:scoreToTimedNotes(score,options).map(n=>({...n,velocity:80})),elapsed:scoreDuration(score,options),interrupted:false,...patch});
 const capture=(patch={})=>normalizeActivity({id:'take:a',kind:'capture',source:'midi',title:'Test',scoreId:score.id,fingerprint:musicFingerprint(score),date:today,startedAt:today+'T10:00:00Z',endedAt:today+'T10:01:00Z',seconds:60,complete:true,whole:true,bpm:120,hand:'right',startBar:1,endBar:barCount(score),expected:100,correct:100,extras:0,paired:100,steady:100,analysisVersion:ANALYSIS_VERSION,updatedAt:today+'T10:01:00Z',...patch});

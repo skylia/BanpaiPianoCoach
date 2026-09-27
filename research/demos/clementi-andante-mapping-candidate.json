@@ -1,0 +1,354 @@
+{
+  "scoreId": "mutopia-clementi-op36-no1-movement2",
+  "recording": "Luis Kolodin, local clementi-op36-no1-luis-kolodin.m4a",
+  "timeBase": "absolute seconds in the full recording, not seconds relative to movement",
+  "status": "spectrally-supported-candidate-requires-auditory-boundary-review",
+  "clipStart": 119.3,
+  "clipEnd": 179.3,
+  "mapping": [
+    {
+      "bar": 1,
+      "time": 119.589
+    },
+    {
+      "bar": 2,
+      "time": 121.844
+    },
+    {
+      "bar": 3,
+      "time": 124.149
+    },
+    {
+      "bar": 4,
+      "time": 126.553
+    },
+    {
+      "bar": 5,
+      "time": 128.848
+    },
+    {
+      "bar": 6,
+      "time": 131.163
+    },
+    {
+      "bar": 7,
+      "time": 133.428
+    },
+    {
+      "bar": 8,
+      "time": 135.583
+    },
+    {
+      "bar": 9,
+      "time": 137.828
+    },
+    {
+      "bar": 10,
+      "time": 140.023
+    },
+    {
+      "bar": 11,
+      "time": 142.128
+    },
+    {
+      "bar": 12,
+      "time": 144.383
+    },
+    {
+      "bar": 13,
+      "time": 146.787
+    },
+    {
+      "bar": 14,
+      "time": 149.202
+    },
+    {
+      "bar": 15,
+      "time": 151.307
+    },
+    {
+      "bar": 16,
+      "time": 153.522
+    },
+    {
+      "bar": 17,
+      "time": 155.657
+    },
+    {
+      "bar": 18,
+      "time": 157.822
+    },
+    {
+      "bar": 19,
+      "time": 160.017
+    },
+    {
+      "bar": 20,
+      "time": 162.282
+    },
+    {
+      "bar": 21,
+      "time": 164.577
+    },
+    {
+      "bar": 22,
+      "time": 166.932
+    },
+    {
+      "bar": 23,
+      "time": 169.207
+    },
+    {
+      "bar": 24,
+      "time": 171.332
+    },
+    {
+      "bar": 25,
+      "time": 173.437
+    },
+    {
+      "bar": 26,
+      "time": 175.831
+    }
+  ],
+  "uncertainty": "40ms DTW + 10ms spectral-flux sampling; candidate attack estimate peak-30ms; intervals are review windows, not statistical confidence or measured errors. Trill closure makes bars4/22 ambiguous. No human auditory or repeated playback validation performed.",
+  "repeats": "The full 26-bar source sequence aligns monotonically to this clip; no extra repeat required by the match. This is supported by melody anchors across all bars, not inferred only from duration.",
+  "reviewWindows": [
+    {
+      "bar": 1,
+      "time": 119.589,
+      "window": [
+        119.509,
+        119.669
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 2,
+      "time": 121.844,
+      "window": [
+        121.764,
+        121.924
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 3,
+      "time": 124.149,
+      "window": [
+        124.069,
+        124.229
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 4,
+      "time": 126.553,
+      "window": [
+        126.403,
+        126.703
+      ],
+      "note": "颤音收尾 F4/G4 与 A4 主音靠近；需耳听复核小节边界，候选范围较宽。"
+    },
+    {
+      "bar": 5,
+      "time": 128.848,
+      "window": [
+        128.768,
+        128.928
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 6,
+      "time": 131.163,
+      "window": [
+        131.083,
+        131.243
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 7,
+      "time": 133.428,
+      "window": [
+        133.348,
+        133.508
+      ],
+      "note": "前一小节末也有 C5；用新 Bb3 低音起音排除前一 C5。"
+    },
+    {
+      "bar": 8,
+      "time": 135.583,
+      "window": [
+        135.503,
+        135.663
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 9,
+      "time": 137.828,
+      "window": [
+        137.748,
+        137.908
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 10,
+      "time": 140.023,
+      "window": [
+        139.943,
+        140.103
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 11,
+      "time": 142.128,
+      "window": [
+        142.048,
+        142.208
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 12,
+      "time": 144.383,
+      "window": [
+        144.303,
+        144.463
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 13,
+      "time": 146.787,
+      "window": [
+        146.707,
+        146.867
+      ],
+      "note": "同音 C5 连奏，采用本小节第一个起音，不采用更响的后续起音。"
+    },
+    {
+      "bar": 14,
+      "time": 149.202,
+      "window": [
+        149.122,
+        149.282
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 15,
+      "time": 151.307,
+      "window": [
+        151.227,
+        151.387
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 16,
+      "time": 153.522,
+      "window": [
+        153.442,
+        153.602
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 17,
+      "time": 155.657,
+      "window": [
+        155.577,
+        155.737
+      ],
+      "note": "上一小节末也有 F4+A4；用新 C3 低音起音区分。"
+    },
+    {
+      "bar": 18,
+      "time": 157.822,
+      "window": [
+        157.742,
+        157.902
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 19,
+      "time": 160.017,
+      "window": [
+        159.937,
+        160.097
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 20,
+      "time": 162.282,
+      "window": [
+        162.202,
+        162.362
+      ],
+      "note": "A4/F3 的后续伴奏泛音较响，选择首个主音起音。"
+    },
+    {
+      "bar": 21,
+      "time": 164.577,
+      "window": [
+        164.497,
+        164.657
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 22,
+      "time": 166.932,
+      "window": [
+        166.782,
+        167.082
+      ],
+      "note": "前一小节颤音收尾也含 D4；用 Bb3 新低音与后续 F4/Bb4/D5 序列排除较早装饰音。"
+    },
+    {
+      "bar": 23,
+      "time": 169.207,
+      "window": [
+        169.127,
+        169.287
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 24,
+      "time": 171.332,
+      "window": [
+        171.252,
+        171.412
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 25,
+      "time": 173.437,
+      "window": [
+        173.357,
+        173.517
+      ],
+      "note": "旋律与相邻小节顺序有频谱支持。"
+    },
+    {
+      "bar": 26,
+      "time": 175.831,
+      "window": [
+        175.751,
+        175.911
+      ],
+      "note": "原始DTW点175.680落在上一小节G4尾音；改用175.83附近F4新起音。"
+    }
+  ],
+  "enabledInApplication": false,
+  "reviewStatus": "Candidate derived from score and spectral evidence; not an auditory review or a teacher-approved map."
+}

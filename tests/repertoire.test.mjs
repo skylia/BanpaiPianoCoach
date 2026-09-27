@@ -7,7 +7,7 @@ import {normalizeScore,scoreToTimedNotes} from '../public/score-model.mjs';
 import {parseMidi,midiToScore} from '../public/midi.mjs';
 import {buildNotationBars} from '../public/notation.mjs';
 const manifest=JSON.parse(readFileSync(new URL('../research/REPERTOIRE-MANIFEST.json',import.meta.url)));
-test('each grade retains ten entries, with three complete Clementi movements added to grade 3',()=>{
+test('ten-grade coverage retains the added Clementi movements',()=>{
  const graded=REPERTOIRE.filter(s=>s.grade);assert.equal(graded.length,103);assert.equal(new Set(graded.map(s=>s.id)).size,103);
  for(let g=1;g<=10;g++)assert.equal(graded.filter(s=>s.grade===g).length,g===3?13:10);
  for(const s of graded){assert(!/哈农|音阶接力|五指/.test(s.title));assert.equal(s.grading,'general');normalizeScore(s);}

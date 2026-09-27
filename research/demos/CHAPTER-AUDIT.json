@@ -1,0 +1,32 @@
+{
+  "verifiedOn": "2026-09-27",
+  "source": "Published Bilibili description and original-page seeking observed in browser.",
+  "automaticStop": false,
+  "chapters": [
+    {
+      "scoreId": "mutopia-chop-28-18",
+      "title": "前奏曲 · Op.28 No.18 · 真人钢琴",
+      "bvid": "BV1QG4y1a7fq",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1QG4y1a7fq/?p=1&t=1707",
+      "performer": "Éric Heidsieck（埃里克·海德西克）",
+      "publisher": "塞琉西亚拆迁队",
+      "startTime": 1707,
+      "endTime": 1763,
+      "coverage": "1972年真人录音合集中的第18首，28:27–29:23；链接从本曲起点打开。原平台会继续播放后续曲目，不会在片段末自动停止，部分播放条件可能要求登录。"
+    },
+    {
+      "scoreId": "mutopia-chop-28-19",
+      "title": "前奏曲 · Op.28 No.19 · 真人钢琴",
+      "bvid": "BV1QG4y1a7fq",
+      "page": 1,
+      "sourceUrl": "https://www.bilibili.com/video/BV1QG4y1a7fq/?p=1&t=1763",
+      "performer": "Éric Heidsieck（埃里克·海德西克）",
+      "publisher": "塞琉西亚拆迁队",
+      "startTime": 1763,
+      "endTime": 1848,
+      "coverage": "1972年真人录音合集中的第19首，29:23–30:48；链接从本曲起点打开。原平台会继续播放后续曲目，不会在片段末自动停止，部分播放条件可能要求登录。"
+    }
+  ],
+  "note": "For part-based collections exact p parameters are recorded in BILIBILI-AUDIT.json; they are not estimated audio timestamps. Clementi bundled recording clipping is separately documented in clementi-movement-boundaries.md."
+}
